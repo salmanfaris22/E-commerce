@@ -1,0 +1,207 @@
+{
+  "user": [
+    {
+      "id": "01ab",
+      "fname": "dasd",
+      "lname": "dasd",
+      "email": "dfadf@gmail.com",
+      "password": "aaa",
+      "cpassword": "aaa"
+    },
+    {
+      "id": "35a8",
+      "fname": "sala",
+      "lname": "s",
+      "email": "salmanfariskalm@gmail.com",
+      "password": "sasa",
+      "cpassword": "sasa"
+    },
+    {
+      "id": "26de",
+      "fname": "sa",
+      "lname": "sa",
+      "email": "salman@gmail.com",
+      "password": "aaa",
+      "cpassword": "aaa"
+    },
+    {
+      "id": "2a4c",
+      "fname": "salman",
+      "lname": "faris",
+      "email": "jasim@gmail.com",
+      "password": "sasa",
+      "cpassword": "sasa"
+    }
+  ],
+
+  "item" :[
+    
+        {
+          "id": 1,
+          "name": "Adidas Ultraboost",
+          "description": "Comfortable and stylish running shoes.",
+          "price": 180.00,
+          "category": "Men",
+          "available_sizes": ["8", "9", "10", "11"],
+          "brand": "Adidas",
+          "image_url": "https://example.com/images/adidas_ultraboost.jpg",
+          "in_stock": true
+        },
+        {
+          "id": 2,
+          "name": "Nike Air Max 270",
+          "description": "Modern and stylish shoes with excellent cushioning.",
+          "price": 150.00,
+          "category": "Men",
+          "available_sizes": ["7", "8", "9", "10"],
+          "brand": "Nike",
+          "image_url": "https://example.com/images/nike_airmax_270.jpg",
+          "in_stock": true
+        },
+        {
+          "id": 3,
+          "name": "Puma RS-X",
+          "description": "Retro-inspired shoes with a comfortable fit.",
+          "price": 110.00,
+          "category": "Men",
+          "available_sizes": ["9", "10", "11"],
+          "brand": "Puma",
+          "image_url": "https://example.com/images/puma_rsx.jpg",
+          "in_stock": false
+        },
+        {
+          "id": 4,
+          "name": "Reebok Classic",
+          "description": "Classic design with a timeless look.",
+          "price": 90.00,
+          "category": "Men",
+          "available_sizes": ["8", "9"],
+          "brand": "Reebok",
+          "image_url": "https://example.com/images/reebok_classic.jpg",
+          "in_stock": true
+        },
+        {
+          "id": 5,
+          "name": "New Balance 990v5",
+          "description": "Premium materials and craftsmanship.",
+          "price": 175.00,
+          "category": "Men",
+          "available_sizes": ["9", "10", "11"],
+          "brand": "New Balance",
+          "image_url": "https://example.com/images/newbalance_990v5.jpg",
+          "in_stock": true
+        },
+        {
+          "id": 6,
+          "name": "Nike Air Force 1",
+          "description": "Iconic design with superior comfort.",
+          "price": 100.00,
+          "category": "Women",
+          "available_sizes": ["6", "7", "8"],
+          "brand": "Nike",
+          "image_url": "https://example.com/images/nike_airforce1.jpg",
+          "in_stock": true
+        },
+        {
+          "id": 7,
+          "name": "Adidas Superstar",
+          "description": "Classic sneakers with a modern twist.",
+          "price": 85.00,
+          "category": "Women",
+          "available_sizes": ["5", "6", "7"],
+          "brand": "Adidas",
+          "image_url": "https://example.com/images/adidas_superstar.jpg",
+          "in_stock": false
+        },
+        {
+          "id": 8,
+          "name": "Puma Clyde",
+          "description": "Stylish and comfortable sneakers for everyday wear.",
+          "price": 95.00,
+          "category": "Women",
+          "available_sizes": ["6", "7", "8"],
+          "brand": "Puma",
+          "image_url": "https://example.com/images/puma_clyde.jpg",
+          "in_stock": true
+        },
+        {
+          "id": 9,
+          "name": "Reebok Zig Kinetica",
+          "description": "High-performance shoes with a unique design.",
+          "price": 120.00,
+          "category": "Women",
+          "available_sizes": ["6", "7"],
+          "brand": "Reebok",
+          "image_url": "https://example.com/images/reebok_zig_kinetica.jpg",
+          "in_stock": true
+        },
+        {
+          "id": 10,
+          "name": "New Balance Fresh Foam 1080v10",
+          "description": "Comfortable and cushioned running shoes.",
+          "price": 150.00,
+          "category": "Men",
+          "available_sizes": ["8", "9", "10", "11"],
+          "brand": "New Balance",
+          "image_url": "https://example.com/images/newbalance_freshfoam_1080v10.jpg",
+          "in_stock": true
+        },
+        {
+          "id": 11,
+          "name": "Adidas NMD",
+          "description": "Sleek and stylish sneakers with a comfortable fit.",
+          "price": 160.00,
+          "category": "Men",
+          "available_sizes": ["8", "9", "10"],
+          "brand": "Adidas",
+          "image_url": "https://example.com/images/adidas_nmd.jpg",
+          "in_stock": true
+        },
+        {
+          "id": 12,
+          "name": "Nike React Infinity Run",
+          "description": "Innovative running shoes with exceptional cushioning.",
+          "price": 170.00,
+          "category": "Men",
+          "available_sizes": ["9", "10", "11"],
+          "brand": "Nike",
+          "image_url": "https://example.com/images/nike_react_infinity_run.jpg",
+          "in_stock": true
+        },
+        {
+          "id": 13,
+          "name": "Puma Basket Classic",
+          "description": "Vintage-inspired sneakers with a modern twist.",
+          "price": 100.00,
+          "category": "Women",
+          "available_sizes": ["6", "7", "8"],
+          "brand": "Puma",
+          "image_url": "https://example.com/images/puma_basket_classic.jpg",
+          "in_stock": true
+        },
+        {
+          "id": 14,
+          "name": "Reebok Club C 85",
+          "description": "Classic design with a comfortable fit.",
+          "price": 90.00,
+          "category": "Women",
+          "available_sizes": ["5", "6", "7"],
+          "brand": "Reebok",
+          "image_url": "https://example.com/images/reebok_club_c85.jpg",
+          "in_stock": true
+        },
+        {
+          "id": 15,
+          "name": "New Balance 574",
+          "description": "Timeless sneakers with premium materials.",
+          "price": 130.00,
+          "category": "Men",
+          "available_sizes": ["8", "9", "10"],
+          "brand": "New Balance",
+          "image_url": "https://example.com/images/newbalance_574.jpg",
+          "in_stock": false
+        }
+      ]
+      
+  
+}
