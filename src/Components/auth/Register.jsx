@@ -1,10 +1,10 @@
-import { Color } from "../Home/Color";
+
 import { userAPI } from "../API/API_URL";
 import axios from "axios";
 import { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import LoginImg from "../../Assets/pexels-craytive-1456706.jpg"
 export const Register = () => {
   const [input, setInput] = useState({});
   const [error, setError] = useState({});
@@ -16,7 +16,7 @@ export const Register = () => {
     });
   };
 
-  const Validate = (val) => {
+  const validate = (val) => {
     const err = {};
 
     if (!val.fname) {
@@ -41,20 +41,18 @@ export const Register = () => {
     return err;
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    const errors = Validate(input);
+    const errors = validate(input);
     setError(errors);
 
     if (Object.keys(errors).length === 0) {
-      axios
-        .post(userAPI, input)
-        .then(() => {
-          toast.success("Registration successful!");
-        })
-        .catch((err) => {
-          toast.error("Error: " + err.message);
-        });
+      try {
+        await axios.post(userAPI, input);
+        toast.success("Registration successful!");
+      } catch (err) {
+        toast.error("Error: " + err.message);
+      }
     } else {
       toast.error("Please fill out the form correctly");
     }
@@ -63,69 +61,100 @@ export const Register = () => {
   return (
     <div>
       <ToastContainer />
-      <div className="flex justify-center items-center h-[100vh] m-auto">
-        <div className="grid grid-cols-2 h-[500px] m-auto shadow shadow-black">
-          <form
-            className="h-[500px] m-auto w-[400px] flex flex-col items-center justify-evenly"
-            style={{ background: Color.primary }}
-            onSubmit={onSubmit}
-          >
-            <div>Welcome</div>
-            <div className="flex flex-col gap-4">
-              <input
-                type="text"
-                name="fname"
-                className="border"
-                placeholder="First Name"
-                onChange={handleChange}
-                value={input.fname || ""}
-              />
-              {error.fname && <span className="text-red-500">{error.fname}</span>}
-
-              <input
-                type="text"
-                name="lname"
-                className="border"
-                placeholder="Last Name"
-                onChange={handleChange}
-                value={input.lname || ""}
-              />
-              {error.lname && <span className="text-red-500">{error.lname}</span>}
-
-              <input
-                type="email"
-                name="email"
-                className="border"
-                placeholder="Email"
-                onChange={handleChange}
-                value={input.email || ""}
-              />
-              {error.email && <span className="text-red-500">{error.email}</span>}
-
-              <input
-                type="password"
-                name="password"
-                className="border"
-                placeholder="Password"
-                onChange={handleChange}
-                value={input.password || ""}
-              />
-              {error.password && <span className="text-red-500">{error.password}</span>}
-
-              <input
-                type="password"
-                name="cpassword"
-                className="border"
-                placeholder="Confirm Password"
-                onChange={handleChange}
-                value={input.cpassword || ""}
-              />
-              {error.cpassword && <span className="text-red-500">{error.cpassword}</span>}
-              {error.check && <span className="text-red-500">{error.check}</span>}
+      <div
+        className="flex justify-center items-center h-[100vh] m-auto absolute z-10  top-0 w-[100vw]"
+        style={{ background: `url(${LoginImg})`, backgroundSize: 'cover' }}
+      >
+        <div className="relative flex justify-center items-center w-full h-full backdrop-blur-sm p-4">
+          <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
+          <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-center md:justify-between max-w-4xl w-full mx-auto p-6 bg-white rounded-lg shadow-lg">
+            <div className="flex flex-col justify-center md:w-1/2 p-4">
+              <h1 className="text-2xl font-bold mb-4">Register</h1>
+              <form className="space-y-4" onSubmit={onSubmit}>
+                <div className="flex flex-col">
+                  <input
+                    type="text"
+                    name="fname"
+                    className="border border-gray-300 rounded-md p-2"
+                    placeholder="First Name"
+                    onChange={handleChange}
+                    value={input.fname || ""}
+                  />
+                  {error.fname && (
+                    <span className="text-red-500 text-sm">{error.fname}</span>
+                  )}
+                </div>
+                <div className="flex flex-col">
+                  <input
+                    type="text"
+                    name="lname"
+                    className="border border-gray-300 rounded-md p-2"
+                    placeholder="Last Name"
+                    onChange={handleChange}
+                    value={input.lname || ""}
+                  />
+                  {error.lname && (
+                    <span className="text-red-500 text-sm">{error.lname}</span>
+                  )}
+                </div>
+                <div className="flex flex-col">
+                  <input
+                    type="email"
+                    name="email"
+                    className="border border-gray-300 rounded-md p-2"
+                    placeholder="Email"
+                    onChange={handleChange}
+                    value={input.email || ""}
+                  />
+                  {error.email && (
+                    <span className="text-red-500 text-sm">{error.email}</span>
+                  )}
+                </div>
+                <div className="flex flex-col">
+                  <input
+                    type="password"
+                    name="password"
+                    className="border border-gray-300 rounded-md p-2"
+                    placeholder="Password"
+                    onChange={handleChange}
+                    value={input.password || ""}
+                  />
+                  {error.password && (
+                    <span className="text-red-500 text-sm">{error.password}</span>
+                  )}
+                </div>
+                <div className="flex flex-col">
+                  <input
+                    type="password"
+                    name="cpassword"
+                    className="border border-gray-300 rounded-md p-2"
+                    placeholder="Confirm Password"
+                    onChange={handleChange}
+                    value={input.cpassword || ""}
+                  />
+                  {error.cpassword && (
+                    <span className="text-red-500 text-sm">{error.cpassword}</span>
+                  )}
+                  {error.check && (
+                    <span className="text-red-500 text-sm">{error.check}</span>
+                  )}
+                </div>
+                <button
+                  type="submit"
+                  className="bg-blue-500 text-white px-4 py-2 rounded-md shadow-md transition-transform transform hover:scale-105"
+                >
+                  Submit
+                </button>
+              </form>
             </div>
-            <button type="submit">Submit</button>
-          </form>
-          <div className="h-[500px] m-auto">kjhj</div>
+            <div className="md:w-1/2 flex justify-center items-center p-4">
+            <img
+              src={LoginImg}
+              alt="Login Illustration"
+              className="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-110"
+            />
+            </div>
+          </div>
         </div>
       </div>
     </div>

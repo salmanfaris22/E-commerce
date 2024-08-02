@@ -1,22 +1,16 @@
-
-import './App.css'
-import RoutesPage from './Rountes/Routes'
-
-
+import "./App.css";
+import NavBar from "./Components/NavBar/NavBar";
+import RoutesPage from "./Rountes/Routes";
 
 function App() {
- 
-
   return (
     <>
-
-
-<div>
-  <RoutesPage/>
-</div>
-   
+      <div>
+        <NavBar />
+        <RoutesPage />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
