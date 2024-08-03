@@ -205,26 +205,6 @@
           "warranty": "2 years",
           "additional_details": "Limited stock available. Offer valid until end of month."
         },
-        "2": {
-          "id": "2",
-          "name": "Nike Air Max 270",
-          "description": "Modern and stylish shoes with excellent cushioning and support.",
-          "price": 150,
-          "category": "Men",
-          "available_sizes": [
-            "7",
-            "8",
-            "9",
-            "10"
-          ],
-          "brand": "Nike",
-          "image_url": "https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw769f9d4b/images/page-designer/2024/July/16130_Comp_X_Womens_Shoes.jpg",
-          "in_stock": true,
-          "special_offer": "Buy one get one 50% off",
-          "discount": 50,
-          "warranty": "1 year",
-          "additional_details": "Available in limited colors. Offer valid while supplies last."
-        },
         "4": {
           "id": "4",
           "name": "Reebok Classic",
@@ -567,6 +547,319 @@
       "discount": 0,
       "warranty": "1 year",
       "additional_details": "Out of stock. Check back soon."
+    },
+    {
+      "id": "16",
+      "name": "New Adidas 574",
+      "description": "Timeless sneakers with premium materials and a comfortable fit.",
+      "price": 130,
+      "category": "Kids",
+      "available_sizes": [
+        "3",
+        "4"
+      ],
+      "brand": "Adidas",
+      "image_url": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c8aba848adba4eeebf89ae2e00ba47dd_9366/Grand_Court_2.0_Shoes_Kids_White_GW6521_01_standard.jpg",
+      "in_stock": true,
+      "special_offer": "None",
+      "discount": 0,
+      "warranty": "1 year",
+      "additional_details": "Out of stock. Check back soon."
+    },
+    {
+      "id": "17",
+      "name": "Nike React Infinity Run Flyknit",
+      "description": "High-performance running shoes with React foam for maximum comfort.",
+      "price": 160,
+      "category": "Running",
+      "available_sizes": [
+        "8",
+        "9",
+        "10"
+      ],
+      "brand": "NIKE",
+      "image_url": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/i1-665455a5-45de-40fb-945f-c1852b82400d/react-infinity-run-flyknit-mens-running-shoe-zX42Nc.jpg",
+      "in_stock": true,
+      "special_offer": "None",
+      "discount": 0,
+      "warranty": "1 year",
+      "additional_details": "Only a few left in stock."
+    },
+    {
+      "id": "18",
+      "name": "Nike React Miler",
+      "description": "Durable running shoes designed for long-distance comfort.",
+      "price": 130,
+      "category": "Running",
+      "available_sizes": [
+        "8",
+        "9",
+        "10"
+      ],
+      "brand": "NIKE",
+      "image_url": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/i1-5cc7de3b-2afc-49c2-a1e4-0508997d09e6/react-miler-mens-running-shoe-DgF6nr.jpg",
+      "in_stock": true,
+      "special_offer": "None",
+      "discount": 0,
+      "warranty": "1 year",
+      "additional_details": "Limited stock available."
+    },
+    {
+      "id": "19",
+      "name": "Nike Air Zoom Pegasus 37",
+      "description": "Iconic running shoes with Zoom Air cushioning for a responsive feel.",
+      "price": 120,
+      "category": "Running",
+      "available_sizes": [
+        "6",
+        "7",
+        "8"
+      ],
+      "brand": "NIKE",
+      "image_url": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/i1-33b0a0a5-c171-46cc-ad20-04a768703e47/air-zoom-pegasus-37-womens-running-shoe-Jl0bDf.jpg",
+      "in_stock": true,
+      "special_offer": "None",
+      "discount": 0,
+      "warranty": "1 year",
+      "additional_details": "Available in multiple sizes."
+    },
+    {
+      "id": "20",
+      "name": "Nike Joyride Run Flyknit",
+      "description": "Running shoes with Joyride cushioning for an ultra-comfortable run.",
+      "price": 180,
+      "category": "Running",
+      "available_sizes": [
+        "6",
+        "7",
+        "8"
+      ],
+      "brand": "NIKE",
+      "image_url": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/99a7d3cb-e40c-4474-91c2-0f2e6d231fd2/joyride-run-flyknit-womens-running-shoe-HcfnJd.jpg",
+      "in_stock": true,
+      "special_offer": "None",
+      "discount": 0,
+      "warranty": "1 year",
+      "additional_details": "Only a few pairs left."
+    },
+    {
+      "id": "21",
+      "name": "Nike Mercurial Vapor 13 Elite FG",
+      "description": "High-performance football boots designed for speed and agility.",
+      "price": 250,
+      "category": "Football",
+      "available_sizes": [
+        "7",
+        "8",
+        "9"
+      ],
+      "brand": "NIKE",
+      "image_url": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/9dda6202-e2ff-4711-9a09-0fcb7d90c164/mercurial-vapor-13-elite-fg-firm-ground-soccer-cleat-14MsF2.jpg",
+      "in_stock": true,
+      "special_offer": "None",
+      "discount": 0,
+      "warranty": "1 year",
+      "additional_details": "High demand. Limited stock."
+    },
+    {
+      "id": "22",
+      "name": "Nike Phantom Vision Elite Dynamic Fit FG",
+      "description": "Advanced football boots with dynamic fit for a secure feel.",
+      "price": 150,
+      "category": "Football",
+      "available_sizes": [
+        "7",
+        "8",
+        "9"
+      ],
+      "brand": "NIKE",
+      "image_url": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/s1amp7uosrn0nqpsxeue/phantom-vision-elite-dynamic-fit-fg-firm-ground-soccer-cleat-19Kv1V.jpg",
+      "in_stock": true,
+      "special_offer": "None",
+      "discount": 0,
+      "warranty": "1 year",
+      "additional_details": "Limited sizes available."
+    },
+    {
+      "id": "23",
+      "name": "Nike Phantom Venom Academy FG",
+      "description": "Football boots designed for precision and control on the pitch.",
+      "price": 80,
+      "category": "Football",
+      "available_sizes": [
+        "6",
+        "7",
+        "8"
+      ],
+      "brand": "NIKE",
+      "image_url": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/whegph8z9ornhxklc8rp/phantom-venom-academy-fg-firm-ground-soccer-cleat-6JVNll.jpg",
+      "in_stock": true,
+      "special_offer": "None",
+      "discount": 0,
+      "warranty": "1 year",
+      "additional_details": "Available in various sizes."
+    },
+    {
+      "id": "24",
+      "name": "Nike Mercurial Vapor 13 Elite Tech Craft FG",
+      "description": "Premium football boots with a tech-crafted design for elite performance.",
+      "price": 145,
+      "category": "Football",
+      "available_sizes": [
+        "7",
+        "8",
+        "9"
+      ],
+      "brand": "NIKE",
+      "image_url": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/vhbwnkor8sxt8qtecgia/mercurial-vapor-13-elite-tech-craft-fg-firm-ground-soccer-cleat-l38JPj.jpg",
+      "in_stock": true,
+      "special_offer": "None",
+      "discount": 0,
+      "warranty": "1 year",
+      "additional_details": "Limited availability."
+    },
+    {
+      "id": "25",
+      "name": "Nike Mercurial Superfly 7 Pro MDS FG",
+      "description": "High-performance football boots designed for maximum speed and control.",
+      "price": 137,
+      "category": "Football",
+      "available_sizes": [
+        "7",
+        "8",
+        "9"
+      ],
+      "brand": "NIKE",
+      "image_url": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/i1-a52a8aec-22dc-4982-961b-75c5f4c72805/mercurial-superfly-7-pro-mds-fg-firm-ground-soccer-cleat-mhcpdN.jpg",
+      "in_stock": true,
+      "special_offer": "None",
+      "discount": 0,
+      "warranty": "1 year",
+      "additional_details": "Only a few left in stock."
+    },
+    {
+      "id": "26",
+      "name": "Nike Air Force 1",
+      "description": "Classic sneakers with timeless design and comfort for kids.",
+      "price": 90,
+      "category": "Casual",
+      "available_sizes": [
+        "4",
+        "5",
+        "6"
+      ],
+      "brand": "NIKE",
+      "image_url": "https://image.goat.com/attachments/product_template_pictures/images/008/654/900/original/52015_00.png.png",
+      "in_stock": true,
+      "special_offer": "None",
+      "discount": 0,
+      "warranty": "1 year",
+      "additional_details": "Available in multiple sizes."
+    },
+    {
+      "id": "27",
+      "name": "X_PLR",
+      "description": "Versatile and comfortable casual sneakers with a sleek design.",
+      "price": 65,
+      "category": "Casual",
+      "available_sizes": [
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "brand": "ADIDAS",
+      "image_url": "https://assets.adidas.com/images/h_320,f_auto,q_auto:sensitive,fl_lossy/a36518227134495da766ab9d01772fa2_9366/X_PLR_Shoes_Red_FY9063_01_standard.jpg",
+      "in_stock": true,
+      "special_offer": "None",
+      "discount": 0,
+      "warranty": "1 year",
+      "additional_details": "Available in multiple sizes. Limited stock."
+    },
+    {
+      "id": "28",
+      "name": "Stan Smith",
+      "description": "Classic white sneakers with a minimalist design for everyday wear.",
+      "price": 55,
+      "category": "Casual",
+      "available_sizes": [
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "brand": "ADIDAS",
+      "image_url": "https://assets.adidas.com/images/h_320,f_auto,q_auto:sensitive,fl_lossy/d0720712d81e42b1b30fa80800826447_9366/Stan_Smith_Shoes_White_M20607_M20607_01_standard.jpg",
+      "in_stock": true,
+      "special_offer": "None",
+      "discount": 0,
+      "warranty": "1 year",
+      "additional_details": "Only a few sizes left in stock."
+    },
+    {
+      "id": "29",
+      "name": "NMD_R1",
+      "description": "High-performance running shoes with boost cushioning for a comfortable ride.",
+      "price": 120,
+      "category": "Running",
+      "available_sizes": [
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "brand": "ADIDAS",
+      "image_url": "https://assets.adidas.com/images/h_320,f_auto,q_auto:sensitive,fl_lossy/99ca762cb9054caf82fbabc500fd146e_9366/NMD_R1_Shoes_Blue_FY9392_01_standard.jpg",
+      "in_stock": true,
+      "special_offer": "None",
+      "discount": 0,
+      "warranty": "1 year",
+      "additional_details": "Limited sizes available. Order soon."
+    },
+    {
+      "id": "30",
+      "name": "NMD_R1 Flash Red",
+      "description": "Bold red sneakers with boost cushioning and a sleek, modern design.",
+      "price": 140,
+      "category": "Casual",
+      "available_sizes": [
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "brand": "ADIDAS",
+      "image_url": "https://assets.adidas.com/images/h_320,f_auto,q_auto:sensitive,fl_lossy/90f85768e3894aeaab67aba0014a3379_9366/NMD_R1_Shoes_Red_FY9389_01_standard.jpg",
+      "in_stock": true,
+      "special_offer": "None",
+      "discount": 0,
+      "warranty": "1 year",
+      "additional_details": "High demand. Limited stock."
+    },
+    {
+      "id": "31",
+      "name": "Superstar",
+      "description": "Iconic white sneakers with a classic shell toe design.",
+      "price": 90,
+      "category": "Casual",
+      "available_sizes": [
+        "4",
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "brand": "ADIDAS",
+      "image_url": "https://assets.adidas.com/images/h_320,f_auto,q_auto:sensitive,fl_lossy/12365dbc7c424288b7cdab4900dc7099_9366/Superstar_Shoes_White_FW3553_FW3553_01_standard.jpg",
+      "in_stock": true,
+      "special_offer": "None",
+      "discount": 0,
+      "warranty": "1 year",
+      "additional_details": "Popular model. Limited availability."
     }
   ]
 }

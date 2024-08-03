@@ -53,7 +53,7 @@ const Cart = () => {
       {cartItems.length > 0 ? (
         cartItems.map((e) => (
           <div key={e.id} className="shadow-lg p-4 rounded-md bg-white">
-               <ToastContainer/>
+                  <ToastContainer/>
             <img src={e.image_url} alt={e.name} className="w-full h-48 object-cover rounded-md" />
             <div className="mt-2">
               <div className="flex justify-between">
