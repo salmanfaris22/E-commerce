@@ -6,6 +6,7 @@ import { FaHeartBroken } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { handleAddCart } from "../Cart/Cartfunction";
+import { Bounce, ToastContainer, toast } from 'react-toastify';
 const ByProducts = () => {
   const [item, setItem] = useState({});
   const [quantity, setQuantity] = useState(1);
@@ -39,7 +40,9 @@ const ByProducts = () => {
 
   return (
     <div className="container mx-auto p-4">
+      <ToastContainer/>
       <div className="md:w-[70vw] p-8 rounded-lg shadow-lg grid md:grid-cols-2 gap-8 mx-auto mt-4">
+        
         <div className="flex justify-center">
           <img
             src={item.image_url}
@@ -49,7 +52,22 @@ const ByProducts = () => {
         </div>
         <div className="flex flex-col justify-center">
 <div className="flex justify-end text-3xl text-red-500">
-    {whish ?<FaHeartBroken onClick={()=>setWhish(!whish)}/>:<FaHeart onClick={()=>setWhish(!whish)}/>}
+    {whish ?<FaHeartBroken onClick={()=>{setWhish(!whish)
+
+toast('🤞🏻 Item successfully whish list !', {
+  position: "top-right",
+  autoClose: 5000,
+  hideProgressBar: false,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+  theme: "light",
+  transition: Bounce,
+  });
+    }}/>:<FaHeart onClick={()=>{setWhish(!whish)
+      
+    }}/>}
 
 </div>
           <p className="text-zinc-500 font-semibold">{item.category}</p>

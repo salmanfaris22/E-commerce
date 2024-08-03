@@ -1,7 +1,7 @@
 import { userAPI } from "../API/API_URL";
 import axios from "axios";
 import { useState } from "react";
-
+import { ToastContainer, toast } from 'react-toastify';
 import { Link } from "react-router-dom";
 import LoginImg from "../../Assets/pexels-craytive-1456706.jpg";
 
@@ -21,17 +21,21 @@ const Login = () => {
 
       if (user) {
         if (user.password === credentials.password) {
-          alert("Login successful!");
+          toast.success("Login successful!");
           localStorage.setItem("id",user.id)
         } else {
           validation.password = "Incorrect password";
+          toast.error("Incorrect password");
         }
       } else {
         validation.email = "Email not found";
         validation.password = "Incorrect password";
+        toast.error("Somethin Went Wrong");
+     
+     
       }
     } catch (error) {
-      console.log("Error: " + error);
+      toast.error("Error: " + error);
     }
 
     setErrors(validation);
@@ -49,6 +53,7 @@ const Login = () => {
       className="flex justify-center items-center h-[100vh] m-auto absolute z-10  top-0 w-[100vw]"
       style={{ background: `url(${LoginImg})`, backgroundSize: 'cover' }}
     >
+       <ToastContainer />
       <div className="relative flex justify-center items-center h-full w-full backdrop-blur-sm p-4">
         <div className="absolute inset-0 bg-black opacity-50 z-0"
        

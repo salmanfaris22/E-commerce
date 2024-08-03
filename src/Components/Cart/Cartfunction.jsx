@@ -1,6 +1,6 @@
 import axios from "axios";
 import { userAPI } from "../API/API_URL";
-
+import { Bounce, toast } from 'react-toastify';
 export const handleAddCart = async (item) => {
   try {
     const user = localStorage.getItem("id");
@@ -19,8 +19,18 @@ export const handleAddCart = async (item) => {
     
  
    
-
-    console.log("Item successfully added to cart");
+    toast('🦄 Item successfully added to cart!', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+      });
+  
   } catch (error) {
     console.error("Error adding to cart:", error);
   }

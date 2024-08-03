@@ -8,6 +8,7 @@ import Women from '../Components/CategoriesPage/Women'
 import Cart from '../Components/Cart/Cart'
 import ByProducts from '../Components/ByProdeact/ByProducts'
 import Paymnet from '../Components/Payment/Paymnet'
+import  { ContactUs } from '../Components/Contact/Contact'
 
 
 
@@ -25,6 +26,7 @@ const RoutesPage = () => {
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/byProducts/:id' element={<ByProducts/>}/>
           <Route path='/paymnet/:id' element={<Paymnet/>}/>
+          <Route path='/contact' element={<ContactUs/>}/>
         <Route path='register' element={<Register/>}/> 
 
     </Routes>

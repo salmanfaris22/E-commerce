@@ -185,25 +185,50 @@
       "password": "aaa",
       "cpassword": "aaa",
       "cart": {
-        "3": {
-          "id": "3",
-          "name": "Puma RS-X",
-          "description": "Retro-inspired shoes with a comfortable fit.",
-          "price": 110,
+        "1": {
+          "id": "1",
+          "name": "Adidas Ultraboost",
+          "description": "Comfortable and stylish running shoes with superior cushioning.",
+          "price": 180,
           "category": "Men",
           "available_sizes": [
+            "8",
             "9",
             "10",
             "11"
           ],
-          "brand": "Puma",
-          "image_url": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3ffcfac2-025a-4107-ac04-5fb938d3a5f6/KILLSHOT+2+LEATHER.png",
-          "in_stock": false
+          "brand": "Adidas",
+          "image_url": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/396464/07/sv01/fnd/AUS/fmt/png/Palermo-Lth-Unisex-Sneakers",
+          "in_stock": true,
+          "special_offer": "10% off with code BOOST10",
+          "discount": 10,
+          "warranty": "2 years",
+          "additional_details": "Limited stock available. Offer valid until end of month."
+        },
+        "2": {
+          "id": "2",
+          "name": "Nike Air Max 270",
+          "description": "Modern and stylish shoes with excellent cushioning and support.",
+          "price": 150,
+          "category": "Men",
+          "available_sizes": [
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "brand": "Nike",
+          "image_url": "https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw769f9d4b/images/page-designer/2024/July/16130_Comp_X_Womens_Shoes.jpg",
+          "in_stock": true,
+          "special_offer": "Buy one get one 50% off",
+          "discount": 50,
+          "warranty": "1 year",
+          "additional_details": "Available in limited colors. Offer valid while supplies last."
         },
         "4": {
           "id": "4",
           "name": "Reebok Classic",
-          "description": "Classic design with a timeless look.",
+          "description": "Classic design with a timeless look and comfortable fit.",
           "price": 90,
           "category": "Men",
           "available_sizes": [
@@ -212,7 +237,30 @@
           ],
           "brand": "Reebok",
           "image_url": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/fcf43637c2694ae197a1ab1487a0e8a4_9366/Duramo_RC_Shoes_Green_IE7991_01_standard.jpg",
-          "in_stock": true
+          "in_stock": true,
+          "special_offer": "15% off on your first purchase",
+          "discount": 15,
+          "warranty": "6 months",
+          "additional_details": "Available in various colors and sizes."
+        },
+        "7": {
+          "id": "7",
+          "name": "Adidas Superstar",
+          "description": "Classic sneakers with a modern twist for everyday wear.",
+          "price": 85,
+          "category": "Men",
+          "available_sizes": [
+            "5",
+            "6",
+            "7"
+          ],
+          "brand": "Adidas",
+          "image_url": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/6c3cc4a0-2bf4-4a7c-a2ba-c83875642bc5/NIKE+CORTEZ+TXT.png",
+          "in_stock": false,
+          "special_offer": "None",
+          "discount": 0,
+          "warranty": "1 year",
+          "additional_details": "Out of stock. Check back soon."
         }
       }
     },
@@ -223,6 +271,14 @@
       "email": "salman567633800@gmail.com",
       "password": "sa",
       "cpassword": "sa"
+    },
+    {
+      "id": "d4dd",
+      "fname": "Salman",
+      "lname": "Faris",
+      "email": "salman@gmail.com",
+      "password": "sasa",
+      "cpassword": "sasa"
     }
   ],
   "item": [

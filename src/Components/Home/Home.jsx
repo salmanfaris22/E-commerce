@@ -4,6 +4,9 @@ import JorImg from "../../Assets/jordan.webp";
 import Categories from "./Categories";
 import Iteam from "./ItemList/Iteam";
 import About from "./about/about";
+import Garendy from "./MorePages/Garendy";
+import Brand from "./MorePages/Brand";
+import BrandSection from "./MorePages/MoreBRand";
 const Home = () => {
   return (
     <div className="p-6">
@@ -27,10 +30,18 @@ const Home = () => {
         
       </div>
     </div>
-    <div className="mt-6">
+    <div className="mt-6 flex flex-col gap-3">
       <Categories />
-      <About/>
+      <BrandSection/>
       <Iteam />
+      <Brand/>
+      <About/>
+    
+      
+    
+   
+      <Garendy/>
+      
     </div>
   </div>
   );

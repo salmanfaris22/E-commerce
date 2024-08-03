@@ -12,7 +12,7 @@ const categories = [
 
 const Categories = () => {
   return (
-    <div className="p-4">
+    <div className="p-4 bg-gray-100">
       <div className="font-bold text-3xl text-zinc-700 p-4">Categories</div>
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-1 md:gap-6 overflow-auto ">
