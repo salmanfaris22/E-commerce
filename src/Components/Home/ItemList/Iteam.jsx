@@ -8,7 +8,7 @@ const Item = () => {
 
   useEffect(() => {
     axios
-      .get(ItemsAPI)
+      .get(`${ItemsAPI}?_limit=12`)
       .then((res) => setItems(res.data))
       .catch((err) => console.log("error", err));
   }, []);

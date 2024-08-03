@@ -2,10 +2,11 @@ import { userAPI } from "../API/API_URL";
 import axios from "axios";
 import { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LoginImg from "../../Assets/pexels-craytive-1456706.jpg";
 
 const Login = () => {
+  const Navigate = useNavigate()
   const [credentials, setCredentials] = useState({ email: "", password: "" });
   const [errors, setErrors] = useState({ email: "", password: "" });
 
@@ -23,6 +24,9 @@ const Login = () => {
         if (user.password === credentials.password) {
           toast.success("Login successful!");
           localStorage.setItem("id",user.id)
+          localStorage.setItem("name",user.fname)
+          Navigate("/")
+          window.location.reload();
         } else {
           validation.password = "Incorrect password";
           toast.error("Incorrect password");

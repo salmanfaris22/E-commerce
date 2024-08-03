@@ -7,28 +7,38 @@ import About from "./about/about";
 import Garendy from "./MorePages/Garendy";
 import Brand from "./MorePages/Brand";
 import BrandSection from "./MorePages/MoreBRand";
+
 const Home = () => {
   return (
     <div className="p-6">
-    <div className="grid md:grid-cols-3 md:grid-rows-4 gap-6 grid-cols-2">
+    
+    <div className="grid grid-cols-3 grid-rows-2 ">
+      
+      <div className="col-span-2 row-span-2">
       <img 
         src={NikeImg} 
         alt="" 
-        className="md:col-span-2 md:row-span-4 col-span-2 transition-transform duration-300 ease-in-out transform hover:scale-105 shadow-lg rounded-lg" 
+        className="h-[400px]  transition-transform duration-300 ease-in-out transform hover:scale-105 shadow-lg rounded-lg" 
       />
-      <img 
+      
+      </div>
+     <div className="col-span-1">
+     <img 
         src={JorImg} 
         alt="" 
-        className="md:row-span-2 transition-transform duration-300 ease-in-out transform hover:scale-105 shadow-lg rounded-lg" 
+        className="md:row-span-1 transition-transform duration-300 ease-in-out transform hover:scale-105 shadow-lg rounded-lg" 
       />
-      <div className="md:row-span-2 flex flex-col justify-center items-center p-4 bg-white shadow-lg rounded-lg transition-transform duration-300 ease-in-out transform hover:scale-105">
-        <img 
+     </div>
+    
+       <div className="col-span-1">
+       <img 
           src={ImgMain} 
           alt="" 
-          className="mb-4" 
+          className="mb-4 w-[900px]" 
         />
+       </div>
         
-      </div>
+    
     </div>
     <div className="mt-6 flex flex-col gap-3">
       <Categories />

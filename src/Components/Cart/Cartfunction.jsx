@@ -2,37 +2,43 @@ import axios from "axios";
 import { userAPI } from "../API/API_URL";
 import { Bounce, toast } from 'react-toastify';
 export const handleAddCart = async (item) => {
-  try {
-    const user = localStorage.getItem("id");
-
-   
-    const response = await axios.get(`${userAPI}/${user}`);
-    const currentCart = response.data.cart;
-
-    const updatedCart = {
-      ...currentCart,
-      [item.id]: item 
-    };
-
-  
-    await axios.patch(`${userAPI}/${user}`, { cart: updatedCart });
+  const user = localStorage.getItem("id");
+  if(user){
+    try {
     
- 
+
    
-    toast('🦄 Item successfully added to cart!', {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      transition: Bounce,
-      });
+      const response = await axios.get(`${userAPI}/${user}`);
+      const currentCart = response.data.cart;
   
-  } catch (error) {
-    console.error("Error adding to cart:", error);
+      const updatedCart = {
+        ...currentCart,
+        [item.id]: item 
+      };
+  
+    
+      await axios.patch(`${userAPI}/${user}`, { cart: updatedCart });
+      
+   
+     
+      toast('🦄 Item successfully added to cart!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+        });
+    
+    } catch (error) {
+      toast.warning("Something went Wrong")
+      console.error("Error adding to cart:", error);
+    }
+  }else{
+    toast.warning("pleas Logine")
   }
 };
 

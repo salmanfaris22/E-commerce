@@ -54,7 +54,10 @@ const Cart = () => {
         cartItems.map((e) => (
           <div key={e.id} className="shadow-lg p-4 rounded-md bg-white">
                   <ToastContainer/>
-            <img src={e.image_url} alt={e.name} className="w-full h-48 object-cover rounded-md" />
+                  <Link  to={`/byProducts/${e.id}`}>
+                  <img src={e.image_url} alt={e.name} className="w-full h-48 object-cover rounded-md" />
+                  </Link>
+    
             <div className="mt-2">
               <div className="flex justify-between">
                 <span className="font-semibold">{e.name}</span>

@@ -9,6 +9,7 @@ import Cart from '../Components/Cart/Cart'
 import ByProducts from '../Components/ByProdeact/ByProducts'
 import Paymnet from '../Components/Payment/Paymnet'
 import  { ContactUs } from '../Components/Contact/Contact'
+import MoreCategories from '../Components/CategoriesPage/MoreCtegory/MoreCategories'
 
 
 
@@ -27,6 +28,7 @@ const RoutesPage = () => {
           <Route path='/byProducts/:id' element={<ByProducts/>}/>
           <Route path='/paymnet/:id' element={<Paymnet/>}/>
           <Route path='/contact' element={<ContactUs/>}/>
+          <Route path='/moreCategories' element={<MoreCategories/>}/>
         <Route path='register' element={<Register/>}/> 
 
     </Routes>

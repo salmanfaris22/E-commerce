@@ -5,7 +5,9 @@ import { useState } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import LoginImg from "../../Assets/pexels-craytive-1456706.jpg"
+import { Link, useNavigate } from "react-router-dom";
 export const Register = () => {
+  const navigate =useNavigate()
   const [input, setInput] = useState({});
   const [error, setError] = useState({});
 
@@ -50,6 +52,7 @@ export const Register = () => {
       try {
         await axios.post(userAPI, input);
         toast.success("Registration successful!");
+        navigate("/login")
       } catch (err) {
         toast.error("Error: " + err.message);
       }
@@ -139,12 +142,20 @@ export const Register = () => {
                     <span className="text-red-500 text-sm">{error.check}</span>
                   )}
                 </div>
-                <button
+               <div className="flex justify-between">
+               <button
                   type="submit"
                   className="bg-blue-500 text-white px-4 py-2 rounded-md shadow-md transition-transform transform hover:scale-105"
                 >
                   Submit
                 </button>
+                <Link
+                  to={"/login"}
+                  className="text-blue-500  px-4 py-2  transition-transform transform hover:scale-105"
+                >
+                  Login
+                </Link>
+               </div>
               </form>
             </div>
             <div className="md:w-1/2 flex justify-center items-center p-4">
@@ -153,8 +164,11 @@ export const Register = () => {
               alt="Login Illustration"
               className="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-110"
             />
+            
             </div>
+            
           </div>
+          
         </div>
       </div>
     </div>

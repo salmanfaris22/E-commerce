@@ -11,7 +11,7 @@
         "1": {
           "id": "1",
           "name": "Adidas Ultraboost",
-          "description": "Comfortable and stylish running shoes.",
+          "description": "Comfortable and stylish running shoes with superior cushioning.",
           "price": 180,
           "category": "Men",
           "available_sizes": [
@@ -22,7 +22,11 @@
           ],
           "brand": "Adidas",
           "image_url": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/396464/07/sv01/fnd/AUS/fmt/png/Palermo-Lth-Unisex-Sneakers",
-          "in_stock": true
+          "in_stock": true,
+          "special_offer": "10% off with code BOOST10",
+          "discount": 10,
+          "warranty": "2 years",
+          "additional_details": "Limited stock available. Offer valid until end of month."
         },
         "2": {
           "id": "2",
@@ -257,6 +261,14 @@
       "fname": "Salman",
       "lname": "Faris",
       "email": "salman@gmail.com",
+      "password": "sasa",
+      "cpassword": "sasa"
+    },
+    {
+      "id": "a9ab",
+      "fname": "sasa",
+      "lname": "sasa",
+      "email": "salman567633800@gmail.com",
       "password": "sasa",
       "cpassword": "sasa"
     }

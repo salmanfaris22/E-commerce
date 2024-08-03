@@ -1,12 +1,12 @@
 import img1 from "../../Assets/manC.webp";
 import img2 from "../../Assets/WomenC.webp";
-import img3 from "../../Assets/Sneakers & Athletics C.jpg";
+import img3 from "../../Assets/boot.webp";
 import img4 from "../../Assets/Kids’ Shoes.webp";
 
 const categories = [
   { name: "Men", img: img1 },
   { name: "Women", img: img2 },
-  { name: "Sneakers & Athletics", img: img3 },
+  { name: "Running", img: img3 },
   { name: "Kids’ Shoes", img: img4 },
 ];
 
@@ -36,7 +36,7 @@ const Categories = () => {
           </div>
           <div className="">
           <div className=" items-center justify-center  group-hover:opacity-100 transition-opacity duration-300 mt-2">
-              <button className="text-white bg-black p-3 rounded-md">
+              <button className="text-white bg-black p-3 rounded-md w-full">
                 {category.name}
               </button>
             </div>

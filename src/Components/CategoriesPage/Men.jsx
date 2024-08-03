@@ -218,11 +218,14 @@ const Men = () => {
         {store &&
           store.map((item) => (
             <div key={item.id} className="shadow-lg p-4 h-[390px] rounded-md bg-white">
+              <Link to={`/byProducts/${item.id}`}>
+            
               <img
                 src={item.image_url}
                 alt={item.name}
                 className="w-full h-48 object-cover rounded-md"
               />
+                </Link>
               <div className="mt-2">
                 <div className="flex justify-between items-center">
                   <span className="font-semibold">{item.name}</span>
