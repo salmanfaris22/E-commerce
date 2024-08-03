@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { ItemsAPI, userAPI } from "../API/API_URL"
+import { ItemsAPI, } from "../API/API_URL"
+import { handleAddCart } from "../Cart/Cartfunction"
 
 
 const Women = () => {
@@ -21,26 +22,6 @@ const Women = () => {
   },[])
 
 
-  const handleAddCart = async(iteam)=>{
-    try{
-        const user = localStorage.getItem("id")
-        const res = await axios.get(`${userAPI}/${user}`)
-        const currentCart = res.data.cart
-
-        const updatedCart = {
-          ...currentCart,
-          [iteam.id]:iteam
-        }
-      
-
-        await axios.patch(`${userAPI}/${user}`,{cart:updatedCart})
-
-        console.log("done");
-
-    }catch(err){
-      console.log("women add cart",err);
-    }
-  }
 
   return (
     <div>

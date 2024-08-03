@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { ItemsAPI, userAPI } from "../API/API_URL";
+import { ItemsAPI, } from "../API/API_URL";
 import IMg from "../../Assets/nikeMian.webp";
+import { handleAddCart } from "../Cart/Cartfunction";
 
 const Men = () => {
   const [mens, setMens] = useState([]);
@@ -25,30 +26,7 @@ const Men = () => {
 
 
 
-  const handleAddCart = async (item) => {
-    try {
-      const user = localStorage.getItem("id");
-
-     
-      const response = await axios.get(`${userAPI}/${user}`);
-      const currentCart = response.data.cart;
-
-      const updatedCart = {
-        ...currentCart,
-        [item.id]: item 
-      };
-
-    
-      await axios.patch(`${userAPI}/${user}`, { cart: updatedCart });
-      
-   
-     
-
-      console.log("Item successfully added to cart");
-    } catch (error) {
-      console.error("Error adding to cart:", error);
-    }
-  };
+ 
 
   return (
     <div>

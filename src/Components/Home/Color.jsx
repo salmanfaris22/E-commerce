@@ -1,6 +1,6 @@
 export const Color = {
     primary : "white",
-    secondary:"red",
+    secondary:"black",
     text:"black",
     sub:"yellow"
 }

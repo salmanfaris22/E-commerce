@@ -53,7 +53,7 @@ const NavBar = () => {
 
     {/* Mobile Menu */}
     {open && (
-      <div className="fixed top-0 right-0 h-full w-[80vw] md:w-[50vw] bg-white shadow-lg transition-transform transform translate-x-0 ease-in-out duration-300">
+      <div className="fixed top-0 right-0 h-full w-[80vw] md:w-[50vw] z-[100] bg-white shadow-lg transition-transform transform translate-x-0 ease-in-out duration-300">
         <div className="flex justify-between items-center p-4">
           <div className="text-2xl">
             <IoCloseSharp onClick={() => setOpen(false)} />
