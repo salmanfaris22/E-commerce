@@ -2,12 +2,14 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { ItemsAPI } from "../API/API_URL";
 import { useParams } from "react-router";
-
+import { ToastContainer, toast } from 'react-toastify';
+import { PaymentAdd } from "./AddPayment";
 
 const Payment = () => {
   const [item, setItem] = useState({});
   const [quantity, setQuantity] = useState(1);
   const [price, setPrice] = useState(0);
+  const [order,setOrder] =useState(false)
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -42,7 +44,7 @@ const Payment = () => {
       setQuantity((prev) => prev - 1);
       setPrice((prev) => prev - item.price);
     } else {
-      alert("Minimum quantity is 1");
+      toast.warn("Minimum quantity is 1");
     }
   };
 
@@ -69,21 +71,61 @@ const Payment = () => {
     e.preventDefault();
     const newErrors = validateForm();
     if (Object.keys(newErrors).length === 0) {
-      alert("Form is valid! Proceed with submission.");
+      
+     
+      setOrder(true)
+      
     } else {
       setErrors(newErrors);
     }
   };
+  const handelOrder = (id)=>{ 
 
+    setOrder(false)
+  
+    
+    
+    PaymentAdd(id)
+  }
   return (
-    <div className="container mx-auto p-4 grid md:grid-cols-2">
+    
+    <div className="container mx-auto p-4 w-[100vw] grid md:grid-cols-2">
+     {order &&  <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
+      <div className="bg-white p-6 rounded shadow-md w-80">
+        <h2 className="text-xl font-semibold mb-4">Confirm Order</h2>
+        <p className="mb-4">Are you sure you want to place this order?</p>
+        <div className="flex justify-end">
+          <button
+            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded mr-2"
+            onClick={()=>setOrder(false)}
+          >
+            Cancel
+          </button>
+          <button
+            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+            onClick={()=>handelOrder(item)}
+          >
+            Confirm
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+
+
+          
+       
+      }
+     
       <div>
+      <ToastContainer/>
         <div className="p-8 rounded-lg  gap-8 mx-auto mt-4">
           <div className="flex justify-center">
             <img
               src={item.image_url}
               alt={item.description}
-              className="rounded-lg min-h-[300px] object-cover"
+              className="rounded-lg h-[300px] object-cover"
             />
           </div>
           <div className="flex flex-col justify-center">
@@ -286,6 +328,7 @@ const Payment = () => {
           </div>
         </form>
       </div>
+     
     </div>
   );
 };

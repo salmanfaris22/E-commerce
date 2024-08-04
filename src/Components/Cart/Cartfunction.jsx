@@ -55,7 +55,7 @@ export const handleRemovecart =async (item)=>{
    // eslint-disable-next-line no-unused-vars
    const {[item.id]:Remove, ...snew} = currentCart
     
-    console.log(snew);
+    
   
     await axios.patch(`${userAPI}/${user}`, { cart: snew });
     

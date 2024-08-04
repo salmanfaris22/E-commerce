@@ -14,6 +14,7 @@ import BrandsPage from '../Components/CategoriesPage/MoreCtegory/Brands'
 import FullCategory from '../Components/CategoriesPage/BrandCategrory/FullCategory'
 
 import Filter from '../Components/CategoriesPage/BrandCategrory/Filter'
+import TrackOrder from '../Components/Payment/TrackOrder/TrackOrder'
 
 
 
@@ -36,6 +37,7 @@ const RoutesPage = () => {
           <Route path='/brandsPage' element={<BrandsPage/>}/>
            <Route path='/Categories/:id' element={<FullCategory/>}/>
            <Route path='/filterCategories/:id' element={<Filter/>}/>
+           <Route path='/trackOrder' element={<TrackOrder/>}/>
         <Route path='register' element={<Register/>}/> 
 
     </Routes>

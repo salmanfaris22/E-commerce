@@ -21,12 +21,12 @@ const Cart = () => {
     }
 
     displayCartItems();
-  }, []); // Empty dependency array to run only once on mount
+  }, []);
 
   const handleRemove = async (item) => {
     try {
       await handleRemovecart(item);
-      // After removing item, update the cart items
+      
       const userId = localStorage.getItem("id");
       const res = await axios.get(`${userAPI}/${userId}`);
       const cartList = res.data.cart;
