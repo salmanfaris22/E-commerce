@@ -23,7 +23,7 @@ const Home = () => {
       />
       
       </div>
-     <div className="col-span-1"
+     <div className="col-span-1 z-[-100]"
      data-aos="fade-left"
      data-aos-anchor="#example-anchor"
      data-aos-offset="500"

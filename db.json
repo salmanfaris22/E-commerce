@@ -28,26 +28,6 @@
           "warranty": "2 years",
           "additional_details": "Limited stock available. Offer valid until end of month."
         },
-        "2": {
-          "id": "2",
-          "name": "Nike Air Max 270",
-          "description": "Modern and stylish shoes with excellent cushioning and support.",
-          "price": 150,
-          "category": "Men",
-          "available_sizes": [
-            "7",
-            "8",
-            "9",
-            "10"
-          ],
-          "brand": "Nike",
-          "image_url": "https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw769f9d4b/images/page-designer/2024/July/16130_Comp_X_Womens_Shoes.jpg",
-          "in_stock": true,
-          "special_offer": "Buy one get one 50% off",
-          "discount": 50,
-          "warranty": "1 year",
-          "additional_details": "Available in limited colors. Offer valid while supplies last."
-        },
         "3": {
           "id": "3",
           "name": "Puma RS-X",
@@ -275,6 +255,44 @@
       "email": "salman567633800@gmail.com",
       "password": "sasa",
       "cpassword": "sasa"
+    },
+    {
+      "id": "a979",
+      "fname": "salman",
+      "lname": "Faris",
+      "email": "salman567633800@gmail.com",
+      "password": "123456",
+      "cpassword": "123456"
+    },
+    {
+      "id": "b01c",
+      "fname": "Salman",
+      "lname": "Faris",
+      "email": "usa@gmail.com",
+      "password": "123456",
+      "cpassword": "123456",
+      "cart": {
+        "2": {
+          "id": "2",
+          "name": "Nike Air Max 270",
+          "description": "Modern and stylish shoes with excellent cushioning and support.",
+          "price": 150,
+          "category": "Men",
+          "available_sizes": [
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "brand": "Nike",
+          "image_url": "https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw769f9d4b/images/page-designer/2024/July/16130_Comp_X_Womens_Shoes.jpg",
+          "in_stock": true,
+          "special_offer": "Buy one get one 50% off",
+          "discount": 50,
+          "warranty": "1 year",
+          "additional_details": "Available in limited colors. Offer valid while supplies last."
+        }
+      }
     }
   ],
   "item": [

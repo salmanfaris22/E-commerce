@@ -107,28 +107,28 @@ const NavBar = () => {
               onClick={handleToggleMenu}
               className="flex items-center rounded"
             >
-              <FaUser className="mr-3" data-aos="zoom-out-down"
+              <FaUser className="mr-3 " data-aos="zoom-out-down"
           data-aos-duration="2300"/>
             </button>
             {showMenu && (
-              <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded shadow-lg">
+              <div className="absolute right-0 z-[999] mt-2 w-48 bg-white border border-gray-300 rounded shadow-lg">
                 <button
                   className="absolute top-2 right-2 text-gray-500"
                   onClick={handleToggleMenu}
                 >
                   <IoMdClose />
                 </button>
-                <ul className="p-2">
+                <ul className="p-2 z-20">
                   {isLoggedin ? (
-                    <div>
+                    <div className="z-[999]">
                       <Link to="/login" onClick={() => setShowMenu(false)}>
-                        <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer">
+                        <li className="py-1 z-50 px-2 hover:bg-gray-100 cursor-pointer">
                           Login
                         </li>
                       </Link>
                       <Link to="/register">
                         <li
-                          className="py-1 px-2 hover:bg-gray-100 cursor-pointer"
+                          className="py-1 px-2 z-20 hover:bg-gray-100 cursor-pointer"
                           onClick={() => setShowMenu(false)}
                         >
                           Register
