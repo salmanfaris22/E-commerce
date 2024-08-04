@@ -21,7 +21,7 @@ console.log(id);
       try {
         const response = await axios.get(ItemsAPI);
         const menItems = response.data.filter(
-          (item) => item.brand === id
+          (item) => item.category === "Football"
         );
         setMens(menItems);
       

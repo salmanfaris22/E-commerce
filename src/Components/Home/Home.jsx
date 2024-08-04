@@ -14,23 +14,32 @@ const Home = () => {
     
     <div className="grid grid-cols-3 grid-rows-2 ">
       
-      <div className="col-span-2 row-span-2">
+      <div className="col-span-2 row-span-2" data-aos="fade-up-right">
       <img 
+       
         src={NikeImg} 
         alt="" 
         className=" transition-transform duration-300 ease-in-out transform hover:scale-105 shadow-lg rounded-lg" 
       />
       
       </div>
-     <div className="col-span-1">
+     <div className="col-span-1"
+     data-aos="fade-left"
+     data-aos-anchor="#example-anchor"
+     data-aos-offset="500"
+     data-aos-duration="500"
+     >
      <img 
+     
         src={JorImg} 
         alt="" 
         className="md:row-span-1 transition-transform duration-300 ease-in-out transform hover:scale-105 shadow-lg rounded-lg" 
       />
      </div>
     
-       <div className="col-span-1">
+       <div className="col-span-1"
+      data-aos="fade-up-left"
+       >
        <img 
           src={ImgMain} 
           alt="" 

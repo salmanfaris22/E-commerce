@@ -4,6 +4,7 @@ import img from '../../../Assets/mainkeBRand.jpg';
 const MoreBRand = () => {
   return (
     <div
+    data-aos="zoom-in-up"
       className='relative grid  shadow-xl rounded-xl min-h-[500px]  bg-cover bg-center'
       style={{ backgroundImage: `url(${img})` }}
     >

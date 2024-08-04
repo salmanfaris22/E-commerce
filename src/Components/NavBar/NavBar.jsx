@@ -1,95 +1,117 @@
 import { useEffect, useState } from "react";
 import { Si4Chan } from "react-icons/si";
-// import { FaSlack, FaUser } from "react-icons/fa";
 import { FaCartShopping, FaUser } from "react-icons/fa6";
 import { IoMdClose, IoMdMenu } from "react-icons/io";
 import { IoCloseSharp } from "react-icons/io5";
 import { Color } from "../Home/Color";
 import { Link } from "react-router-dom";
-import { ToastContainer, toast, Bounce } from "react-toastify";
+import { ToastContainer, toast,  } from "react-toastify";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const NavBar = () => {
+  useEffect(() => {
+    AOS.init();
+  }, [])
   const [open, setOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
-  const [isLoggine, seIssLogne] = useState(true);
+  const [isLoggedin, setIsLoggedin] = useState(true);
 
   const handleToggleMenu = () => {
     setShowMenu(!showMenu);
   };
+
   useEffect(() => {
     if (localStorage.getItem("id")) {
-      const user = localStorage.getItem("name");
-      seIssLogne(false);
-      toast.success("👋🏻 Welcome Back ", user, {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        transition: Bounce,
-      });
+     
+      setIsLoggedin(false);
+      
     } else {
-      seIssLogne(true);
+      setIsLoggedin(true);
     }
-  }, [isLoggine]);
+  }, []);
+
   const handleLogout = () => {
-    localStorage.clear("id");
-    toast.success("LogOuted");
-    seIssLogne(true);
+    localStorage.removeItem("id");
+    toast.success("Logged Out");
+    setIsLoggedin(true);
     setShowMenu(false);
   };
+
   return (
     <div>
-      {/* Desktop Navbar */}
+      {/* Toast Container */}
+      <ToastContainer />
 
-        <ToastContainer />
-        
-    
-      <div
-        className="hidden md:flex justify-between items-center w-full h-[70px] px-4 "
+      {/* Desktop Navbar */}
+      <div data-aos="fade-down"
+        className="hidden md:flex justify-between items-center w-full h-[70px] px-4"
         style={{ background: Color.primary, color: Color.secondary }}
       >
-        <div className="text-2xl flex justify-center items-center gap-3">
+        <div className="text-2xl flex items-center gap-3">
           <Si4Chan />
-          <div className="text-4xl">shoezee</div>
+          <div className="text-4xl"
+          data-aos="zoom-out-down"
+          data-aos-duration="2000"
+          >shoezee</div>
         </div>
-        <ul className="flex gap-8 font-medium">
-          <li>
+        <ul className="flex gap-5 font-medium">
+      
+          <li data-aos="zoom-out-down"
+          data-aos-duration="500"
+          >
             <Link to="/">Home</Link>
           </li>
-          <li>
-            <Link to="/allCategories">AllCategories</Link>
+          <li data-aos="zoom-out-down"
+          data-aos-duration="800">
+            <Link to="/allCategories">All Categories</Link>
           </li>
-          <li>
-            <Link to="/mens">Mens</Link>
+          <li
+          data-aos="zoom-out-down"
+          data-aos-duration="1100"
+          >
+            <Link to="/filterCategories/Men">Mens</Link>
           </li>
-          <li>
-            <Link to="/womens">Womens</Link>
+          <li
+          data-aos="zoom-out-down"
+          data-aos-duration="1400"
+          >
+            <Link to="/filterCategories/Women">Womens</Link>
           </li>
-          <li>
+          <li
+          data-aos="zoom-out-down"
+          data-aos-duration="1700"
+          >
+            <Link to="/brandsPage">Brands</Link>
+          </li>
+        
+          <li
+          data-aos="zoom-out-down"
+          data-aos-duration="2000"
+          >
             <Link to="/moreCategories">More Categories</Link>
           </li>
-          <li>
+          <li
+          data-aos="zoom-out-down"
+          data-aos-duration="2300"
+          >
             <Link to="/contact">Contact</Link>
           </li>
-         
         </ul>
-       
         <div className="flex gap-6 text-2xl">
           <Link to="/cart">
-            <FaCartShopping />
+            <FaCartShopping data-aos="zoom-out-down"
+          data-aos-duration="2000" />
           </Link>
-          <div className="">
+          <div className="relative">
             <button
               onClick={handleToggleMenu}
-              className="flex items-center   rounded"
+              className="flex items-center rounded"
             >
-              <FaUser className="mr-3" />
+              <FaUser className="mr-3" data-aos="zoom-out-down"
+          data-aos-duration="2300"/>
             </button>
             {showMenu && (
-              <div className="z-[4] absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded shadow-lg">
+              <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded shadow-lg">
                 <button
                   className="absolute top-2 right-2 text-gray-500"
                   onClick={handleToggleMenu}
@@ -97,20 +119,19 @@ const NavBar = () => {
                   <IoMdClose />
                 </button>
                 <ul className="p-2">
-                  {isLoggine ? (
+                  {isLoggedin ? (
                     <div>
                       <Link to="/login" onClick={() => setShowMenu(false)}>
                         <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer">
                           Login
                         </li>
                       </Link>
-
-                      <Link to={"/register"}>
+                      <Link to="/register">
                         <li
                           className="py-1 px-2 hover:bg-gray-100 cursor-pointer"
                           onClick={() => setShowMenu(false)}
                         >
-                          Regiter
+                          Register
                         </li>
                       </Link>
                     </div>
@@ -119,7 +140,7 @@ const NavBar = () => {
                       onClick={handleLogout}
                       className="py-1 px-2 hover:bg-gray-100 cursor-pointer"
                     >
-                      LogOut
+                      Logout
                     </li>
                   )}
                 </ul>
@@ -134,25 +155,23 @@ const NavBar = () => {
         className="md:hidden flex justify-between items-center w-full h-[70px] px-4 shadow-md"
         style={{ background: Color.primary, color: Color.secondary }}
       >
-       <div className="text-2xl flex justify-center items-center gap-3">
+        <div className="text-2xl flex items-center gap-3">
           <Si4Chan />
           <div className="text-4xl">shoezee</div>
         </div>
-       <div className="flex gap-9">
-       <div className="text-2xl">
-          <FaCartShopping />
+        <div className="flex gap-6">
+          <Link to="/cart" className="text-2xl">
+            <FaCartShopping />
+          </Link>
+          <IoMdMenu onClick={() => setOpen(true)} className="text-2xl cursor-pointer" />
         </div>
-        <IoMdMenu onClick={() => setOpen(true)} className="text-2xl" />
-       </div>
       </div>
 
       {/* Mobile Menu */}
       {open && (
         <div className="fixed top-0 right-0 h-full w-[80vw] md:w-[50vw] z-[100] bg-white shadow-lg transition-transform transform translate-x-0 ease-in-out duration-300">
           <div className="flex justify-between items-center p-4">
-            <div className="text-2xl">
-              <IoCloseSharp onClick={() => setOpen(false)} />
-            </div>
+            <IoCloseSharp onClick={() => setOpen(false)} className="text-2xl cursor-pointer" />
           </div>
           <ul className="flex flex-col gap-6 p-4">
             <li>
@@ -161,13 +180,23 @@ const NavBar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/products" onClick={() => setOpen(false)}>
-                Products
+              <Link to="/allCategories" onClick={() => setOpen(false)}>
+                All Categories
               </Link>
             </li>
             <li>
-              <Link to="/about" onClick={() => setOpen(false)}>
-                About
+              <Link to="/filterCategories/Men" onClick={() => setOpen(false)}>
+                Mens
+              </Link>
+            </li>
+            <li>
+              <Link to="/filterCategories/Women" onClick={() => setOpen(false)}>
+                Womens
+              </Link>
+            </li>
+            <li>
+              <Link to="/moreCategories" onClick={() => setOpen(false)}>
+                More Categories
               </Link>
             </li>
             <li>
@@ -175,16 +204,19 @@ const NavBar = () => {
                 Contact
               </Link>
             </li>
-            <li>
-              <Link
-                to="/login"
-                onClick={() => setOpen(false)}
-                className="flex items-center text-lg gap-2"
-              >
+            {isLoggedin ? (
+              <li>
+                <Link to="/login" onClick={() => setOpen(false)} className="flex items-center text-lg gap-2">
+                  <FaUser />
+                  Login
+                </Link>
+              </li>
+            ) : (
+              <li onClick={handleLogout} className="cursor-pointer text-lg flex items-center gap-2">
                 <FaUser />
-                Login
-              </Link>
-            </li>
+                Logout
+              </li>
+            )}
           </ul>
         </div>
       )}

@@ -16,10 +16,11 @@ const Item = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
       <h2 className="text-4xl font-extrabold mb-8 mt-5 text-center text-blue-600">Best Seller</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-2 w-full max-w-screen-xl">
+      <div data-aos="zoom-in-up" className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-2 w-full max-w-screen-xl ">
         {items &&
           items.map((item) => (
             <div
+    data-aos="zoom-in-up"
               key={item.id}
               className="relative h-[400px] p-4 bg-white shadow-md rounded-lg overflow-hidden group transition duration-300 ease-in-out transform hover:scale-105"
             >

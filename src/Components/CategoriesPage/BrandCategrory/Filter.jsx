@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { ItemsAPI } from "../API/API_URL";
+import { ItemsAPI } from "../../API/API_URL";
 
-import { handleAddCart } from "../Cart/Cartfunction";
+import { handleAddCart } from "../../Cart/Cartfunction";
 import { ToastContainer } from "react-toastify";
 import { FaFilter } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 
-const Men = () => {
+const Filter = () => {
+    const {id} = useParams()
   const [mens, setMens] = useState([]);
   const [filter, setFilter] = useState(false);
   const [store, seStore] = useState([]);
@@ -20,7 +21,7 @@ const Men = () => {
       try {
         const response = await axios.get(ItemsAPI);
         const menItems = response.data.filter(
-          (item) => item.category === "Men"
+          (item) => item.category === id
         );
         setMens(menItems);
         seStore(menItems);
@@ -30,7 +31,7 @@ const Men = () => {
     };
 
     fetchMenItems();
-  }, []);
+  }, [store,filter,mens]);
 
 
  useEffect(()=>{
@@ -251,4 +252,5 @@ const Men = () => {
   );
 };
 
-export default Men;
+
+export default Filter

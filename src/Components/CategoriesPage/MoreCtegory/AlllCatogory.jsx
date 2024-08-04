@@ -146,7 +146,7 @@ const AlllCatogory = () => {
               </Link>
               <div className="mt-2">
                 <div className="flex justify-between items-center">
-                  <span className="font-semibold">{item.name}</span>
+                  <span className="font-semi`   bold">{item.name}</span>
                   <span className="text-blue-500 font-bold">{item.price}$</span>
                 </div>
                 <Link to={`/byProducts/${item.id}`}>

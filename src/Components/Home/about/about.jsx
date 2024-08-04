@@ -7,9 +7,10 @@ const About = () => {
       <img 
         src={aboutImg} 
         alt="About" 
+         data-aos="fade-right"
         className="w-full h-64 md:h-full object-cover rounded-md " 
       />
-      <div className="flex flex-col items-center justify-center bg-gray-100 p-4">
+      <div className="flex flex-col items-center justify-center bg-gray-100 p-4" data-aos="fade-left">
         <div className="max-w-lg text-center">
           <h1 className="text-3xl font-bold mb-4 text-gray-800">About Us</h1>
           <p className="text-gray-600 mb-6">

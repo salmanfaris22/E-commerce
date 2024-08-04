@@ -17,7 +17,9 @@ const Categories = () => {
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-1 md:gap-6 overflow-auto ">
         {categories.map((category, index) => (
-          <div    key={index}>
+          <div    key={index} data-aos="flip-left"
+          
+          >
             <div
          
             className="relative h-[300px] bg-white shadow-md rounded-lg overflow-hidden group"

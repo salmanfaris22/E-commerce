@@ -21,7 +21,7 @@ const MoreCategories = () => {
     <div className="grid grid-cols-1   ">
       {categories.map((category, index) => (
         <div key={index} className="relative group overflow-hidden">
-           <Link to={`CategoriesMore/${category.text}`}>
+           <Link to={`/filterCategories/${category.text}`}>
           <img
             src={category.img}
             alt={category.text}
