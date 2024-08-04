@@ -68,7 +68,7 @@ const Men = () => {
 
       <div className="flex justify-between ml-5 mr-5 ">
       {filter && (
-          <div className="md:w-1/4 w-[300px] p-10 bg-white rounded-lg shadow-lg absolute h-[90vh] right-0 flex flex-col">
+          <div className="md:w-1/4 w-[300px] p-10 bg-white rounded-lg  fixed shadow-lg top-0 h-[90vh] right-0 flex flex-col">
             <div className=" w-[90%] m-auto h-[90%]  rounded-lg">
               <div>
                 <div className="flex justify-between  items-center">

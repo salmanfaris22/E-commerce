@@ -10,6 +10,10 @@ import ByProducts from '../Components/ByProdeact/ByProducts'
 import Paymnet from '../Components/Payment/Paymnet'
 import  { ContactUs } from '../Components/Contact/Contact'
 import MoreCategories from '../Components/CategoriesPage/MoreCtegory/MoreCategories'
+import AlllCatogory from '../Components/CategoriesPage/MoreCtegory/AlllCatogory'
+import BrandsPage from '../Components/CategoriesPage/MoreCtegory/Brands'
+import FullCategory from '../Components/CategoriesPage/BrandCategrory/FullCategory'
+import CatrgroryFilter from '../Components/CategoriesPage/BrandCategrory/CatrgroryFilter'
 
 
 
@@ -29,6 +33,10 @@ const RoutesPage = () => {
           <Route path='/paymnet/:id' element={<Paymnet/>}/>
           <Route path='/contact' element={<ContactUs/>}/>
           <Route path='/moreCategories' element={<MoreCategories/>}/>
+          <Route path='/allCategories' element={<AlllCatogory/>}/>
+          <Route path='/brandsPage' element={<BrandsPage/>}/>
+           <Route path='/Categories/:id' element={<FullCategory/>}/>
+           <Route path='/categoriesMore/:id' element={<CatrgroryFilter/>}/>
         <Route path='register' element={<Register/>}/> 
 
     </Routes>

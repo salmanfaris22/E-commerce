@@ -10,7 +10,7 @@ import BrandSection from "./MorePages/MoreBRand";
 
 const Home = () => {
   return (
-    <div className="p-6">
+    <div className="p-6 ">
     
     <div className="grid grid-cols-3 grid-rows-2 ">
       
@@ -18,7 +18,7 @@ const Home = () => {
       <img 
         src={NikeImg} 
         alt="" 
-        className="h-[400px]  transition-transform duration-300 ease-in-out transform hover:scale-105 shadow-lg rounded-lg" 
+        className=" transition-transform duration-300 ease-in-out transform hover:scale-105 shadow-lg rounded-lg" 
       />
       
       </div>

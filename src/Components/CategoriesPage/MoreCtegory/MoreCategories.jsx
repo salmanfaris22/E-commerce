@@ -1,10 +1,11 @@
-import React from "react";
+
 import img1 from "../../../Assets/OutherFootball.jpg";
 import img2 from "../../../Assets/OutherKids.webp";
 import img3 from "../../../Assets/OutherMen.jpg";
 import img4 from "../../../Assets/OutherWomen.jpg";
 import img5 from "../../../Assets/OutherCasual.avif";
 import img6 from "../../../Assets/Outherrunnig.webp";
+import { Link } from "react-router-dom";
 
 const categories = [
   { img: img1, text: "Football", etc: "Let's Play With Me" },
@@ -17,9 +18,10 @@ const categories = [
 
 const MoreCategories = () => {
   return (
-    <div className="grid grid-cols-1  ">
+    <div className="grid grid-cols-1   ">
       {categories.map((category, index) => (
         <div key={index} className="relative group overflow-hidden">
+           <Link to={`CategoriesMore/${category.text}`}>
           <img
             src={category.img}
             alt={category.text}
@@ -34,11 +36,15 @@ const MoreCategories = () => {
               <button className="bg-transparent opacity-100 border-2 border-white text-white w-36 p-3 rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
                 {category.text}
               </button>
+             
               <button className="bg-black text-white w-36 p-3 rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
                 Shop Now
               </button>
+             
+             
             </div>
           </div>
+          </Link>
         </div>
       ))}
     </div>

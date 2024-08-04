@@ -60,6 +60,9 @@ const NavBar = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
+            <Link to="/allCategories">AllCategories</Link>
+          </li>
+          <li>
             <Link to="/mens">Mens</Link>
           </li>
           <li>
@@ -71,7 +74,9 @@ const NavBar = () => {
           <li>
             <Link to="/contact">Contact</Link>
           </li>
+         
         </ul>
+       
         <div className="flex gap-6 text-2xl">
           <Link to="/cart">
             <FaCartShopping />
