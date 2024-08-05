@@ -1,28 +1,19 @@
-
-import {  Route, Routes } from 'react-router-dom'
-import Home from '../Admin/AdminUser/Home/Home'
-import UserDetails from '../Admin/AdminUser/Detaile/UserDetails'
-
-
+import { Route, Routes } from "react-router";
+import Home from "../Admin/AdminUser/Home/Home";
+import UserDetails from "../Admin/AdminUser/Product/UserDetails";
+import AddProduct from "../Admin/AdminUser/Product/AddProduct";
 
 
-
-
-
-const RoutesPage = () => {
-  
+const AminRoutes = () => {
   return (
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/user" element={<UserDetails />} />
+        <Route path="/AddProduct" element={<AddProduct />} />
+      </Routes>
+    </div>
+  );
+};
 
-    <Routes>
-        
-        <Route path='/' element={<Home/>}/>
-         <Route path='/userDetails' element={<UserDetails/>}/>
-         
-
-    </Routes>
-
-
-  )
-}
-
-export default RoutesPage
+export default AminRoutes;

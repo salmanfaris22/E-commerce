@@ -8,13 +8,18 @@ import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import AOS from "aos";
 import "aos/dist/aos.css";
-const NavBar = ({setAdmin}) => {
+import axios from "axios";
+import { userAPI } from "../API/API_URL";
+
+// eslint-disable-next-line react/prop-types
+const NavBar = ({ setAdmin }) => {
   useEffect(() => {
     AOS.init();
   }, []);
   const [open, setOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [isLoggedin, setIsLoggedin] = useState(true);
+  const [admin, OpenAdmin] = useState(false);
 
   const handleToggleMenu = () => {
     setShowMenu(!showMenu);
@@ -26,6 +31,23 @@ const NavBar = ({setAdmin}) => {
     } else {
       setIsLoggedin(true);
     }
+
+    const AdminCheack = async () => {
+      const user = localStorage.getItem("id");
+      if (user) {
+        try {
+          const response = await axios.get(`${userAPI}/${user}`);
+          const currentCart = response.data.admin;
+          console.log("admin",currentCart);
+          if (currentCart) {
+            OpenAdmin(true);
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    };
+    AdminCheack();
   }, []);
 
   const handleLogout = () => {
@@ -86,12 +108,14 @@ const NavBar = ({setAdmin}) => {
                 >
                   Logout
                 </li>
-                <li
-                  onClick={()=>setAdmin(true)}
-                  className="py-1 px-2 hover:bg-gray-100 cursor-pointer"
-                >
-                  Admin Logine
-                </li>
+                {admin && (
+                  <li
+                    onClick={() => setAdmin(true)}
+                    className="py-1 px-2 hover:bg-gray-100 cursor-pointer"
+                  >
+                    Admin Logine
+                  </li>
+                )}
               </div>
             )}
           </ul>

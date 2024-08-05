@@ -1,201 +1,59 @@
 {
   "user": [
     {
-      "id": "d6c9"
-    },
-    {
-      "id": "d426",
+      "id": "5ac6",
       "fname": "Salman",
       "lname": "Faris",
       "email": "salman@gmail.com",
-      "password": "sasa",
-      "cpassword": "sasa",
-      "orders": {
-        "2": {
-          "id": "2",
-          "name": "Nike Air Max 270",
-          "description": "Modern and stylish shoes with excellent cushioning and support.",
-          "price": 150,
-          "category": "Men",
-          "available_sizes": [
-            "7",
-            "8",
-            "9",
-            "10"
-          ],
-          "brand": "Nike",
-          "image_url": "https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw769f9d4b/images/page-designer/2024/July/16130_Comp_X_Womens_Shoes.jpg",
-          "in_stock": true,
-          "special_offer": "Buy one get one 50% off",
-          "discount": 50,
-          "warranty": "1 year",
-          "additional_details": "Available in limited colors. Offer valid while supplies last.",
-          "qty": 1,
-          "qtyPrice": 150,
-          "paymentMethord": "creditCard",
-          "size": 0
-        }
-      },
+      "password": "salman",
+      "cpassword": "salman",
+      "admin": true,
       "cart": {
-        "2": {
-          "id": "2",
-          "name": "Nike Air Max 270",
-          "description": "Modern and stylish shoes with excellent cushioning and support.",
-          "price": 150,
+        "33": {
+          "id": "33",
+          "name": "nike air",
+          "description": "The best Nike shoes The best Nike shoes",
+          "price": 111,
           "category": "Men",
-          "available_sizes": [
-            "7",
-            "8",
-            "9",
-            "10"
-          ],
+          "available_sizes": [],
           "brand": "Nike",
-          "image_url": "https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw769f9d4b/images/page-designer/2024/July/16130_Comp_X_Womens_Shoes.jpg",
-          "in_stock": true,
-          "special_offer": "Buy one get one 50% off",
-          "discount": 50,
-          "warranty": "1 year",
-          "additional_details": "Available in limited colors. Offer valid while supplies last."
-        },
-        "3": {
-          "id": "3",
-          "name": "Puma RS-X",
-          "description": "Retro-inspired shoes with a comfortable fit and bold design.",
-          "price": 110,
-          "category": "Men",
-          "available_sizes": [
-            "9",
-            "10",
-            "11"
-          ],
-          "brand": "Puma",
-          "image_url": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3ffcfac2-025a-4107-ac04-5fb938d3a5f6/KILLSHOT+2+LEATHER.png",
-          "in_stock": false,
-          "special_offer": "None",
-          "discount": 0,
-          "warranty": "1 year",
-          "additional_details": "Out of stock. Expected restock in two weeks."
-        },
-        "7": {
-          "id": "7",
-          "name": "Adidas Superstar",
-          "description": "Classic sneakers with a modern twist for everyday wear.",
-          "price": 85,
-          "category": "Men",
-          "available_sizes": [
-            "5",
-            "6",
-            "7"
-          ],
-          "brand": "Adidas",
-          "image_url": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/6c3cc4a0-2bf4-4a7c-a2ba-c83875642bc5/NIKE+CORTEZ+TXT.png",
-          "in_stock": false,
-          "special_offer": "None",
-          "discount": 0,
-          "warranty": "1 year",
-          "additional_details": "Out of stock. Check back soon."
-        },
-        "28": {
-          "id": "28",
-          "name": "Stan Smith",
-          "description": "Classic white sneakers with a minimalist design for everyday wear.",
-          "price": 55,
-          "category": "Casual",
-          "available_sizes": [
-            "4",
-            "5",
-            "6",
-            "7",
-            "8"
-          ],
-          "brand": "Adidas",
-          "image_url": "https://assets.adidas.com/images/h_320,f_auto,q_auto:sensitive,fl_lossy/d0720712d81e42b1b30fa80800826447_9366/Stan_Smith_Shoes_White_M20607_M20607_01_standard.jpg",
-          "in_stock": true,
-          "special_offer": "None",
-          "discount": 0,
-          "warranty": "1 year",
-          "additional_details": "Only a few sizes left in stock."
+          "image_url": "https://media-cldnry.s-nbcnews.com/image/upload/newscms/2023_17/1989442/230428-nike-vl-2x1.jpg",
+          "in_stock": "yes",
+          "special_offer": "10% offer",
+          "discount": "10%",
+          "warranty": "2 year",
+          "additional_details": "The best Nike shoes for your feet, according to a podiatrist",
+          "size": [
+            "2",
+            "3",
+            "2"
+          ]
         }
       }
     },
     {
-      "id": "ba49",
+      "id": "8a94",
+      "fname": "sabith",
+      "lname": "sabu",
+      "email": "sabith@gamil.com",
+      "password": "sasa",
+      "cpassword": "sasa"
+    },
+    {
+      "id": "daa8",
+      "fname": "maleeha",
+      "lname": "miya",
+      "email": "fmaleeha@gmail.com",
+      "password": "aaa",
+      "cpassword": "aaa"
+    },
+    {
+      "id": "62af",
       "fname": "Salman",
       "lname": "Faris",
-      "email": "aa@gmail.com",
-      "password": "aaa",
-      "cpassword": "aaa",
-      "cart": {
-        "3": {
-          "id": "3",
-          "name": "Puma RS-X",
-          "description": "Retro-inspired shoes with a comfortable fit and bold design.",
-          "price": 110,
-          "category": "Men",
-          "available_sizes": [
-            "9",
-            "10",
-            "11"
-          ],
-          "brand": "Puma",
-          "image_url": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3ffcfac2-025a-4107-ac04-5fb938d3a5f6/KILLSHOT+2+LEATHER.png",
-          "in_stock": false,
-          "special_offer": "None",
-          "discount": 0,
-          "warranty": "1 year",
-          "additional_details": "Out of stock. Expected restock in two weeks."
-        }
-      },
-      "orders": {
-        "1": {
-          "id": "1",
-          "name": "Adidas Ultraboost",
-          "description": "Comfortable and stylish running shoes with superior cushioning.",
-          "price": 180,
-          "category": "Men",
-          "available_sizes": [
-            "8",
-            "9",
-            "10",
-            "11"
-          ],
-          "brand": "Adidas",
-          "image_url": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/396464/07/sv01/fnd/AUS/fmt/png/Palermo-Lth-Unisex-Sneakers",
-          "in_stock": true,
-          "special_offer": "10% off with code BOOST10",
-          "discount": 10,
-          "warranty": "2 years",
-          "additional_details": "Limited stock available. Offer valid until end of month.",
-          "qty": 4,
-          "qtyPrice": 720,
-          "paymentMethord": "creditCard",
-          "size": 0
-        },
-        "2": {
-          "id": "2",
-          "name": "Nike Air Max 270",
-          "description": "Modern and stylish shoes with excellent cushioning and support.",
-          "price": 150,
-          "category": "Men",
-          "available_sizes": [
-            "7",
-            "8",
-            "9",
-            "10"
-          ],
-          "brand": "Nike",
-          "image_url": "https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw769f9d4b/images/page-designer/2024/July/16130_Comp_X_Womens_Shoes.jpg",
-          "in_stock": true,
-          "special_offer": "Buy one get one 50% off",
-          "discount": 50,
-          "warranty": "1 year",
-          "additional_details": "Available in limited colors. Offer valid while supplies last.",
-          "qty": 3,
-          "qtyPrice": 450,
-          "paymentMethord": "creditCard",
-          "size": "9"
-        }
-      }
+      "email": "salmanfariskalm@gmial.com",
+      "password": "sasa",
+      "cpassword": "sasa"
     }
   ],
   "item": [
@@ -797,6 +655,46 @@
       "discount": 0,
       "warranty": "1 year",
       "additional_details": "Popular model. Limited availability."
+    },
+    {
+      "id": "32",
+      "name": "nike air",
+      "description": "The best Nike shoes The best Nike shoes",
+      "price": 100,
+      "category": "Men",
+      "available_sizes": [],
+      "brand": "Nike",
+      "image_url": "https://yt3.googleusercontent.com/thqp9NPpR09OQGON8VFw_2Uc8HxYFBn0sX5KicvY3Rg8f_pHwMetoNmvDStJ-zPB3uwBsZCRTpE=s900-c-k-c0x00ffffff-no-rj",
+      "in_stock": false,
+      "special_offer": "10% offer",
+      "discount": "10%",
+      "warranty": "2 year",
+      "additional_details": "The best Nike shoes for your feet, according to a podiatrist",
+      "size": [
+        "2",
+        "3",
+        "2"
+      ]
+    },
+    {
+      "id": "33",
+      "name": "nike air",
+      "description": "The best Nike shoes The best Nike shoes",
+      "price": 111,
+      "category": "Men",
+      "available_sizes": [],
+      "brand": "Nike",
+      "image_url": "https://media-cldnry.s-nbcnews.com/image/upload/newscms/2023_17/1989442/230428-nike-vl-2x1.jpg",
+      "in_stock": "yes",
+      "special_offer": "10% offer",
+      "discount": "10%",
+      "warranty": "2 year",
+      "additional_details": "The best Nike shoes for your feet, according to a podiatrist",
+      "size": [
+        "2",
+        "3",
+        "2"
+      ]
     }
   ]
 }
