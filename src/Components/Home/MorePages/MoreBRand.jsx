@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import img from '../../../Assets/mainkeBRand.jpg';
 
 const MoreBRand = () => {
@@ -7,8 +8,9 @@ const MoreBRand = () => {
     data-aos="zoom-in-up"
       className='relative grid  shadow-xl rounded-xl min-h-[500px]  bg-cover bg-center'
       style={{ backgroundImage: `url(${img})` }}
-    >
+    > 
       <div className='flex flex-col justify-center items-center  text-center md:text-left bg-black bg-opacity-0 hover:bg-opacity-50 rounded-lg'>
+      <Link to="/allCategories">
         <h2 className='text-3xl md:text-4xl font-bold mb-4 text-white'>
           Discover the Best in Athletic Wear
         </h2>
@@ -22,8 +24,9 @@ const MoreBRand = () => {
           <button className='bg-black w-36 p-3 text-white rounded-lg shadow-lg transform transition duration-300 hover:scale-105'>
             Shop Now
           </button>
-        </div>
+        </div>    </Link>
       </div>
+  
     </div>
   );
 };

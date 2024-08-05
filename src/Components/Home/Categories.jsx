@@ -2,12 +2,13 @@ import img1 from "../../Assets/manC.webp";
 import img2 from "../../Assets/WomenC.webp";
 import img3 from "../../Assets/boot.webp";
 import img4 from "../../Assets/Kids’ Shoes.webp";
+import { Link } from "react-router-dom";
 
 const categories = [
   { name: "Men", img: img1 },
   { name: "Women", img: img2 },
   { name: "Running", img: img3 },
-  { name: "Kids’ Shoes", img: img4 },
+  { name: "Kids", img: img4 },
 ];
 
 const Categories = () => {
@@ -20,6 +21,7 @@ const Categories = () => {
           <div    key={index} data-aos="flip-left"
           
           >
+        <Link to={`/filterCategories/${category.name}`}>
             <div
          
             className="relative h-[300px] bg-white shadow-md rounded-lg overflow-hidden group"
@@ -42,7 +44,7 @@ const Categories = () => {
                 {category.name}
               </button>
             </div>
-            </div>
+            </div></Link>
           </div>
         ))}
       </div>

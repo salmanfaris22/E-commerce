@@ -57,6 +57,25 @@
           "warranty": "1 year",
           "additional_details": "Available in limited colors. Offer valid while supplies last."
         },
+        "3": {
+          "id": "3",
+          "name": "Puma RS-X",
+          "description": "Retro-inspired shoes with a comfortable fit and bold design.",
+          "price": 110,
+          "category": "Men",
+          "available_sizes": [
+            "9",
+            "10",
+            "11"
+          ],
+          "brand": "Puma",
+          "image_url": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3ffcfac2-025a-4107-ac04-5fb938d3a5f6/KILLSHOT+2+LEATHER.png",
+          "in_stock": false,
+          "special_offer": "None",
+          "discount": 0,
+          "warranty": "1 year",
+          "additional_details": "Out of stock. Expected restock in two weeks."
+        },
         "7": {
           "id": "7",
           "name": "Adidas Superstar",

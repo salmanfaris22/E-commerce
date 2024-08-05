@@ -15,6 +15,8 @@ import FullCategory from '../Components/CategoriesPage/BrandCategrory/FullCatego
 
 import Filter from '../Components/CategoriesPage/BrandCategrory/Filter'
 import TrackOrder from '../Components/Payment/TrackOrder/TrackOrder'
+import HomeAdmin from '../Admin/AdminUser/Home/Home'
+
 
 
 
@@ -39,6 +41,9 @@ const RoutesPage = () => {
            <Route path='/filterCategories/:id' element={<Filter/>}/>
            <Route path='/trackOrder' element={<TrackOrder/>}/>
         <Route path='register' element={<Register/>}/> 
+        {/* Admin routees */}
+        <Route path='/AdminHome' element={<HomeAdmin/>}/>
+         
 
     </Routes>
 

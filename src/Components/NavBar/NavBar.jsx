@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import AOS from "aos";
 import "aos/dist/aos.css";
-const NavBar = () => {
+const NavBar = ({setAdmin}) => {
   useEffect(() => {
     AOS.init();
   }, []);
@@ -40,69 +40,63 @@ const NavBar = () => {
       {/* Toast Container */}
       <ToastContainer />
       {showMenu && (
-              <div className="absolute  right-0 z-[999] mt-2 w-48 bg-white border border-gray-300 rounded shadow-lg">
-                <button
-                  className="absolute top-2 right-2 text-gray-500"
-                  onClick={handleToggleMenu}
+        <div className="absolute  right-0 z-[999] mt-2 w-48 bg-white border border-gray-300 rounded shadow-lg">
+          <button
+            className="absolute top-2 right-2 text-gray-500"
+            onClick={handleToggleMenu}
+          >
+            <IoMdClose className="text-2xl" />
+          </button>
+          <ul className="p-2 z-20">
+            {isLoggedin ? (
+              <div className="z-[999]">
+                <Link to="/login" onClick={() => setShowMenu(false)}>
+                  <li className="py-1 z-50 px-2 hover:bg-gray-100 cursor-pointer">
+                    Login
+                  </li>
+                </Link>
+                <Link to="/register">
+                  <li
+                    className="py-1 px-2 hover:bg-gray-100 cursor-pointer"
+                    onClick={() => setShowMenu(false)}
+                  >
+                    Register
+                  </li>
+                </Link>
+              </div>
+            ) : (
+              <div className="flex flex-col gap-5">
+                <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer">
+                  <Link to={"/trackOrder"} onClick={() => setShowMenu(false)}>
+                    Trak Order
+                  </Link>
+                </li>
+                <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer">
+                  About
+                </li>
+                <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer">
+                  Report Bug
+                </li>
+                <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer">
+                  <Link to="/contact">Contact</Link>
+                </li>
+                <li
+                  onClick={handleLogout}
+                  className="py-1 px-2 hover:bg-gray-100 cursor-pointer"
                 >
-                  <IoMdClose  className="text-2xl"/>
-                </button>
-                <ul className="p-2 z-20">
-                  {isLoggedin ? (
-                    <div className="z-[999]">
-                      <Link to="/login" onClick={() => setShowMenu(false)}>
-                        <li className="py-1 z-50 px-2 hover:bg-gray-100 cursor-pointer">
-                          Login
-                        </li>
-                      </Link>
-                      <Link to="/register">
-                        <li
-                          className="py-1 px-2 hover:bg-gray-100 cursor-pointer"
-                          onClick={() => setShowMenu(false)}
-                        >
-                          Register
-                        </li>
-                      </Link>
-                    </div>
-                  ) : (
-                    <div className="flex flex-col gap-5" >
-                      <li
-                   
-                        className="py-1 px-2 hover:bg-gray-100 cursor-pointer"
-                      ><Link to={'/trackOrder'} onClick={()=>setShowMenu(false)}>
-                       Trak Order
-                      </Link>
-                       
-                      </li>
-                      <li
-                    
-                        className="py-1 px-2 hover:bg-gray-100 cursor-pointer"
-                      >
-                        About
-                      </li>
-                      <li
-                
-                        className="py-1 px-2 hover:bg-gray-100 cursor-pointer"
-                      >
-                        Report Bug 
-                      </li>
-                      <li
-                     
-                        className="py-1 px-2 hover:bg-gray-100 cursor-pointer"
-                      >
-                        <Link to="/contact">Contact</Link>
-                      </li>
-                      <li
-                        onClick={handleLogout}
-                        className="py-1 px-2 hover:bg-gray-100 cursor-pointer"
-                      >
-                        Logout
-                      </li>
-                    </div>
-                  )}
-                </ul>
+                  Logout
+                </li>
+                <li
+                  onClick={()=>setAdmin(true)}
+                  className="py-1 px-2 hover:bg-gray-100 cursor-pointer"
+                >
+                  Admin Logine
+                </li>
               </div>
             )}
+          </ul>
+        </div>
+      )}
 
       {/* Desktop Navbar */}
       <div
@@ -140,7 +134,6 @@ const NavBar = () => {
           <li data-aos="zoom-out-down" data-aos-duration="2000">
             <Link to="/moreCategories">More Categories</Link>
           </li>
-          
         </ul>
         <div className="flex gap-6 text-2xl">
           <Link to="/cart">
@@ -157,7 +150,6 @@ const NavBar = () => {
                 data-aos-duration="2300"
               />
             </button>
-           
           </div>
         </div>
       </div>
@@ -217,30 +209,55 @@ const NavBar = () => {
                 More Categories
               </Link>
             </li>
+
             <li>
               <Link to="/contact" onClick={() => setOpen(false)}>
                 Contact
               </Link>
             </li>
+
             {isLoggedin ? (
-              <li>
+              <li className="flex text-1xl items-center  text-lg gap-4">
                 <Link
                   to="/login"
                   onClick={() => setOpen(false)}
-                  className="flex items-center text-lg gap-2"
+                  className="flex items-center text-lg gap-2 bg-slate-100 p-3 rounded-lg"
                 >
                   <FaUser />
                   Login
                 </Link>
+                <Link
+                  to="/register"
+                  className="flex items-center text-lg gap-2 bg-slate-100 p-3 rounded-lg"
+                >
+                  Register
+                </Link>
               </li>
             ) : (
-              <li
-                onClick={handleLogout}
-                className="cursor-pointer text-lg flex items-center gap-2"
-              >
-                <FaUser />
-                Logout
-              </li>
+              <div className="text-1xl flex flex-col gap-4">
+                <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer">
+                  <Link to={"/trackOrder"} onClick={() => setShowMenu(false)}>
+                    Trak Order
+                  </Link>
+                </li>
+                <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer">
+                  About
+                </li>
+                <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer">
+                  Report Bug
+                </li>
+                <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer">
+                  <Link to="/contact">Contact</Link>
+                </li>
+
+                <li
+                  onClick={handleLogout}
+                  className="cursor-pointer text-lg flex items-center gap-2"
+                >
+                  <FaUser />
+                  Logout
+                </li>
+              </div>
             )}
           </ul>
         </div>
