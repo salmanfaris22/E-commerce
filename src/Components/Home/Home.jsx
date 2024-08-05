@@ -7,12 +7,16 @@ import About from "./about/about";
 import Garendy from "./MorePages/Garendy";
 import Brand from "./MorePages/Brand";
 import BrandSection from "./MorePages/MoreBRand";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
     <div className="p-6 ">
       <div className="grid grid-cols-3 grid-rows-2 ">
+
+      
         <div className="col-span-2 row-span-2  relative  " data-aos="fade-up-right">
+        <Link to="/Categories/Nike">
           <img
             src={NikeImg}
             alt=""
@@ -25,7 +29,9 @@ const Home = () => {
             Shop Now
           </button>
           </div>
+          </Link>
         </div>
+        
         <div
           className="col-span-1  "
           data-aos="fade-left"
