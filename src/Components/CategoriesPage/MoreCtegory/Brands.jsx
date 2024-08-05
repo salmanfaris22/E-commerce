@@ -19,7 +19,8 @@ const Brands = () => {
     <div className="overflow-auto h-screen">
       <div className="flex overflow-x-auto bg-black">
         {brands.map((brand, i) => (
-          <div key={i} className="relative h-[100vh] w-[300px] flex-shrink-0 bg-black  opacity-black">
+          <div key={i} className="relative h-[100vh] w-[300px] md:w-[400px] flex-shrink-0 bg-black  opacity-black">
+             <Link to={`/Categories/${brand.name}`}>
             <img src={brand.img} className="h-[100vh] w-full object-cover hover:opacity-50 hover:p-7 transform  duration-300" alt={brand.name} />
             <div className="absolute top-[50%] left-1/2 transform -translate-x-1/2">
               <Link to={`/Categories/${brand.name}`}>
@@ -35,6 +36,7 @@ const Brands = () => {
                 </button>
            
             </div>
+            </Link>
           </div>
         ))}
       </div>

@@ -68,6 +68,9 @@ const Home = () => {
 
         <Garendy />
       </div>
+
+
+     
     </div>
   );
 };

@@ -2,14 +2,15 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { ItemsAPI } from "../API/API_URL";
 import { useParams } from "react-router";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
 import { PaymentAdd } from "./AddPayment";
 
 const Payment = () => {
   const [item, setItem] = useState({});
   const [quantity, setQuantity] = useState(1);
   const [price, setPrice] = useState(0);
-  const [order,setOrder] =useState(false)
+  const [order, setOrder] = useState(false);
+  const [size,getSize]=useState(0)
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -30,6 +31,8 @@ const Payment = () => {
       const res = await axios.get(`${ItemsAPI}/${id}`);
       setItem(res.data);
       setPrice(res.data.price);
+     
+  
     }
     fetchItem();
   }, [id]);
@@ -54,6 +57,7 @@ const Payment = () => {
       ...form,
       [name]: value,
     });
+  
   };
 
   const validateForm = () => {
@@ -71,55 +75,43 @@ const Payment = () => {
     e.preventDefault();
     const newErrors = validateForm();
     if (Object.keys(newErrors).length === 0) {
-      
-     
-      setOrder(true)
-      
+      setOrder(true);
     } else {
       setErrors(newErrors);
     }
   };
-  const handelOrder = (id)=>{ 
-
-    setOrder(false)
+  const handelOrder = (id) => {
+    setOrder(false);
   
-    
-    
-    PaymentAdd(id)
-  }
+    PaymentAdd(id,quantity,price,form.paymentMethod,size);
+  };
   return (
-    
     <div className="container mx-auto p-4 w-[100vw] grid md:grid-cols-2">
-     {order &&  <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
-      <div className="bg-white p-6 rounded shadow-md w-80">
-        <h2 className="text-xl font-semibold mb-4">Confirm Order</h2>
-        <p className="mb-4">Are you sure you want to place this order?</p>
-        <div className="flex justify-end">
-          <button
-            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded mr-2"
-            onClick={()=>setOrder(false)}
-          >
-            Cancel
-          </button>
-          <button
-            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
-            onClick={()=>handelOrder(item)}
-          >
-            Confirm
-          </button>
+      {order && (
+        <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white p-6 rounded shadow-md w-80">
+            <h2 className="text-xl font-semibold mb-4">Confirm Order</h2>
+            <p className="mb-4">Are you sure you want to place this order?</p>
+            <div className="flex justify-end">
+              <button
+                className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded mr-2"
+                onClick={() => setOrder(false)}
+              >
+                Cancel
+              </button>
+              <button
+                className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+                onClick={() => handelOrder(item)}
+              >
+                Confirm
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
 
-
-
-
-          
-       
-      }
-     
       <div>
-      <ToastContainer/>
+        <ToastContainer />
         <div className="p-8 rounded-lg  gap-8 mx-auto mt-4">
           <div className="flex justify-center">
             <img
@@ -154,21 +146,7 @@ const Payment = () => {
                 <span className="font-bold text-2xl p-2 rounded-lg shadow-md">
                   ${price.toFixed(2)}
                 </span>
-                <div className="flex gap-3 items-center p-2 rounded-lg shadow-md">
-                  <button
-                    className="p-2 bg-blue-500 text-white rounded-lg"
-                    onClick={incrementQuantity}
-                  >
-                    +
-                  </button>
-                  <span>{quantity}</span>
-                  <button
-                    className="p-2 bg-blue-500 text-white rounded-lg"
-                    onClick={decrementQuantity}
-                  >
-                    -
-                  </button>
-                </div>
+               
               </div>
             </div>
           </div>
@@ -256,7 +234,7 @@ const Payment = () => {
               <span className="text-red-500">{errors.street}</span>
             )}
           </div>
-          <div className="flex gap-3 items-center">
+          <div className="flex gap-3 items-center ">
             <label>Select Country:</label>
             <select
               name="country"
@@ -280,9 +258,9 @@ const Payment = () => {
               <option value="karnataka">Karnataka</option>
             </select>
           </div>
-          <div className="mt-4">
+          <div className="mt-4 ">
             <label>Payment Method:</label>
-            <div className="flex gap-2">
+            <div className="flex gap-4 flex-wrap">
               <label className="flex items-center">
                 <input
                   type="radio"
@@ -293,6 +271,17 @@ const Payment = () => {
                   className="mr-2"
                 />
                 Credit Card
+              </label>
+              <label className="flex items-center">
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  value="cashOnPay"
+                  checked={form.paymentMethod === "cashOnPay"}
+                  onChange={handleInputChange}
+                  className="mr-2"
+                />
+               cashOnPay
               </label>
               <label className="flex items-center">
                 <input
@@ -309,15 +298,51 @@ const Payment = () => {
                 <input
                   type="radio"
                   name="paymentMethod"
-                  value="paypal"
-                  checked={form.paymentMethod === "paypal"}
+                  value="upi"
+                  checked={form.paymentMethod === "upi"}
                   onChange={handleInputChange}
                   className="mr-2"
                 />
-                PayPal
+                UPI
               </label>
             </div>
           </div>
+          <div className="flex gap-3 items-center p-2 rounded-lg shadow-md">
+                Set Quy :  <div
+                type="btn"
+                    className="p-2 bg-blue-500 text-white rounded-lg"
+                    onClick={incrementQuantity}
+                  >
+                    +
+                  </div>
+                  <span>{quantity}</span>
+                  <div
+                    className="p-2 bg-blue-500 text-white rounded-lg"
+                    onClick={decrementQuantity}
+                  >
+                    -
+                  </div> <span className="font-bold text-2xl p-2 rounded-lg shadow-md">
+                  ${price.toFixed(2)}
+                </span>
+
+                <div className="flex gap-3 items-center">
+                 <span className=" font-semibold"> Select Sizes :</span>
+                 {item.available_sizes ? (
+                  item.available_sizes.map((size, index) => (
+                    <label className="ml-3" key={index}>
+                           {size}
+
+                        <input onClick={()=>getSize(size)} type="radio" className="ml-1" name="size" />
+                       
+                 
+       
+                    </label>
+                  ))
+                ) : (
+                  <div>No sizes available</div>
+                )}
+                </div>
+                </div>
           <div className="mt-8">
             <button
               type="submit"
@@ -328,7 +353,6 @@ const Payment = () => {
           </div>
         </form>
       </div>
-     
     </div>
   );
 };

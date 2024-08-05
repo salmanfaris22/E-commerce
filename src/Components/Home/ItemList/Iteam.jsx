@@ -25,14 +25,15 @@ const Item = () => {
               className="relative h-[400px] p-4 bg-white shadow-md rounded-lg overflow-hidden group transition duration-300 ease-in-out transform hover:scale-105"
             >
               {item.special_offer !== "None" && (
-                <div className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-lg z-10">
+                <div className="absolute top-2  right-2 bg-red-500 text-white px-2 py-1 rounded-lg z-10">
                   {item.special_offer}
                 </div>
               )}
               <img
                 src={item.image_url}
                 alt={item.name}
-                className="w-full object-cover h-[300px] rounded-md transition-transform duration-300 ease-in-out group-hover:blur-sm"
+                    data-aos="zoom-in-up"
+                className="w-full   object-cover h-[300px] rounded-md transition-transform duration-300 ease-in-out group-hover:blur-sm"
               />
               <Link to={`/byProducts/${item.id}`}>
                 <button className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

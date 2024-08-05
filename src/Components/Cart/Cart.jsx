@@ -19,7 +19,7 @@ const Cart = () => {
         console.log("Error in carts:", err);
       }
     }
-
+  
     displayCartItems();
   }, []);
 
@@ -31,6 +31,9 @@ const Cart = () => {
       const res = await axios.get(`${userAPI}/${userId}`);
       const cartList = res.data.cart;
       setCartItems(Object.values(cartList));
+    
+    
+    
       toast('🦄 Item successfully removed from cart!', {
         position: "top-right",
         autoClose: 5000,
@@ -48,11 +51,11 @@ const Cart = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 h-[100vh] lg:grid-cols-3 gap-4">
    
       {cartItems.length > 0 ? (
         cartItems.map((e) => (
-          <div key={e.id} className="shadow-lg p-4 rounded-md bg-white">
+          <div key={e.id} className="shadow-lg p-4 max-h-[420px] flex flex-col rounded-md bg-white">
                   <ToastContainer/>
                   <Link  to={`/byProducts/${e.id}`}>
                   <img src={e.image_url} alt={e.name} className="w-full h-48 object-cover rounded-md" />
