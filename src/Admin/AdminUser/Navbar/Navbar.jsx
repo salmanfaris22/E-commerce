@@ -22,22 +22,17 @@ const NavBarAdmin = ({ setAdmin }) => {
       onMouseEnter={() => setOpen(true)}
       onMouseLeave={() => setOpen(false)}
     >
-      <div className="flex gap-6 h-[100vh] fixed top-0 w-[50px] z-[999999] ">
-        <Si4Chan className="cursor-pointer ml-2 mt-3  z-[9999] text-3xl" />
-      </div>
-
+      
       <div
         className={`${
           open ? "w-[200px]" : "w-[50px]"
         } transition-all duration-100 fixed flex  shadow-lg flex-col text-black bg-white items-center h-[100vh] z-[8888] px-4`}
       >
-        {/* <div className="text-2xl flex flex-col  items-center gap-3">
-         
-          {open && (
-            <div className="text-4xl">shoezee</div>
-          )}
-        </div> */}
-        {/* ${open ? "block" : "hidden"} */}
+       
+       <div className="flex mt-20 p-1  gap-4  items-center justify-center  font-bold ">
+       <Si4Chan className="cursor-pointer  mt-3  z-[9999] text-3xl" />
+       <div className={`${open ? "block" : "hidden"} text-4xl`}>shoezee</div>
+       </div>
         <Link to={"/user"} className="flex mt-20 p-1  gap-4 ">
           <FaUsersBetweenLines className="text-3xl  block " />
           <li className={`${open ? "block" : "hidden"}`}>Users</li>
