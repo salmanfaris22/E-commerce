@@ -21,17 +21,30 @@ const NavBar = ({ setAdmin }) => {
   const [isLoggedin, setIsLoggedin] = useState(true);
   const [admin, OpenAdmin] = useState(false);
 
+
+ function handleAdmin(){
+  localStorage.setItem("admin",true)
+  setAdmin(true)
+ }
+
   const handleToggleMenu = () => {
     setShowMenu(!showMenu);
   };
 
   useEffect(() => {
+
+    if(localStorage.getItem("admin")===true){
+      setAdmin(true)
+    }else{
+      setAdmin(false)
+    }
+
     if (localStorage.getItem("id")) {
       setIsLoggedin(false);
     } else {
       setIsLoggedin(true);
     }
-
+    
     const AdminCheack = async () => {
       const user = localStorage.getItem("id");
       if (user) {
@@ -110,7 +123,7 @@ const NavBar = ({ setAdmin }) => {
                 </li>
                 {admin && (
                   <li
-                    onClick={() => setAdmin(true)}
+                    onClick={handleAdmin}
                     className="py-1 px-2 hover:bg-gray-100 cursor-pointer"
                   >
                     Admin Logine

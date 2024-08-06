@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {  useEffect, useState } from "react";
 
 import Footer from "./Components/Footer/Footer";
 import NavBar from "./Components/NavBar/NavBar";
@@ -9,12 +9,18 @@ import AminRoutes from "./Rountes/AminRoutes";
 
 function App() {
   const [admin, setAdmin] = useState(false);
+  
+ useEffect(()=>{
+  if(localStorage.getItem("admin")){
+    setAdmin(true)
+  }
+ },[])
 
   return (
     <>
       {admin ? (
         <div className=" ">
-          <NavBarAdmin />
+          <NavBarAdmin  setAdmin={setAdmin}/>
           <AminRoutes/>
         </div>
       ) : (

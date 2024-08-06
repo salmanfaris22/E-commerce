@@ -695,6 +695,26 @@
         "3",
         "2"
       ]
+    },
+    {
+      "id": "34",
+      "name": "WALKANEW SHOES",
+      "description": "The best Adidas shoes The best Nike shoes",
+      "price": 299,
+      "category": "Women",
+      "available_sizes": [],
+      "brand": "Adidas",
+      "image_url": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5bbf68d51e03420c9b28bf1c7c167d8b_9366/WALKANEW_SHOES_Blue_IQ9188_01_standard.jpg",
+      "in_stock": "yes",
+      "special_offer": "10% offer",
+      "discount": "40% ",
+      "warranty": "1 year",
+      "additional_details": "Runnig best Sheos ",
+      "size": [
+        "5",
+        "6",
+        "7"
+      ]
     }
   ]
 }

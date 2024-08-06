@@ -1,10 +1,17 @@
 import axios from "axios"
 import { ItemsAPI } from "../../../../Components/API/API_URL"
-
+import {  toast } from "react-toastify";
 export const AddProductItems = async (iteam)=>{
         try{
-               await axios.post(ItemsAPI,iteam)
+           const res= await axios.get(ItemsAPI)
+           const id=res.data.filter((e)=>e.id===iteam.id)
+           alert(id)
+           if(id===undefined){
+            await axios.post(ItemsAPI,iteam)
+           }
+       
+      
         }catch(err){
-            console.log("err");
+            toast.warning("err");
         }
 }

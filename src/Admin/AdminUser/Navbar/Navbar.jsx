@@ -4,9 +4,13 @@ import { FaUser } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 
-const NavBarAdmin = () => {
+// eslint-disable-next-line react/prop-types
+const NavBarAdmin = ({setAdmin}) => {
   const [open, setOpen] = useState(false);
-
+ const handleLockOut =()=>{
+    localStorage.clear("admin")
+    setAdmin(false)
+ }
   return (
     <div className=" fixed top-0"
     onMouseEnter={()=>setOpen(!open)}
@@ -45,7 +49,7 @@ const NavBarAdmin = () => {
         <div className={`flex gap-6 text-2xl ${open ? "block" : "hidden"}`}>
           <div className="relative">
             <button className="flex items-center rounded mt-10">
-              <FaUser className="mr-3" />
+              <FaUser onClick={handleLockOut} className="mr-3" />
             </button>
           </div>
         </div>

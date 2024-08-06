@@ -3,7 +3,7 @@ import { AddProductItems } from "./buttonFunction/AddIteam";
 import { useParams } from "react-router";
 
 const AddProduct = () => {
-    const params = useParams()
+  
   const [product, setProduct] = useState({
     id: "",
     name: "",
@@ -20,6 +20,18 @@ const AddProduct = () => {
     additional_details: "",
   });
   
+
+  // const validate =()=>{
+  //   const err= {}
+
+  //   if(!product.id){
+  //     err.id="pleas enter Id"
+  //   }
+
+
+  //   return err
+  // }
+
   const handleChange = (e) => {
     if(e.target.name==='price'){
         const num =Number(e.target.value,)
@@ -49,7 +61,7 @@ const AddProduct = () => {
   }
  const handleSubmit =async()=>{
     await AddProductItems(product)
- params('/AddProduct')
+
 
 }
   return (
