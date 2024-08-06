@@ -7,7 +7,7 @@ export const PaymentAdd = async (item,qty,price,Payment,size,useInfo)=>{
     if(user){
       
        try{
-         item = {...item,"qty":qty,"qtyPrice":price,"paymentMethord":Payment,"size":size,"userInfo":useInfo,"status":"pending"}
+         item = {...item,"qty":qty,"qtyPrice":price,"paymentMethord":Payment,"size":size,"userInfo":useInfo,"status":"pending","userId":user}
         const res = await axios.get(`${userAPI}/${user}`)
         const  GetOrders = res.data.orders
         const updateOrder = {
