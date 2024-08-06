@@ -20,6 +20,7 @@ const Payment = () => {
     street: "",
     country: "india",
     state: "kerala",
+    
     paymentMethod: "creditCard",
   });
   const [errors, setErrors] = useState({});
@@ -83,7 +84,7 @@ const Payment = () => {
   const handelOrder = (id) => {
     setOrder(false);
   
-    PaymentAdd(id,quantity,price,form.paymentMethod,size);
+    PaymentAdd(id,quantity,price,form.paymentMethod,size,form);
   };
   return (
     <div className="container mx-auto p-4 w-[100vw] grid md:grid-cols-2">

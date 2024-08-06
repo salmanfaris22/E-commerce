@@ -1,7 +1,10 @@
 import { Route, Routes } from "react-router";
 import Home from "../Admin/AdminUser/Home/Home";
-import UserDetails from "../Admin/AdminUser/Product/UserDetails";
-import AddProduct from "../Admin/AdminUser/Product/AddProduct";
+import UserDetails from "../Admin/AdminUser/Product/UserDetails/UserDetails";
+import AddProduct from "../Admin/AdminUser/Product/EidProduct/AddProduct";
+import DeletProduct from "../Admin/AdminUser/Product/EidProduct/DeletProduct";
+import EditProduct from "../Admin/AdminUser/Product/EidProduct/EditPRoduct";
+import UserInfo from "../Admin/AdminUser/Product/UserDetails/UserInfo";
 
 
 const AminRoutes = () => {
@@ -11,6 +14,9 @@ const AminRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="/user" element={<UserDetails />} />
         <Route path="/AddProduct" element={<AddProduct />} />
+        <Route path="/DeletProduct" element={<DeletProduct/>}/>
+        <Route path="/EditProduct/:id" element={<EditProduct/>}/>
+        <Route path="/UserInfo/:id" element={<UserInfo/>}/>
       </Routes>
     </div>
   );

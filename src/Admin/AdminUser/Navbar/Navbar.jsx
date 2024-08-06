@@ -12,9 +12,9 @@ const NavBarAdmin = ({setAdmin}) => {
     setAdmin(false)
  }
   return (
-    <div className=" fixed top-0"
-    onMouseEnter={()=>setOpen(!open)}
-    onMouseLeave={()=>setOpen(!open)}
+    <div className=" fixed top-0 z-[999999]"
+    onMouseEnter={()=>setOpen(true)}
+    onMouseLeave={()=>setOpen(false)}
     >
       <div className="flex gap-6 h-[100vh] fixed top-0 w-[50px] z-[999999] ">
         <Si4Chan 
@@ -40,8 +40,10 @@ const NavBarAdmin = ({setAdmin}) => {
           <li>Users</li>
           </Link>
          <Link to={"/AddProduct"}><li>AddProduct</li></Link>
-     
-          <li>Edit/Remove</li>
+       <Link to={"/DeletProduct"}>
+       <li>Edit/Remove</li>
+       </Link>
+         
           <li>Orders</li>
           <li>DashBoard</li>
         </ul>

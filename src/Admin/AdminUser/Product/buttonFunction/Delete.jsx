@@ -1,6 +1,8 @@
 import axios from "axios";
-import { userAPI } from "../../../../Components/API/API_URL";
+import { ItemsAPI, userAPI } from "../../../../Components/API/API_URL";
 
+
+// User Delete
 export async function HandleDelet(user){
 
   
@@ -10,3 +12,15 @@ export async function HandleDelet(user){
 
 
 }
+
+
+//Product Deleit
+
+
+export async function ProductDelet(e){
+
+  await axios.delete(`${ItemsAPI}/${e.id}`)
+}
+
+
+

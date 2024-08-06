@@ -47,7 +47,7 @@ const ByProducts = () => {
           <img
             src={item.image_url}
             alt={item.description}
-            className="rounded-lg min-h-[300px] object-cover"
+            className="rounded-lg min-h-[300px] object-cover max-h-[500px]"
           />
         </div>
         <div className="flex flex-col justify-center">
@@ -70,8 +70,13 @@ toast('🤞🏻 Item successfully whish list !', {
     }}/>}
 
 </div>
-          <p className="text-zinc-500 font-semibold">{item.category}</p>
-          <h2 className="font-bold text-3xl">{item.brand}</h2>
+<div className="flex justify-between">
+         <p className="text-zinc-500 font-semibold mt-1">{item.category}</p>
+         <h2 className="font-bold text-2]1xl mt-2">{item.brand}</h2>
+         </div>
+          <h2 className=" font-semibold flex gap-3 text-red-500 mt-2">{item.special_offer}</h2>
+          <h2 className="font-bold text-3xl mt-2">{item.name}</h2>
+          
           <p className="font-semibold text-2xl text-zinc-500">{item.description}</p>
 
           <div className="p-3 mt-7">
@@ -119,7 +124,37 @@ toast('🤞🏻 Item successfully whish list !', {
               <button onClick={()=>handleAddCart(item)} className="bg-blue-500 text-white p-3  rounded-lg shadow-lg">
                 Add to Cart
               </button>
+              <div className="p-2 shadow-lg rounded-lg">
+                <div className="font-bold text-3xl mt-5">Additional  InforMation</div>
+                <div className="mt-3 flex gap-4 flex-col p-2 ">
+                <p className="text-zinc-500 font-semibold flex gap-3"><span className="text-black">Category:</span>{item.category}</p>
+                <h2 className="text-zinc-500 font-semibold flex gap-3"><span className="text-black">Product Name:</span>{item.name}</h2>
+                <h2 className="text-zinc-500 font-semibold flex gap-3"><span className="text-black">Brand:</span>{item.brand}</h2>
+                <h2 className="text-zinc-500 font-semibold flex gap-3"><span className="text-black">Price:</span>{item.price}$</h2>
+                <h2 className="text-zinc-500 font-semibold flex gap-3 items-center"><span className="text-black">Available Sizes:</span>{item.available_sizes ? (
+                item.available_sizes.map((size, index) => (
+                  <span
+                    className="rounded-lg p-2 shadow-sm text-black-500 border border-black"
+                    key={index}
+                  >
+                    {size}
+                  </span>
+                ))
+              ) : (
+                <div>No sizes available</div>
+              )}</h2>
+
+<h2 className="text-green font-semibold flex gap-3"><span className="text-black">In Stock:</span> {item.in_stock ? "Stock" : "Out Of Stock"}</h2>
+<h2 className="text-green-500 font-semibold flex gap-3"><span className="text-black">Discount:</span>{item.discount}</h2>
+<h2 className="text-red-500 font-semibold flex gap-3"><span className="text-black">Warranty:</span>{item.warranty}</h2>
+<h2 className="text-zinc-500 font-semibold flex gap-3"><span className="text-black">Additional Details:</span>{item.additional_details}</h2>
+
+
+                </div>
+
+              </div>
             </div>
+            
           </div>
         </div>
       </div>

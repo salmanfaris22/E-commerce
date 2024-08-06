@@ -2,20 +2,19 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import {  userAPI } from "../API/API_URL";
 
-export const PaymentAdd = async (item,qty,price,Payment,size)=>{
+export const PaymentAdd = async (item,qty,price,Payment,size,useInfo)=>{
     const user =localStorage.getItem("id")
     if(user){
+      
        try{
-         item = {...item,"qty":qty,"qtyPrice":price,"paymentMethord":Payment,"size":size}
+         item = {...item,"qty":qty,"qtyPrice":price,"paymentMethord":Payment,"size":size,"userInfo":useInfo,"status":"pending"}
         const res = await axios.get(`${userAPI}/${user}`)
         const  GetOrders = res.data.orders
         const updateOrder = {
             ...GetOrders,
             [item.id]:item,
-            
-            
+         }
 
-        }
         
         axios.patch(`${userAPI}/${user}`,{orders:updateOrder})
         console.log("this is iteamn",item);
@@ -49,7 +48,7 @@ export const CancelOrder = async (item)=>{
  
    
 
-    console.log("Item successfully added to cart");
+   
   } catch (error) {
     console.error("Error adding to cart:", error);
   }
