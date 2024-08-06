@@ -113,6 +113,42 @@
             "paymentMethod": "debitCard"
           },
           "status": "pending"
+        },
+        "6": {
+          "id": "6",
+          "name": "Nike Air Force 1",
+          "description": "Iconic design with superior comfort and durability.",
+          "price": 100,
+          "category": "Men",
+          "available_sizes": [
+            "6",
+            "7",
+            "8"
+          ],
+          "brand": "Nike",
+          "image_url": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-014.jpg",
+          "in_stock": true,
+          "special_offer": "None",
+          "discount": 0,
+          "warranty": "1 year",
+          "additional_details": "Regular stock available.",
+          "qty": 4,
+          "qtyPrice": 400,
+          "paymentMethord": "debitCard",
+          "size": "6",
+          "userInfo": {
+            "firstName": "jasim",
+            "lastName": "aa",
+            "email": "salmanfariskalm@gmial.com",
+            "phoneNumber": "09961821977",
+            "address": "Malappuram",
+            "street": "sasa",
+            "country": "india",
+            "state": "kerala",
+            "paymentMethod": "debitCard"
+          },
+          "status": "pending",
+          "userId": "8a94"
         }
       }
     },
@@ -124,6 +160,26 @@
       "password": "aaa",
       "cpassword": "aaa",
       "cart": {
+        "2": {
+          "id": "2",
+          "name": "New Balance",
+          "description": "Modern and stylish shoes with excellent cushioning and support.",
+          "price": 150,
+          "category": "Men",
+          "available_sizes": [
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "brand": "New-balance",
+          "image_url": "https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw769f9d4b/images/page-designer/2024/July/16130_Comp_X_Womens_Shoes.jpg",
+          "in_stock": true,
+          "special_offer": "Buy one get one 50% off",
+          "discount": 50,
+          "warranty": "1 year",
+          "additional_details": "Available in limited colors. Offer valid while supplies last."
+        },
         "13": {
           "id": "13",
           "name": "Puma Basket Classic",
@@ -204,7 +260,7 @@
           "additional_details": "Available in limited colors. Offer valid while supplies last.",
           "qty": 1,
           "qtyPrice": 150,
-          "paymentMethord": "creditCard",
+          "paymentMethord": "upi",
           "size": "7",
           "userInfo": {
             "firstName": "Salman",
@@ -212,12 +268,13 @@
             "email": "salmanfariskalm@gmial.com",
             "phoneNumber": "09961821977",
             "address": "Malappuram",
-            "street": "saas",
+            "street": "aaaaa",
             "country": "india",
             "state": "kerala",
-            "paymentMethod": "creditCard"
+            "paymentMethod": "upi"
           },
-          "status": "pending"
+          "status": "pending",
+          "userId": "daa8"
         },
         "4": {
           "id": "4",
@@ -871,6 +928,26 @@
       "discount": 0,
       "warranty": "1 year",
       "additional_details": "Popular model. Limited availability."
+    },
+    {
+      "id": "12243524",
+      "name": "fadf",
+      "description": "The best Nike shoes The best Nike shoes",
+      "price": 22,
+      "category": "Men",
+      "available_sizes": [
+        "4",
+        "5",
+        "6",
+        "6"
+      ],
+      "brand": "Nike",
+      "image_url": "https://media-cldnry.s-nbcnews.com/image/upload/newscms/2023_17/1989442/230428-nike-vl-2x1.jpg",
+      "in_stock": false,
+      "special_offer": "10% offer",
+      "discount": "10%",
+      "warranty": "2 year",
+      "additional_details": "Runnig best Sheos "
     }
   ]
 }

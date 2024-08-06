@@ -27,14 +27,14 @@ const Home = () => {
           return Object.values(user.orders).map((order) => (
             <div
               key={order.id}
-              className="grid grid-cols-1 md:grid-cols-6 gap-4 p-4 bg-white rounded-lg shadow-md place-items-center"
+              className="grid grid-cols-1 md:grid-cols-6 transition-transform hover:scale-105 transform gap-4 p-4 bg-white rounded-lg shadow-md place-items-center"
             >
               <div className="font-semibold text-lg text-gray-800"><img src={order.image_url} alt=""  className="h-[100px] w-[150px]"/>
-              <div className="text-gray-600">OrderId:{order.id}</div>
+             
               </div>
               <div className="text-gray-700">{order.userInfo.firstName}
 
-                <div>user id:{order.userInfo.id}</div>
+              
               </div>
               <div className="space-y-2">
                 <div className="text-gray-700">{order.userInfo.phoneNumber}</div>
@@ -47,7 +47,7 @@ const Home = () => {
               </div>
               <div className="text-gray-700">{order.userInfo.paymentMethod}</div>
               <div
-                className={`w-[100px] h-[30px] rounded-full text-white flex justify-center items-center ${
+                className={`w-[100px] h-[30px] transition-transform hover:scale-105  rounded-full text-white flex justify-center items-center ${
                   order.status === "pending"
                     ? "bg-black"
                     : order.status === "inTransist"
@@ -73,6 +73,13 @@ const Home = () => {
                   ? "Exchange"
                   : "Cancelled"}
               </div>
+              <div className="col-span-5 hover:scale-105 transition-transform transform rounded-lg text-[12px] flex bg-gray-400 text-white p-1 justify-between w-[100%]">
+                <div>Order Id:{order.id}</div>
+                <div>User Id:{order.userId}</div>
+                <div>Prize:{order.price}$</div>
+                <div>qty:{order.qty}</div>
+                <div>total{order.qtyPrice}$</div>
+                </div>
             </div>
           ));
         })}

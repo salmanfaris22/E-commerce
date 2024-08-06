@@ -1,59 +1,69 @@
 import { useState } from "react";
 import { Si4Chan } from "react-icons/si";
 import { FaUser } from "react-icons/fa6";
-import { Link } from "react-router-dom";
-
-
+import { Link, useNavigate } from "react-router-dom";
+import { FaUsersBetweenLines } from "react-icons/fa6";
+import { BiSolidCartAdd } from "react-icons/bi";
+import { MdOutlineProductionQuantityLimits } from "react-icons/md";
+import { FaEye } from "react-icons/fa";
+import { BiSolidDashboard } from "react-icons/bi";
 // eslint-disable-next-line react/prop-types
-const NavBarAdmin = ({setAdmin}) => {
+const NavBarAdmin = ({ setAdmin }) => {
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
- const handleLockOut =()=>{
-    localStorage.clear("admin")
-    setAdmin(false)
- }
+  const handleLockOut = () => {
+    localStorage.clear("admin");
+    navigate("/");
+    setAdmin(false);
+  };
   return (
-    <div className=" fixed top-0 z-[999999]"
-    onMouseEnter={()=>setOpen(true)}
-    onMouseLeave={()=>setOpen(false)}
+    <div
+      className=" fixed top-0 z-[999999]"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
     >
       <div className="flex gap-6 h-[100vh] fixed top-0 w-[50px] z-[999999] ">
-        <Si4Chan 
-
-         
-          className="cursor-pointer  z-[9999] text-3xl"
-        />
+        <Si4Chan className="cursor-pointer ml-2 mt-3  z-[9999] text-3xl" />
       </div>
+
       <div
         className={`${
           open ? "w-[200px]" : "w-[50px]"
-        } transition-all duration-300 fixed flex  shadow-lg flex-col text-black bg-white items-center h-[100vh] z-[8888] px-4`}
+        } transition-all duration-100 fixed flex  shadow-lg flex-col text-black bg-white items-center h-[100vh] z-[8888] px-4`}
       >
-        <div className="text-2xl flex flex-col mt-10 items-center gap-3">
+        {/* <div className="text-2xl flex flex-col  items-center gap-3">
          
           {open && (
             <div className="text-4xl">shoezee</div>
           )}
+        </div> */}
+        {/* ${open ? "block" : "hidden"} */}
+        <Link to={"/user"} className="flex mt-20 p-1  gap-4 ">
+          <FaUsersBetweenLines className="text-3xl  block " />
+          <li className={`${open ? "block" : "hidden"}`}>Users</li>
+        </Link>
+
+        <Link to={"/AddProduct"} className="flex mt-10 p-1  gap-4 ">
+          <BiSolidCartAdd className="text-3xl  block " />
+          <li className={`${open ? "block" : "hidden"}`}>AddProduct</li>
+        </Link>
+        <Link to={"/DeletProduct"} className="flex mt-10 p-1  gap-4 ">
+          <MdOutlineProductionQuantityLimits className="text-3xl  block " />
+          <li className={`${open ? "block" : "hidden"}`}> Edit/Remove</li>
+        </Link>
+
+        <Link to={"/"} className="flex mt-10 p-1  gap-4 ">
+          <FaEye className="text-3xl  block " />
+          <li className={`${open ? "block" : "hidden"}`}>Trak Orders</li>
+        </Link>
+        <div className="flex mt-10 p-1  gap-4 ">
+          <BiSolidDashboard className="text-3xl  block " />
+          <li className={`${open ? "block" : "hidden"}`}>DashBoard</li>
         </div>
 
-        <ul className={`flex flex-col gap-5  font-semibold mt-12 ${open ? "block" : "hidden"}`}>
-          <Link to={"/user"}>
-          <li>Users</li>
-          </Link>
-         <Link to={"/AddProduct"}><li>AddProduct</li></Link>
-       <Link to={"/DeletProduct"}>
-       <li>Edit/Remove</li>
-       </Link>
-         
-          <li>Orders</li>
-          <li>DashBoard</li>
-        </ul>
-
-        <div className={`flex gap-6 text-2xl ${open ? "block" : "hidden"}`}>
-          <div className="relative">
-            <button className="flex items-center rounded mt-10">
-              <FaUser onClick={handleLockOut} className="mr-3" />
-            </button>
-          </div>
+        <div onClick={handleLockOut} className="flex mt-10 p-1  gap-4 ">
+          <FaUser className="text-3xl  block " />
+          <li className={`${open ? "block" : "hidden"}`}>LogOut</li>
         </div>
       </div>
     </div>

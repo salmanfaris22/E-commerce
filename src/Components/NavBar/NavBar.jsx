@@ -4,7 +4,7 @@ import { FaCartShopping, FaUser } from "react-icons/fa6";
 import { IoMdClose, IoMdMenu } from "react-icons/io";
 import { IoCloseSharp } from "react-icons/io5";
 import { Color } from "../Home/Color";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -13,6 +13,7 @@ import { userAPI } from "../API/API_URL";
 
 // eslint-disable-next-line react/prop-types
 const NavBar = ({ setAdmin }) => {
+  const Navigate =useNavigate()
   useEffect(() => {
     AOS.init();
   }, []);
@@ -68,6 +69,8 @@ const NavBar = ({ setAdmin }) => {
     toast.success("Logged Out");
     setIsLoggedin(true);
     setShowMenu(false);
+    Navigate("/")
+    window.location.reload();
   };
 
   return (
