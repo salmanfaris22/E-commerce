@@ -51,10 +51,11 @@ const NavBarAdmin = ({ setAdmin }) => {
           <FaEye className="text-3xl  block " />
           <li className={`${open ? "block" : "hidden"}`}>Trak Orders</li>
         </Link>
-        <div className="flex mt-10 p-1  gap-4 ">
-          <BiSolidDashboard className="text-3xl  block " />
+        <Link to={"/DashBoard"}  className="flex mt-10 p-1  gap-4 ">
+        <BiSolidDashboard className="text-3xl  block " />
           <li className={`${open ? "block" : "hidden"}`}>DashBoard</li>
-        </div>
+        </Link>
+     
 
         <div onClick={handleLockOut} className="flex mt-10 p-1  gap-4 ">
           <FaUser className="text-3xl  block " />

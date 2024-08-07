@@ -5,6 +5,7 @@ import AddProduct from "../Admin/AdminUser/Product/EidProduct/AddProduct";
 import DeletProduct from "../Admin/AdminUser/Product/EidProduct/DeletProduct";
 import EditProduct from "../Admin/AdminUser/Product/EidProduct/EditPRoduct";
 import UserInfo from "../Admin/AdminUser/Product/UserDetails/UserInfo";
+import DashBoard from "../Admin/DashBoeard/DashBoard";
 
 
 const AminRoutes = () => {
@@ -17,6 +18,7 @@ const AminRoutes = () => {
         <Route path="/DeletProduct" element={<DeletProduct/>}/>
         <Route path="/EditProduct/:id" element={<EditProduct/>}/>
         <Route path="/UserInfo/:id" element={<UserInfo/>}/>
+        <Route path="/DashBoard" element={<DashBoard/>}/>
       </Routes>
     </div>
   );

@@ -50,7 +50,44 @@
           "additional_details": "Out of stock. Expected restock in two weeks."
         }
       },
-      "orders": {}
+      "orders": {
+        "16": {
+          "id": "16",
+          "name": "New Adidas 574",
+          "description": "Timeless sneakers with premium materials and a comfortable fit.",
+          "price": 130,
+          "category": "Kids",
+          "available_sizes": [
+            "3",
+            "4"
+          ],
+          "brand": "Adidas",
+          "image_url": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c8aba848adba4eeebf89ae2e00ba47dd_9366/Grand_Court_2.0_Shoes_Kids_White_GW6521_01_standard.jpg",
+          "in_stock": true,
+          "special_offer": "None",
+          "discount": 0,
+          "warranty": "1 year",
+          "additional_details": "Out of stock. Check back soon.",
+          "qty": 4,
+          "qtyPrice": 520,
+          "paymentMethord": "creditCard",
+          "size": 0,
+          "userInfo": {
+            "firstName": "Salman",
+            "lastName": "Faris",
+            "email": "salmanfariskalm@gmial.com",
+            "phoneNumber": "09961821977",
+            "address": "Malappuram",
+            "street": "sas",
+            "country": "india",
+            "state": "kerala",
+            "paymentMethod": "creditCard"
+          },
+          "status": "pending",
+          "userId": "5ac6",
+          "date": "2024-08-07T15:38:17.128Z"
+        }
+      }
     },
     {
       "id": "daa8",
@@ -173,7 +210,7 @@
             "state": "kerala",
             "paymentMethod": "upi"
           },
-          "status": "pending",
+          "status": "inTransist",
           "userId": "daa8"
         },
         "4": {
@@ -208,7 +245,7 @@
             "state": "kerala",
             "paymentMethod": "creditCard"
           },
-          "status": "pending"
+          "status": "outForDelivery"
         },
         "23": {
           "id": "23",
@@ -243,7 +280,7 @@
             "state": "kerala",
             "paymentMethod": "upi"
           },
-          "status": "pending",
+          "status": "delivers",
           "userId": "daa8"
         }
       },
@@ -300,7 +337,7 @@
             "state": "kerala",
             "paymentMethod": "upi"
           },
-          "status": "pending",
+          "status": "delivers",
           "userId": "c0a1",
           "date": "2024-08-07T05:55:42.812Z"
         }
@@ -413,7 +450,7 @@
             "state": "kerala",
             "paymentMethod": "upi"
           },
-          "status": "pending",
+          "status": "outForDelivery",
           "userId": "af86"
         },
         "8": {
@@ -487,6 +524,90 @@
           },
           "status": "pending",
           "userId": "af86"
+        }
+      }
+    },
+    {
+      "id": "908a",
+      "fname": "New",
+      "lname": "User",
+      "email": "salmanfariskalm@gmail.com",
+      "password": "sasa",
+      "cpassword": "sasa",
+      "orders": {
+        "2": {
+          "id": "2",
+          "name": "New Balance",
+          "description": "Modern and stylish shoes with excellent cushioning and support.",
+          "price": 150,
+          "category": "Men",
+          "available_sizes": [
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "brand": "New-balance",
+          "image_url": "https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw769f9d4b/images/page-designer/2024/July/16130_Comp_X_Womens_Shoes.jpg",
+          "in_stock": true,
+          "special_offer": "Buy one get one 50% off",
+          "discount": 50,
+          "warranty": "1 year",
+          "additional_details": "Available in limited colors. Offer valid while supplies last.",
+          "qty": 5,
+          "qtyPrice": 750,
+          "paymentMethord": "creditCard",
+          "size": "7",
+          "userInfo": {
+            "firstName": "Salman",
+            "lastName": "Faris",
+            "email": "salmanfariskalm@gmial.com",
+            "phoneNumber": "09961821977",
+            "address": "Malappuram",
+            "street": "sasa",
+            "country": "india",
+            "state": "kerala",
+            "paymentMethod": "creditCard"
+          },
+          "status": "pending",
+          "userId": "908a",
+          "date": "2024-08-07T15:53:04.241Z"
+        },
+        "4": {
+          "id": "4",
+          "name": "Reebok Classic",
+          "description": "Classic design with a timeless look and comfortable fit.",
+          "price": 90,
+          "category": "Men",
+          "available_sizes": [
+            "8",
+            "9"
+          ],
+          "brand": "Reebok",
+          "image_url": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/fcf43637c2694ae197a1ab1487a0e8a4_9366/Duramo_RC_Shoes_Green_IE7991_01_standard.jpg",
+          "in_stock": true,
+          "special_offer": "15% off on your first purchase",
+          "discount": 15,
+          "warranty": "6 months",
+          "additional_details": "Available in various colors and sizes.",
+          "qty": 10,
+          "qtyPrice": 900,
+          "paymentMethord": "creditCard",
+          "size": 0,
+          "userInfo": {
+            "firstName": "Salman",
+            "lastName": "Faris",
+            "email": "salmanfariskalm@gmial.com",
+            "phoneNumber": "09961821977",
+            "address": "Malappuram",
+            "street": "sasa",
+            "country": "india",
+            "state": "kerala",
+            "paymentMethod": "creditCard"
+          },
+          "status": "pending",
+          "userId": "908a",
+          "date": "2024-08-07T15:53:21.474Z"
         }
       }
     }
