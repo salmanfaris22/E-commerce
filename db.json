@@ -8,37 +8,8 @@
       "password": "salman",
       "cpassword": "salman",
       "admin": true,
-      "cart": {},
-      "orders": {}
-    },
-    {
-      "id": "8a94",
-      "fname": "sabith",
-      "lname": "sabu",
-      "email": "sabith@gamil.com",
-      "password": "sasa",
-      "cpassword": "sasa",
+      "superAdmin": true,
       "cart": {
-        "1": {
-          "id": "1",
-          "name": "Puma",
-          "description": "Comfortable and stylish running shoes with superior cushioning.",
-          "price": 180,
-          "category": "Men",
-          "available_sizes": [
-            "8",
-            "9",
-            "10",
-            "11"
-          ],
-          "brand": "Puma",
-          "image_url": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/396464/07/sv01/fnd/AUS/fmt/png/Palermo-Lth-Unisex-Sneakers",
-          "in_stock": true,
-          "special_offer": "10% off with code BOOST10",
-          "discount": 10,
-          "warranty": "2 years",
-          "additional_details": "Limited stock available. Offer valid until end of month."
-        },
         "2": {
           "id": "2",
           "name": "New Balance",
@@ -79,78 +50,7 @@
           "additional_details": "Out of stock. Expected restock in two weeks."
         }
       },
-      "orders": {
-        "4": {
-          "id": "4",
-          "name": "Reebok Classic",
-          "description": "Classic design with a timeless look and comfortable fit.",
-          "price": 90,
-          "category": "Men",
-          "available_sizes": [
-            "8",
-            "9"
-          ],
-          "brand": "Reebok",
-          "image_url": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/fcf43637c2694ae197a1ab1487a0e8a4_9366/Duramo_RC_Shoes_Green_IE7991_01_standard.jpg",
-          "in_stock": true,
-          "special_offer": "15% off on your first purchase",
-          "discount": 15,
-          "warranty": "6 months",
-          "additional_details": "Available in various colors and sizes.",
-          "qty": 1,
-          "qtyPrice": 90,
-          "paymentMethord": "debitCard",
-          "size": "8",
-          "userInfo": {
-            "firstName": "sabith ",
-            "lastName": "mhd",
-            "email": "sabith@gamil.com",
-            "phoneNumber": "09961821977",
-            "address": "Malappuram",
-            "street": "bridgon",
-            "country": "india",
-            "state": "tamilnadu",
-            "paymentMethod": "debitCard"
-          },
-          "status": "pending"
-        },
-        "6": {
-          "id": "6",
-          "name": "Nike Air Force 1",
-          "description": "Iconic design with superior comfort and durability.",
-          "price": 100,
-          "category": "Men",
-          "available_sizes": [
-            "6",
-            "7",
-            "8"
-          ],
-          "brand": "Nike",
-          "image_url": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-014.jpg",
-          "in_stock": true,
-          "special_offer": "None",
-          "discount": 0,
-          "warranty": "1 year",
-          "additional_details": "Regular stock available.",
-          "qty": 4,
-          "qtyPrice": 400,
-          "paymentMethord": "debitCard",
-          "size": "6",
-          "userInfo": {
-            "firstName": "jasim",
-            "lastName": "aa",
-            "email": "salmanfariskalm@gmial.com",
-            "phoneNumber": "09961821977",
-            "address": "Malappuram",
-            "street": "sasa",
-            "country": "india",
-            "state": "kerala",
-            "paymentMethod": "debitCard"
-          },
-          "status": "pending",
-          "userId": "8a94"
-        }
-      }
+      "orders": {}
     },
     {
       "id": "daa8",
@@ -309,8 +209,45 @@
             "paymentMethod": "creditCard"
           },
           "status": "pending"
+        },
+        "23": {
+          "id": "23",
+          "name": "Nike Phantom Venom Academy FG",
+          "description": "Football boots designed for precision and control on the pitch.",
+          "price": 80,
+          "category": "Football",
+          "available_sizes": [
+            "6",
+            "7",
+            "8"
+          ],
+          "brand": "Nike",
+          "image_url": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/whegph8z9ornhxklc8rp/phantom-venom-academy-fg-firm-ground-soccer-cleat-6JVNll.jpg",
+          "in_stock": true,
+          "special_offer": "None",
+          "discount": 0,
+          "warranty": "1 year",
+          "additional_details": "Available in various sizes.",
+          "qty": 7,
+          "qtyPrice": 560,
+          "paymentMethord": "upi",
+          "size": "6",
+          "userInfo": {
+            "firstName": "henbnea",
+            "lastName": "kutty",
+            "email": "henna@gmial.com",
+            "phoneNumber": "961821977",
+            "address": "Malappuram",
+            "street": "ramannarruraas",
+            "country": "india",
+            "state": "kerala",
+            "paymentMethod": "upi"
+          },
+          "status": "pending",
+          "userId": "daa8"
         }
-      }
+      },
+      "admin": true
     },
     {
       "id": "62af",
@@ -318,7 +255,8 @@
       "lname": "Faris",
       "email": "salmanfariskalm@gmial.com",
       "password": "sasa",
-      "cpassword": "sasa"
+      "cpassword": "sasa",
+      "admin": false
     },
     {
       "id": "c0a1",
@@ -326,7 +264,231 @@
       "lname": "mhd",
       "email": "sabith@gamil.com",
       "password": "aaa",
+      "cpassword": "aaa",
+      "admin": false,
+      "orders": {
+        "23": {
+          "id": "23",
+          "name": "Nike Phantom Venom Academy FG",
+          "description": "Football boots designed for precision and control on the pitch.",
+          "price": 80,
+          "category": "Football",
+          "available_sizes": [
+            "6",
+            "7",
+            "8"
+          ],
+          "brand": "Nike",
+          "image_url": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/whegph8z9ornhxklc8rp/phantom-venom-academy-fg-firm-ground-soccer-cleat-6JVNll.jpg",
+          "in_stock": true,
+          "special_offer": "None",
+          "discount": 0,
+          "warranty": "1 year",
+          "additional_details": "Available in various sizes.",
+          "qty": 1,
+          "qtyPrice": 80,
+          "paymentMethord": "upi",
+          "size": "6",
+          "userInfo": {
+            "firstName": "Salman",
+            "lastName": "Faris",
+            "email": "salmanfariskalm@gmial.com",
+            "phoneNumber": "09961821977",
+            "address": "Malappuram",
+            "street": "sasa",
+            "country": "india",
+            "state": "kerala",
+            "paymentMethod": "upi"
+          },
+          "status": "pending",
+          "userId": "c0a1",
+          "date": "2024-08-07T05:55:42.812Z"
+        }
+      }
+    },
+    {
+      "id": "241e",
+      "fname": "jasim",
+      "lname": "saju",
+      "email": "jasim@gmail.com",
+      "password": "aaa",
       "cpassword": "aaa"
+    },
+    {
+      "id": "af86",
+      "email": "arshhu@gmail.com",
+      "fname": "arshad",
+      "lname": "roshaa",
+      "password": "aaa",
+      "cpassword": "aaa",
+      "cart": {
+        "2": {
+          "id": "2",
+          "name": "New Balance",
+          "description": "Modern and stylish shoes with excellent cushioning and support.",
+          "price": 150,
+          "category": "Men",
+          "available_sizes": [
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "brand": "New-balance",
+          "image_url": "https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw769f9d4b/images/page-designer/2024/July/16130_Comp_X_Womens_Shoes.jpg",
+          "in_stock": true,
+          "special_offer": "Buy one get one 50% off",
+          "discount": 50,
+          "warranty": "1 year",
+          "additional_details": "Available in limited colors. Offer valid while supplies last."
+        },
+        "3": {
+          "id": "3",
+          "name": "Nike X-3 Sh",
+          "description": "Retro-inspired shoes with a comfortable fit and bold design.",
+          "price": 115,
+          "category": "Men",
+          "available_sizes": [
+            "9",
+            "10",
+            "11"
+          ],
+          "brand": "Nike",
+          "image_url": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3ffcfac2-025a-4107-ac04-5fb938d3a5f6/KILLSHOT+2+LEATHER.png",
+          "in_stock": false,
+          "special_offer": "None",
+          "discount": 0,
+          "warranty": "1 year",
+          "additional_details": "Out of stock. Expected restock in two weeks."
+        },
+        "4": {
+          "id": "4",
+          "name": "Reebok Classic",
+          "description": "Classic design with a timeless look and comfortable fit.",
+          "price": 90,
+          "category": "Men",
+          "available_sizes": [
+            "8",
+            "9"
+          ],
+          "brand": "Reebok",
+          "image_url": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/fcf43637c2694ae197a1ab1487a0e8a4_9366/Duramo_RC_Shoes_Green_IE7991_01_standard.jpg",
+          "in_stock": true,
+          "special_offer": "15% off on your first purchase",
+          "discount": 15,
+          "warranty": "6 months",
+          "additional_details": "Available in various colors and sizes."
+        }
+      },
+      "orders": {
+        "4": {
+          "id": "4",
+          "name": "Reebok Classic",
+          "description": "Classic design with a timeless look and comfortable fit.",
+          "price": 90,
+          "category": "Men",
+          "available_sizes": [
+            "8",
+            "9"
+          ],
+          "brand": "Reebok",
+          "image_url": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/fcf43637c2694ae197a1ab1487a0e8a4_9366/Duramo_RC_Shoes_Green_IE7991_01_standard.jpg",
+          "in_stock": true,
+          "special_offer": "15% off on your first purchase",
+          "discount": 15,
+          "warranty": "6 months",
+          "additional_details": "Available in various colors and sizes.",
+          "qty": 1,
+          "qtyPrice": 90,
+          "paymentMethord": "upi",
+          "size": "8",
+          "userInfo": {
+            "firstName": "sabiht",
+            "lastName": "sasa",
+            "email": "sabu@gmial.com",
+            "phoneNumber": "33333333",
+            "address": "Malappuram",
+            "street": "sasa",
+            "country": "india",
+            "state": "kerala",
+            "paymentMethod": "upi"
+          },
+          "status": "pending",
+          "userId": "af86"
+        },
+        "8": {
+          "id": "8",
+          "name": "Puma Clyde",
+          "description": "Stylish and comfortable sneakers for everyday wear.",
+          "price": 95,
+          "category": "Men",
+          "available_sizes": [
+            "6",
+            "7",
+            "8"
+          ],
+          "brand": "Puma",
+          "image_url": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/0029ebe4-0ea3-4d8b-9e0d-b13ffa466165/NIKE+SB+ZOOM+BLAZER+MID.png",
+          "in_stock": true,
+          "special_offer": "None",
+          "discount": 0,
+          "warranty": "1 year",
+          "additional_details": "Available in all sizes.",
+          "qty": 2,
+          "qtyPrice": 190,
+          "paymentMethord": "upi",
+          "size": "7",
+          "userInfo": {
+            "firstName": "arsha",
+            "lastName": "roshan",
+            "email": "arshu@gmial.com",
+            "phoneNumber": "09961821977",
+            "address": "Malappuram",
+            "street": "parel house",
+            "country": "india",
+            "state": "kerala",
+            "paymentMethod": "upi"
+          },
+          "status": "exchange",
+          "userId": "af86"
+        },
+        "13": {
+          "id": "13",
+          "name": "Puma Basket Classic",
+          "description": "Vintage-inspired sneakers with a modern twist and superior comfort.",
+          "price": 100,
+          "category": "Women",
+          "available_sizes": [
+            "6",
+            "7",
+            "8"
+          ],
+          "brand": "Puma",
+          "image_url": "https://s.alicdn.com/@sc04/kf/H099893a17cbd40358e75437d4e652d3cD.jpg",
+          "in_stock": true,
+          "special_offer": "None",
+          "discount": 0,
+          "warranty": "6 months",
+          "additional_details": "Classic color options available. Regular stock.",
+          "qty": 1,
+          "qtyPrice": 100,
+          "paymentMethord": "upi",
+          "size": "7",
+          "userInfo": {
+            "firstName": "shifna",
+            "lastName": "Faris",
+            "email": "shifna@gmial.com",
+            "phoneNumber": "9961821977",
+            "address": "Malappuram",
+            "street": "kamlo",
+            "country": "india",
+            "state": "kerala",
+            "paymentMethod": "upi"
+          },
+          "status": "pending",
+          "userId": "af86"
+        }
+      }
     }
   ],
   "item": [

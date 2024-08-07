@@ -1,9 +1,12 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { userAPI } from "../../../Components/API/API_URL";
+import { OrderStatus } from "../Product/buttonFunction/CheckOrderStatus";
 
 const Home = () => {
   const [users, setUsers] = useState([]);
+  const [status,SetStaus]=useState([])
+  const [openStatus,setOpenStatus]=useState(false)
 
   useEffect(() => {
     axios
@@ -12,6 +15,21 @@ const Home = () => {
       .catch((err) => console.log("err", err));
   }, []);
 
+function handleOpenStatus(e,a){
+  SetStaus({e,a})
+  setOpenStatus((pre)=>!pre)
+}  
+ async function handleStatus (e){
+ 
+  await  OrderStatus(status,e)
+  setOpenStatus(false)
+
+   axios
+  .get(userAPI)
+  .then((res) => setUsers(res.data.filter((e) => e.orders)))
+  .catch((err) => console.log("err", err));
+
+}
   return (
     <div className="min-h-screen ml-4 md:ml-[100px] py-6">
       <div className="grid gap-4">
@@ -46,8 +64,9 @@ const Home = () => {
                 <div className="text-gray-700">{order.userInfo.state}</div>
               </div>
               <div className="text-gray-700">{order.userInfo.paymentMethod}</div>
-              <div
-                className={`w-[100px] h-[30px] transition-transform hover:scale-105  rounded-full text-white flex justify-center items-center ${
+              <button
+                onClick={()=>handleOpenStatus(user.id,order.id)}
+                className={`w-[150px] h-[30px] transition-transform hover:scale-105  rounded-full text-white flex justify-center items-center ${
                   order.status === "pending"
                     ? "bg-black"
                     : order.status === "inTransist"
@@ -72,20 +91,54 @@ const Home = () => {
                   : order.status === "exchange"
                   ? "Exchange"
                   : "Cancelled"}
-              </div>
-              <div className="col-span-5 hover:scale-105 transition-transform transform rounded-lg text-[12px] flex bg-gray-400 text-white p-1 justify-between w-[100%]">
+              </button>
+              <div  className="col-span-5 hover:scale-105 transition-transform transform rounded-lg text-[12px] flex bg-gray-400 text-white p-1 justify-between w-[100%]">
                 <div>Order Id:{order.id}</div>
                 <div>User Id:{order.userId}</div>
                 <div>Prize:{order.price}$</div>
                 <div>qty:{order.qty}</div>
                 <div>total{order.qtyPrice}$</div>
+                <div>Date:{order.date}</div>
                 </div>
+
+
+
+                
             </div>
           ));
         })}
       </div>
+      {openStatus &&
+       <div className=" fixed top-0 h-[100vh] w-[100vw] flex justify-center items-center left-0 bg-black bg-opacity-40">
+      
+       <div className=" h-[400px] w-[400px] bg-white rounded-lg p-3 shadow-md flex justify-center items-center gap-4 flex-col">
+
+           {["pending","inTransist","delivers","outForDelivery","exchange","Cancelled"].map((e,i)=>{
+             return(
+              <div key={i}>
+     
+                <button   onClick={()=>handleStatus(e)}  className={`w-[150px] h-[30px] transition-transform hover:scale-105  rounded-full text-white flex justify-center items-center ${
+                 e === "pending"
+                   ? "bg-black"
+                   : e === "inTransist"
+                   ? "bg-yellow-400"
+                   : e === "delivers"
+                   ? "bg-orange-500"
+                   : e === "outForDelivery"
+                   ? "bg-green-600"
+                   : e === "exchange"
+                   ? "bg-red-500"
+                   : "bg-blue-500"
+               }`}>{e}</button>
+              </div>
+             )
+           })}
+       </div>
+     </div>
+      }
+     
     </div>
   );
 };
 
-export default Home;
+export default memo(Home);

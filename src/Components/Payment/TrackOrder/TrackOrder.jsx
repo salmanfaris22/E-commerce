@@ -37,7 +37,7 @@ const TrackOrder = () => {
   return (
     <div className="h-[100vh] mt-2">
       <ToastContainer />
-
+{console.log("hey", cartItems)}
       {cartItems.length >= 1 ? (
         cartItems.map((e) => {
           return (
@@ -85,6 +85,7 @@ const TrackOrder = () => {
                       <div>
                         <span className="font-semibold"> Size: </span>
                         <span className="text-blue-500"> {e.size}</span>
+                        
                       </div>
                       <div>
                         <span className=" font-semibold"> Payment Method:</span>
@@ -92,14 +93,30 @@ const TrackOrder = () => {
                           {" "}
                           {e.paymentMethord}
                         </span>
+                        
                       </div>
                     </div>
-                    <button
+                   <div className="flex gap-2 flex-col">
+                   <button
                       onClick={() => handleRemoveOrder(e)}
-                      className="text-white bg-blue-500 p-2 mt-4 rounded-lg"
+                      className="text-white bg-blue-500 p-2 mt-4 rounded-lg "
                     >
                       Cancel Order
                     </button>
+                    <button     className={`w-[150px] h-[30px] text-white rounded-lg ${
+                 e.status === "pending"
+                   ? "bg-black"
+                   : e.status === "inTransist"
+                   ? "bg-yellow-400"
+                   : e.status === "delivers"
+                   ? "bg-orange-500"
+                   : e.status === "outForDelivery"
+                   ? "bg-green-600"
+                   : e.status === "exchange"
+                   ? "bg-red-500"
+                   : "bg-blue-500"
+               }`}>{e.status}</button>
+                   </div>
                   </div>
                 </div>
                 {/* {order && (

@@ -95,14 +95,14 @@ const AlllCatogory = () => {
               <div className="font-thin mt-7">Filter With Money</div>
               <div className="ml-10 flex font-semibold gap-5 mt-4 flex-col justify-start">
                 {["All", [0, 25], [25, 50], [50, 100], [100, 250], [250, 999]].map((price, index) => (
-                  <label key={index} className="w-[60%] justify-between flex">
+                  <label key={index} className="w-[60%] justify-between  flex">
                     {price === "All" ? "All" : `${price[0]}$-${price[1]}$`}
                     <input
                       type="radio"
                       className="ml-2"
                       name="price"
                       value={price}
-                      checked={filterPrice === price}
+                      // checked={filterPrice === price}
                       onChange={() => handlePriceChange(price)}
                     />
                   </label>

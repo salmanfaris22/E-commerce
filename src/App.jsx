@@ -1,4 +1,4 @@
-import {  useEffect, useState } from "react";
+import {   useEffect, useState } from "react";
 
 import Footer from "./Components/Footer/Footer";
 import NavBar from "./Components/NavBar/NavBar";
@@ -15,6 +15,8 @@ function App() {
     setAdmin(true)
   }
  },[])
+
+
 
   return (
     <>

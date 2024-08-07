@@ -34,7 +34,7 @@ const ByProducts = () => {
       setQuantity(prev => prev - 1);
       setPrice(prev => prev - item.price);
     } else {
-      alert("Minimum quantity is 1");
+      toast.warn("Minimum quantity is 1");
     }
   };
 

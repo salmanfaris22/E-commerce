@@ -65,4 +65,5 @@ const NavBarAdmin = ({ setAdmin }) => {
   );
 };
 
-export default NavBarAdmin;
+
+export default  NavBarAdmin;

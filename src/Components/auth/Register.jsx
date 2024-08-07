@@ -1,15 +1,22 @@
-
 import { userAPI } from "../API/API_URL";
 import axios from "axios";
-import { useState } from "react";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import LoginImg from "../../Assets/pexels-craytive-1456706.jpg"
+import { useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import LoginImg from "../../Assets/pexels-craytive-1456706.jpg";
 import { Link, useNavigate } from "react-router-dom";
 export const Register = () => {
-  const navigate =useNavigate()
+  const navigate = useNavigate();
   const [input, setInput] = useState({});
   const [error, setError] = useState({});
+  const [email, setEmail] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(userAPI)
+      .then((res) => setEmail(res.data))
+      .catch((rs) => console.log(rs));
+  }, []);
 
   const handleChange = (e) => {
     setInput({
@@ -47,17 +54,22 @@ export const Register = () => {
     e.preventDefault();
     const errors = validate(input);
     setError(errors);
+    const mail = email.find((e) => e.email === input.email);
 
-    if (Object.keys(errors).length === 0) {
-      try {
-        await axios.post(userAPI, input);
-        toast.success("Registration successful!");
-        navigate("/login")
-      } catch (err) {
-        toast.error("Error: " + err.message);
-      }
+    if (mail) {
+      toast.error("Email Alredy Used");
     } else {
-      toast.error("Please fill out the form correctly");
+      if (Object.keys(errors).length === 0) {
+        try {
+          await axios.post(userAPI, input);
+          toast.success("Registration successful!");
+          navigate("/login");
+        } catch (err) {
+          toast.error("Error: " + err.message);
+        }
+      } else {
+        toast.error("Please fill out the form correctly");
+      }
     }
   };
 
@@ -66,7 +78,7 @@ export const Register = () => {
       <ToastContainer />
       <div
         className="flex justify-center items-center h-[100vh] m-auto absolute z-10  top-0 w-[100vw]"
-        style={{ background: `url(${LoginImg})`, backgroundSize: 'cover' }}
+        style={{ background: `url(${LoginImg})`, backgroundSize: "cover" }}
       >
         <div className="relative flex justify-center items-center w-full h-full backdrop-blur-sm p-4">
           <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
@@ -123,7 +135,9 @@ export const Register = () => {
                     value={input.password || ""}
                   />
                   {error.password && (
-                    <span className="text-red-500 text-sm">{error.password}</span>
+                    <span className="text-red-500 text-sm">
+                      {error.password}
+                    </span>
                   )}
                 </div>
                 <div className="flex flex-col">
@@ -136,39 +150,38 @@ export const Register = () => {
                     value={input.cpassword || ""}
                   />
                   {error.cpassword && (
-                    <span className="text-red-500 text-sm">{error.cpassword}</span>
+                    <span className="text-red-500 text-sm">
+                      {error.cpassword}
+                    </span>
                   )}
                   {error.check && (
                     <span className="text-red-500 text-sm">{error.check}</span>
                   )}
                 </div>
-               <div className="flex justify-between">
-               <button
-                  type="submit"
-                  className="bg-blue-500 text-white px-4 py-2 rounded-md shadow-md transition-transform transform hover:scale-105"
-                >
-                  Submit
-                </button>
-                <Link
-                  to={"/login"}
-                  className="text-blue-500  px-4 py-2  transition-transform transform hover:scale-105"
-                >
-                  Login
-                </Link>
-               </div>
+                <div className="flex justify-between">
+                  <button
+                    type="submit"
+                    className="bg-blue-500 text-white px-4 py-2 rounded-md shadow-md transition-transform transform hover:scale-105"
+                  >
+                    Submit
+                  </button>
+                  <Link
+                    to={"/login"}
+                    className="text-blue-500  px-4 py-2  transition-transform transform hover:scale-105"
+                  >
+                    Login
+                  </Link>
+                </div>
               </form>
             </div>
             <div className="md:w-1/2 flex justify-center items-center p-4">
-            <img
-              src={LoginImg}
-              alt="Login Illustration"
-              className="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-110"
-            />
-            
+              <img
+                src={LoginImg}
+                alt="Login Illustration"
+                className="w-full h-auto rounded-lg shadow-md transition-transform transform hover:scale-110"
+              />
             </div>
-            
           </div>
-          
         </div>
       </div>
     </div>

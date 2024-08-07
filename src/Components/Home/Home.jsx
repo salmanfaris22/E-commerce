@@ -14,7 +14,7 @@ const Home = () => {
     <div className="p-6 ">
       <div className="grid grid-cols-3 grid-rows-2 ">
 
-      
+    
         <div className="col-span-2  row-span-2  relative  " data-aos="fade-up-right">
         <Link to="/Categories/Nike">
           <img

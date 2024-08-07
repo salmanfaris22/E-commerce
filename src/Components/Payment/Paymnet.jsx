@@ -41,6 +41,8 @@ const Payment = () => {
   const incrementQuantity = () => {
     setQuantity((prev) => prev + 1);
     setPrice((prev) => prev + item.price);
+
+  
   };
 
   const decrementQuantity = () => {
