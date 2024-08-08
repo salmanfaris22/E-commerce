@@ -8,9 +8,15 @@ import UserInfo from "../Admin/AdminUser/Product/UserDetails/UserInfo";
 import DashBoard from "../Admin/DashBoeard/DashBoard";
 
 
+
+
+
 const AminRoutes = () => {
+ 
+
   return (
     <div>
+     
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/user" element={<UserDetails />} />
@@ -20,6 +26,7 @@ const AminRoutes = () => {
         <Route path="/UserInfo/:id" element={<UserInfo/>}/>
         <Route path="/DashBoard" element={<DashBoard/>}/>
       </Routes>
+ 
     </div>
   );
 };

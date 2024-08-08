@@ -9,59 +9,66 @@ import { ToastContainer, toast } from "react-toastify";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import axios from "axios";
-import { userAPI } from "../API/API_URL";
+import { ItemsAPI, userAPI } from "../API/API_URL";
 
-// eslint-disable-next-line react/prop-types
 const NavBar = ({ setAdmin }) => {
-  const Navigate =useNavigate()
-  useEffect(() => {
-    AOS.init();
-  }, []);
+  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [isLoggedin, setIsLoggedin] = useState(true);
-  const [admin, OpenAdmin] = useState(false);
+  const [admin, setAdminStatus] = useState(false);
+  const [items, setItems] = useState([]);
+  const [records, setRecords] = useState([]);
+  const [query, setQuery] = useState("");
 
+  const filter = (e) => {
+    const value = e.target.value.toLowerCase();
+    setQuery(value);
+    setRecords(items.filter((f) => f.name.toLowerCase().includes(value)));
+  };
 
- function handleAdmin(){
-  localStorage.setItem("admin",true)
-  setAdmin(true)
- }
+  function handleAdmin() {
+    localStorage.setItem("admin", true);
+    setAdmin(true);
+  }
 
   const handleToggleMenu = () => {
     setShowMenu(!showMenu);
   };
 
   useEffect(() => {
+    AOS.init();
+    axios
+      .get(ItemsAPI)
+      .then((res) => {
+        setItems(res.data);
+        setRecords(res.data);
+      })
+      .catch((err) => console.log(err));
 
-    if(localStorage.getItem("admin")===true){
-      setAdmin(true)
-    }else{
-      setAdmin(false)
-    }
+    setAdmin(localStorage.getItem("admin") === "true");
 
     if (localStorage.getItem("id")) {
       setIsLoggedin(false);
     } else {
       setIsLoggedin(true);
     }
-    
-    const AdminCheack = async () => {
+
+    const AdminCheck = async () => {
       const user = localStorage.getItem("id");
       if (user) {
         try {
           const response = await axios.get(`${userAPI}/${user}`);
           const currentCart = response.data.admin;
-          console.log("admin",currentCart);
           if (currentCart) {
-            OpenAdmin(true);
+            setAdminStatus(true);
           }
         } catch (error) {
           console.error(error);
         }
       }
     };
-    AdminCheack();
+    AdminCheck();
   }, []);
 
   const handleLogout = () => {
@@ -69,8 +76,12 @@ const NavBar = ({ setAdmin }) => {
     toast.success("Logged Out");
     setIsLoggedin(true);
     setShowMenu(false);
-    Navigate("/")
+    navigate("/");
     window.location.reload();
+  };
+
+  const handleClik = () => {
+    setRecords([]);
   };
 
   return (
@@ -78,7 +89,7 @@ const NavBar = ({ setAdmin }) => {
       {/* Toast Container */}
       <ToastContainer />
       {showMenu && (
-        <div className="absolute  right-0 z-[999] mt-2 w-48 bg-white border border-gray-300 rounded shadow-lg">
+        <div className="absolute right-0 z-[999] mt-2 w-48 bg-white border border-gray-300 rounded shadow-lg">
           <button
             className="absolute top-2 right-2 text-gray-500"
             onClick={handleToggleMenu}
@@ -106,7 +117,7 @@ const NavBar = ({ setAdmin }) => {
               <div className="flex flex-col gap-5">
                 <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer">
                   <Link to={"/trackOrder"} onClick={() => setShowMenu(false)}>
-                    Trak Order
+                    Track Order
                   </Link>
                 </li>
                 <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer">
@@ -129,7 +140,7 @@ const NavBar = ({ setAdmin }) => {
                     onClick={handleAdmin}
                     className="py-1 px-2 hover:bg-gray-100 cursor-pointer"
                   >
-                    Admin Logine
+                    Admin Login
                   </li>
                 )}
               </div>
@@ -137,7 +148,18 @@ const NavBar = ({ setAdmin }) => {
           </ul>
         </div>
       )}
-
+      {query && (
+        <div className="absolute right-0 z-[999] mt-[75px] bg-white border w-[100vw] max-h-[500px] overflow-auto border-gray-300 rounded shadow-lg">
+          {records.map((record) => (
+            <Link onClick={handleClik} key={record.id} to={`/byProducts/${record.id}`}>
+              <div className="p-4 w-[90%] flex justify-between m-auto mt-4 rounded-md mb-2 bg-gray-50 hover:bg-gray-100 transition duration-300">
+                <div>{record.name}</div>
+                <img src={record.image_url} alt="" className="w-[50px]" />
+              </div>
+            </Link>
+          ))}
+        </div>
+      )}
       {/* Desktop Navbar */}
       <div
         data-aos="fade-down"
@@ -170,11 +192,18 @@ const NavBar = ({ setAdmin }) => {
           <li data-aos="zoom-out-down" data-aos-duration="1700">
             <Link to="/brandsPage">Brands</Link>
           </li>
-
           <li data-aos="zoom-out-down" data-aos-duration="2000">
             <Link to="/moreCategories">More Categories</Link>
           </li>
         </ul>
+        <div className="hidden md:block">
+          <input
+            type="text"
+            placeholder="Search..."
+            onChange={filter}
+            className="w-full max-w-md p-2 h-[30px] text-lg border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+          />
+        </div>
         <div className="flex gap-6 text-2xl">
           <Link to="/cart">
             <FaCartShopping data-aos="zoom-out-down" data-aos-duration="2000" />
@@ -185,7 +214,7 @@ const NavBar = ({ setAdmin }) => {
               className="flex items-center rounded"
             >
               <FaUser
-                className="mr-3 "
+                className="mr-3"
                 data-aos="zoom-out-down"
                 data-aos-duration="2300"
               />
@@ -203,6 +232,14 @@ const NavBar = ({ setAdmin }) => {
           <Si4Chan />
           <div className="text-4xl">shoezee</div>
         </div>
+        <div className="p-4">
+            <input
+              type="text"
+              placeholder="Search..."
+              onChange={filter}
+              className="w-full p-2 h-[30px] text-lg border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black"
+            />
+          </div>
         <div className="flex gap-6">
           <Link to="/cart" className="text-2xl">
             <FaCartShopping />
@@ -223,6 +260,7 @@ const NavBar = ({ setAdmin }) => {
               className="text-2xl cursor-pointer"
             />
           </div>
+          
           <ul className="flex flex-col gap-6 p-4">
             <li>
               <Link to="/" onClick={() => setOpen(false)}>
@@ -249,15 +287,13 @@ const NavBar = ({ setAdmin }) => {
                 More Categories
               </Link>
             </li>
-
             <li>
               <Link to="/contact" onClick={() => setOpen(false)}>
                 Contact
               </Link>
             </li>
-
             {isLoggedin ? (
-              <li className="flex text-1xl items-center  text-lg gap-4">
+              <li className="flex text-1xl items-center text-lg gap-4">
                 <Link
                   to="/login"
                   onClick={() => setOpen(false)}
@@ -276,8 +312,8 @@ const NavBar = ({ setAdmin }) => {
             ) : (
               <div className="text-1xl flex flex-col gap-4">
                 <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer">
-                  <Link to={"/trackOrder"} onClick={() => setShowMenu(false)}>
-                    Trak Order
+                  <Link to={"/trackOrder"} onClick={() => setOpen(false)}>
+                    Track Order
                   </Link>
                 </li>
                 <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer">
@@ -289,7 +325,6 @@ const NavBar = ({ setAdmin }) => {
                 <li className="py-1 px-2 hover:bg-gray-100 cursor-pointer">
                   <Link to="/contact">Contact</Link>
                 </li>
-
                 <li
                   onClick={handleLogout}
                   className="cursor-pointer text-lg flex items-center gap-2"

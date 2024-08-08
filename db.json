@@ -83,7 +83,7 @@
             "state": "kerala",
             "paymentMethod": "creditCard"
           },
-          "status": "pending",
+          "status": "inTransist",
           "userId": "5ac6",
           "date": "2024-08-07T15:38:17.128Z"
         }
@@ -210,7 +210,7 @@
             "state": "kerala",
             "paymentMethod": "upi"
           },
-          "status": "inTransist",
+          "status": "delivers",
           "userId": "daa8"
         },
         "4": {
@@ -280,7 +280,7 @@
             "state": "kerala",
             "paymentMethod": "upi"
           },
-          "status": "delivers",
+          "status": "pending",
           "userId": "daa8"
         }
       },
@@ -337,7 +337,7 @@
             "state": "kerala",
             "paymentMethod": "upi"
           },
-          "status": "delivers",
+          "status": "pending",
           "userId": "c0a1",
           "date": "2024-08-07T05:55:42.812Z"
         }
@@ -450,7 +450,7 @@
             "state": "kerala",
             "paymentMethod": "upi"
           },
-          "status": "outForDelivery",
+          "status": "pending",
           "userId": "af86"
         },
         "8": {
@@ -486,7 +486,7 @@
             "state": "kerala",
             "paymentMethod": "upi"
           },
-          "status": "exchange",
+          "status": "outForDelivery",
           "userId": "af86"
         },
         "13": {
@@ -522,7 +522,7 @@
             "state": "kerala",
             "paymentMethod": "upi"
           },
-          "status": "pending",
+          "status": "outForDelivery",
           "userId": "af86"
         }
       }
@@ -605,9 +605,93 @@
             "state": "kerala",
             "paymentMethod": "creditCard"
           },
-          "status": "pending",
+          "status": "exchange",
           "userId": "908a",
           "date": "2024-08-07T15:53:21.474Z"
+        }
+      }
+    },
+    {
+      "id": "245c",
+      "email": "salman567633800@gmail.com",
+      "fname": "Salman",
+      "lname": "Faris",
+      "password": "sasa",
+      "cpassword": "sasa",
+      "orders": {
+        "6": {
+          "id": "6",
+          "name": "Nike Air Force 1",
+          "description": "Iconic design with superior comfort and durability.",
+          "price": 100,
+          "category": "Men",
+          "available_sizes": [
+            "6",
+            "7",
+            "8"
+          ],
+          "brand": "Nike",
+          "image_url": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-014.jpg",
+          "in_stock": true,
+          "special_offer": "None",
+          "discount": 0,
+          "warranty": "1 year",
+          "additional_details": "Regular stock available.",
+          "qty": 22,
+          "qtyPrice": 2200,
+          "paymentMethord": "cashOnPay",
+          "size": 0,
+          "userInfo": {
+            "firstName": "Salman",
+            "lastName": "Faris",
+            "email": "salmanfariskalm@gmial.com",
+            "phoneNumber": "09961821977",
+            "address": "Malappuram",
+            "street": "asa",
+            "country": "india",
+            "state": "kerala",
+            "paymentMethod": "cashOnPay"
+          },
+          "status": "pending",
+          "userId": "245c",
+          "date": "2024-08-07T15:58:03.645Z"
+        },
+        "14": {
+          "id": "14",
+          "name": "Reebok Club C 85",
+          "description": "Classic design with a comfortable fit for casual wear.",
+          "price": 90,
+          "category": "Women",
+          "available_sizes": [
+            "5",
+            "6",
+            "7"
+          ],
+          "brand": "Reebok",
+          "image_url": "https://s.alicdn.com/@sc04/kf/Ha1665e97746c4267806a294fbea6012aO.jpg",
+          "in_stock": true,
+          "special_offer": "15% off with code REEBOK15",
+          "discount": 15,
+          "warranty": "6 months",
+          "additional_details": "Available in white and black. Free shipping.",
+          "qty": 4,
+          "qtyPrice": 360,
+          "paymentMethord": "upi",
+          "size": "5",
+          "userInfo": {
+            "firstName": "Salman",
+            "lastName": "Faris",
+            "email": "salmanfariskalm@gmial.com",
+            "phoneNumber": "09961821977",
+            "address": "Malappuram",
+            "street": "sasa",
+            "country": "india",
+            "state": "kerala",
+            "paymentMethod": "upi"
+          },
+          "status": "delivers",
+          "userId": "245c",
+          "date": "2024-08-07T15:57:38.614Z"
         }
       }
     }

@@ -16,7 +16,7 @@ export const ContactUs = () => {
       })
       .then(
         () => {
-          toast.success('🤞🏻 Item successfully added to wishlist!', {
+          toast.success('🤞🏻 Tnx For Contacting s!', {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,

@@ -1,13 +1,15 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { userAPI } from "../../../../Components/API/API_URL";
 import { HandleDelet } from "../buttonFunction/Delete";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 import { MakeAdmin, RemoveAdmin } from "../buttonFunction/MakeAdmin";
+import { Color } from "../../../../App";
 
 const UserDetails = () => {
+  const color = useContext(Color)
   const [user, setUser] = useState([]);
 
   useEffect(() => {
@@ -57,12 +59,15 @@ const UserDetails = () => {
     }
   };
   return (
-    <div className="  bg-gray-100 h-[100vh] p-6">
+    <div className="  bg-gray-100 h-[100vh] p-6"
+    style={{background:color.color.main}}
+    >
       <ToastContainer />
       <div className="ml-[100px] ">
         <div className="flex flex-col gap-6 mt-4">
           {user.map((e, i) => (
-            <div
+            <div     style={{background:color.color.secondry,color:color.color.primery}}
+
               key={e.id}
               className="hover:scale-105 grid grid-cols-1 md:grid-cols-3  transition-transform transform gap-4 p-4 bg-white rounded-lg shadow-md"
             >

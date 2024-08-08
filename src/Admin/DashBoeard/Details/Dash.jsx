@@ -25,16 +25,16 @@ export const TotalProduct = async()=>{
 
     
 } 
-export const TotalOrder = async()=>{
-    try{
-        const res =await axios.get(userAPI)
-        const datas = res.data
-        return datas
-}catch(err){
-        console.log(err);
-}
+// export const TotalOrder = async()=>{
+//     try{
+//         const res =await axios.get(userAPI)
+//         const datas = res.data
+//         return datas
+// }catch(err){
+//         console.log(err);
+// }
     
-} 
+// } 
 
 // export const TotalSales = async()=>{
 //     try{

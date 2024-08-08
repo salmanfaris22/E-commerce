@@ -1,13 +1,15 @@
 import axios from "axios";
-import { memo, useEffect, useState } from "react";
+import { memo, useContext, useEffect, useState } from "react";
 import { userAPI } from "../../../Components/API/API_URL";
 import { OrderStatus } from "../Product/buttonFunction/CheckOrderStatus";
+import { Color } from "../../../App";
 
-const Home = () => {
+const Home = () => { 
+  const color=useContext(Color)
   const [users, setUsers] = useState([]);
   const [status,SetStaus]=useState([])
   const [openStatus,setOpenStatus]=useState(false)
-
+   
   useEffect(() => {
     axios
       .get(userAPI)
@@ -30,8 +32,14 @@ function handleOpenStatus(e,a){
   .catch((err) => console.log("err", err));
 
 }
+
   return (
-    <div className="min-h-screen ml-4 md:ml-[100px] py-6">
+   <div
+   style={{background:color.color.main,color:color.color.primery}}
+   >
+     <div className="min-h-screen ml-4 md:ml-[100px] py-6"
+
+    >
       <div className="grid gap-4">
         <div className="grid grid-cols-1 md:grid-cols-6 text-1xl place-items-center font-bold">
           <div>Product</div>
@@ -45,27 +53,43 @@ function handleOpenStatus(e,a){
           return Object.values(user.orders).map((order) => (
             <div
               key={order.id}
+              style={{background:color.color.secondry,color:color.color.primery}}
               className="grid grid-cols-1 md:grid-cols-6 transition-transform hover:scale-105 transform gap-4 p-4 bg-white rounded-lg shadow-md place-items-center"
             >
               <div className="font-semibold text-lg text-gray-800"><img src={order.image_url} alt=""  className="h-[100px] w-[150px]"/>
              
               </div>
-              <div className="text-gray-700">{order.userInfo.firstName}
+              <div className="text-gray-700"
+                 style={{background:color.color.secondry,color:color.color.primery}}
+              >{order.userInfo.firstName}
 
               
               </div>
               <div className="space-y-2">
-                <div className="text-gray-700">{order.userInfo.phoneNumber}</div>
-                <div className="text-gray-700">{order.userInfo.email}</div>
+                <div className="text-gray-700"
+                 style={{background:color.color.secondry,color:color.color.primery}}
+                >{order.userInfo.phoneNumber}</div>
+                <div className="text-gray-700"
+                 style={{background:color.color.secondry,color:color.color.primery}}
+                >{order.userInfo.email}</div>
               </div>
               <div className="space-y-2">
-                <div className="text-gray-700">{order.userInfo.street}</div>
-                <div className="text-gray-700">{order.userInfo.address}</div>
-                <div className="text-gray-700">{order.userInfo.state}</div>
+                <div className="text-gray-700"
+                 style={{background:color.color.secondry,color:color.color.primery}}
+                >{order.userInfo.street}</div>
+                <div className="text-gray-700"
+                 style={{background:color.color.secondry,color:color.color.primery}}
+                >{order.userInfo.address}</div>
+                <div className="text-gray-700"
+                 style={{background:color.color.secondry,color:color.color.primery}}
+                >{order.userInfo.state}</div>
               </div>
-              <div className="text-gray-700">{order.userInfo.paymentMethod}</div>
+              <div className="text-gray-700"
+               style={{background:color.color.secondry,color:color.color.primery}}
+              >{order.userInfo.paymentMethod}</div>
               <button
                 onClick={()=>handleOpenStatus(user.id,order.id)}
+                style={{color:color.color.primery}}
                 className={`w-[150px] h-[30px] transition-transform hover:scale-105  rounded-full text-white flex justify-center items-center ${
                   order.status === "pending"
                     ? "bg-black"
@@ -93,7 +117,7 @@ function handleOpenStatus(e,a){
                   : "Cancelled"}
               </button>
               <div  className="col-span-5 hover:scale-105 transition-transform transform rounded-lg text-[12px] flex bg-gray-400 text-white p-1 justify-between w-[100%]">
-                <div>Order Id:{order.id}</div>
+                <div >Order Id:{order.id}</div>
                 <div>User Id:{order.userId}</div>
                 <div>Prize:{order.price}$</div>
                 <div>qty:{order.qty}</div>
@@ -138,6 +162,7 @@ function handleOpenStatus(e,a){
       }
      
     </div>
+   </div>
   );
 };
 

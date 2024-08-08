@@ -5,7 +5,11 @@ import { RiShoppingCartFill } from "react-icons/ri";
 import { BiSolidSquareRounded } from "react-icons/bi";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,  } from 'recharts';
+import { FaMoneyBillTrendUp } from "react-icons/fa6";
+import { FaMoneyBillTransfer } from "react-icons/fa6";
+import { IoCloudDone } from "react-icons/io5";
 
+import { MdOutlinePendingActions } from "react-icons/md";
 const DashBoard = () => {
   const [coutomer, setCutermer] = useState({
     coutomer: "0",
@@ -37,8 +41,10 @@ const DashBoard = () => {
       const Adidas =allOrders.filter((e) => e.brand ==="Adidas");
       const Puma =allOrders.filter((e) => e.brand ==="Puma");
 
-      
-       const profit = delivers.reduce((acc,e)=>acc+e.qtyPrice,0)
+       console.log("jhh",delivers);
+
+       const profit = totalSales.reduce((acc,e)=>acc+e.qtyPrice,0)
+       const UpProfit = allOrders.reduce((acc,e)=>acc+e.qtyPrice,0)-profit
       setTrack({
         outForDelivery: totalSales.length,
         pending: pending.length,
@@ -65,10 +71,14 @@ const DashBoard = () => {
         ...coutomer,
         coutomer: total.length,
         product: product.length,
-        order: allOrders.length,
+        order: 
+        Newbalance.reduce((acc,e)=>acc+e.qty,0,) + Reebok.reduce((acc,e)=>acc+e.qty,0,) +Nike.reduce((acc,e)=>acc+e.qty,0,)+Adidas.reduce((acc,e)=>acc+e.qty,0,)+Puma.reduce((acc,e)=>acc+e.qty,0,)
+
+        ,
         sales: totalSales.length,
         orders: allOrders,
         profit:profit,
+        UpProfit:UpProfit
       });
     }
     abc();
@@ -168,7 +178,7 @@ const DashBoard = () => {
           </div>
           <div className="w-full mt-10 grid grid-cols-2 place-content-center rounded-lg p-3 shadow-lg bg-white h-[100px]">
             <div className="flex justify-center">
-              <RiShoppingCartFill className="text-red-500 text-6xl" />
+              <MdOutlinePendingActions className="text-orange-500 text-6xl" />
             </div>
             <div className="flex flex-col justify-center items-start">
               <div className="font-bold">{coutomer.order}+</div>
@@ -177,7 +187,7 @@ const DashBoard = () => {
           </div>
           <div className="w-full mt-10 grid grid-cols-2 place-content-center rounded-lg p-3 shadow-lg bg-white h-[100px]">
             <div className="flex justify-center">
-              <RiShoppingCartFill className="text-red-500 text-6xl" />
+              <IoCloudDone className="text-green-500 text-6xl" />
             </div>
             <div className="flex flex-col justify-center items-start">
               <div className="font-bold">{coutomer.sales}+</div>
@@ -204,7 +214,7 @@ const DashBoard = () => {
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />
-        
+        <YAxis/>
        
         <Tooltip />
         <Legend />
@@ -214,7 +224,7 @@ const DashBoard = () => {
     </ResponsiveContainer>
             </div>
           </div>
-          <div className="col-span-2 bg-white p-3 rounded-lg shadow-lg h-[400px]">
+          <div className="col-span-2 bg-white p-3 rounded-lg shadow-lg h-[450px]">
             <div className="flex gap-3 flex-wrap justify-center items-center">
               {data.map((item, index) => (
                 <div key={index} className="flex justify-center items-center" style={{ color: COLORS[index % COLORS.length] }}>
@@ -249,8 +259,9 @@ const DashBoard = () => {
         </div>
         <div className="grid grid-cols-6 mt-10" >
             <div className=" md:col-span-4 "></div>
-      <div className="h-[100px] bg-white p-2 md:col-span-2 col-span-6 shadow-xl rounded-lg flex justify-center items-center">
-      <span className="font-bold text-2xl">Total Profit :<span className="text-green-600">{coutomer.profit}$</span></span>
+      <div className="h-[100px] bg-white p-2 md:col-span-2 col-span-6 shadow-xl rounded-lg flex flex-col justify-center ">
+      <span className="font-bold text-2xl ml-5 flex gap-3 p-1 justify-center items-center"><FaMoneyBillTrendUp/> Total Profit :<span className="text-green-600">{coutomer.profit}$</span></span>
+      <span className="font-bold text-2xl ml-5 flex gap-3 p-1 justify-center items-center"><FaMoneyBillTransfer/>PendingProfit :<span className="text-red-600">{coutomer.UpProfit}$</span></span>
       </div>
       </div>
       </div>
