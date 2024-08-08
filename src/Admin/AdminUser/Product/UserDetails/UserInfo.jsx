@@ -15,7 +15,7 @@ const UserInfo = () => {
   }, [id]);
 
   if (!user) {
-    return <div className="text-center text-gray-600">Loading...</div>;
+    return <div className="text-center text-gray-600">Loading....</div>;
   }
 
   return (
