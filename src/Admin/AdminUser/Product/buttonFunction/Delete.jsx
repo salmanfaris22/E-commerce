@@ -5,8 +5,17 @@ import { ItemsAPI, userAPI } from "../../../../Components/API/API_URL";
 // User Delete
 export async function HandleDelet(user){
 
-  
- await axios.delete(`${userAPI}/${user.id}`)
+
+  await axios.patch(`${userAPI}/${user.id}`, { bloked: "bloked" });
+
+
+
+
+}
+export async function HandleUnDelet(user){
+
+
+  await axios.patch(`${userAPI}/${user.id}`, { bloked: "" });
 
 
 

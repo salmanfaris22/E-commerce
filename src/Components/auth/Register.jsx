@@ -27,7 +27,7 @@ export const Register = () => {
 
   const validate = (val) => {
     const err = {};
-
+  
     if (!val.fname) {
       err.fname = "Please enter your first name";
     }
@@ -61,7 +61,10 @@ export const Register = () => {
     } else {
       if (Object.keys(errors).length === 0) {
         try {
-          await axios.post(userAPI, input);
+          // eslint-disable-next-line no-unused-vars
+          const {cpassword:remove,...inputtt} =input
+
+          await axios.post(userAPI, inputtt)
           toast.success("Registration successful!");
           navigate("/login");
         } catch (err) {

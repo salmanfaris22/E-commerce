@@ -21,12 +21,14 @@ const Login = () => {
       );
 
       if (user) {
-        if (user.password === credentials.password) {
+        if (user.password === credentials.password && user.bloked !== "bloked" ) {
           toast.success("Login successful!");
           localStorage.setItem("id",user.id)
           localStorage.setItem("name",user.fname)
           Navigate("/")
           window.location.reload();
+        }else if(user.bloked === "bloked"){
+          toast.error("This Email is Bloked");
         } else {
           validation.password = "Incorrect password";
           toast.error("Incorrect password");

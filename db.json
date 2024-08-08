@@ -6,7 +6,6 @@
       "lname": "Faris",
       "email": "salman@gmail.com",
       "password": "salman",
-      "cpassword": "salman",
       "admin": true,
       "superAdmin": true,
       "cart": {
@@ -30,27 +29,159 @@
           "warranty": "1 year",
           "additional_details": "Available in limited colors. Offer valid while supplies last."
         },
-        "3": {
-          "id": "3",
-          "name": "Nike X-3 Sh",
-          "description": "Retro-inspired shoes with a comfortable fit and bold design.",
-          "price": 115,
+        "4": {
+          "id": "4",
+          "name": "Adidas Clasiic",
+          "description": "Classic design with a timeless look and comfortable fit.",
+          "price": 90,
+          "category": "Men",
+          "available_sizes": [
+            "8",
+            "9"
+          ],
+          "brand": "Reebok",
+          "image_url": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/fcf43637c2694ae197a1ab1487a0e8a4_9366/Duramo_RC_Shoes_Green_IE7991_01_standard.jpg",
+          "in_stock": true,
+          "special_offer": "15% off on your first purchase",
+          "discount": 15,
+          "warranty": "6 months",
+          "additional_details": "Available in various colors and sizes."
+        },
+        "5": {
+          "id": "5",
+          "name": "New Balance 990v5",
+          "description": "Premium materials and craftsmanship for optimal comfort.",
+          "price": 175,
           "category": "Men",
           "available_sizes": [
             "9",
             "10",
             "11"
           ],
+          "brand": "New Balance",
+          "image_url": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-017.jpg",
+          "in_stock": true,
+          "special_offer": "20% off for a limited time",
+          "discount": 20,
+          "warranty": "2 years",
+          "additional_details": "Special offer ends soon. Free shipping included."
+        },
+        "6": {
+          "id": "6",
+          "name": "Nike Air Force 1",
+          "description": "Iconic design with superior comfort and durability.",
+          "price": 100,
+          "category": "Men",
+          "available_sizes": [
+            "6",
+            "7",
+            "8"
+          ],
           "brand": "Nike",
-          "image_url": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3ffcfac2-025a-4107-ac04-5fb938d3a5f6/KILLSHOT+2+LEATHER.png",
-          "in_stock": false,
+          "image_url": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-014.jpg",
+          "in_stock": true,
           "special_offer": "None",
           "discount": 0,
           "warranty": "1 year",
-          "additional_details": "Out of stock. Expected restock in two weeks."
+          "additional_details": "Regular stock available."
+        },
+        "17": {
+          "id": "17",
+          "name": "Nike React Infinity Run Flyknit",
+          "description": "High-performance running shoes with React foam for maximum comfort.",
+          "price": 160,
+          "category": "Running",
+          "available_sizes": [
+            "8",
+            "9",
+            "10"
+          ],
+          "brand": "Nike",
+          "image_url": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/i1-665455a5-45de-40fb-945f-c1852b82400d/react-infinity-run-flyknit-mens-running-shoe-zX42Nc.jpg",
+          "in_stock": true,
+          "special_offer": "None",
+          "discount": 0,
+          "warranty": "1 year",
+          "additional_details": "Only a few left in stock."
+        },
+        "19": {
+          "id": "19",
+          "name": "Nike Air Zoom Pegasus 37",
+          "description": "Iconic running shoes with Zoom Air cushioning for a responsive feel.",
+          "price": 120,
+          "category": "Running",
+          "available_sizes": [
+            "6",
+            "7",
+            "8"
+          ],
+          "brand": "Nike",
+          "image_url": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/i1-33b0a0a5-c171-46cc-ad20-04a768703e47/air-zoom-pegasus-37-womens-running-shoe-Jl0bDf.jpg",
+          "in_stock": true,
+          "special_offer": "None",
+          "discount": 0,
+          "warranty": "1 year",
+          "additional_details": "Available in multiple sizes."
+        },
+        "20": {
+          "id": "20",
+          "name": "Nike Joyride Run Flyknit",
+          "description": "Running shoes with Joyride cushioning for an ultra-comfortable run.",
+          "price": 180,
+          "category": "Running",
+          "available_sizes": [
+            "6",
+            "7",
+            "8"
+          ],
+          "brand": "Nike",
+          "image_url": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/99a7d3cb-e40c-4474-91c2-0f2e6d231fd2/joyride-run-flyknit-womens-running-shoe-HcfnJd.jpg",
+          "in_stock": true,
+          "special_offer": "None",
+          "discount": 0,
+          "warranty": "1 year",
+          "additional_details": "Only a few pairs left."
         }
       },
       "orders": {
+        "2": {
+          "id": "2",
+          "name": "New Balance",
+          "description": "Modern and stylish shoes with excellent cushioning and support.",
+          "price": 150,
+          "category": "Men",
+          "available_sizes": [
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "brand": "New-balance",
+          "image_url": "https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw769f9d4b/images/page-designer/2024/July/16130_Comp_X_Womens_Shoes.jpg",
+          "in_stock": true,
+          "special_offer": "Buy one get one 50% off",
+          "discount": 50,
+          "warranty": "1 year",
+          "additional_details": "Available in limited colors. Offer valid while supplies last.",
+          "qty": 4,
+          "qtyPrice": 600,
+          "paymentMethord": "creditCard",
+          "size": "7",
+          "userInfo": {
+            "firstName": "Salman",
+            "lastName": "Faris",
+            "email": "salmanfariskalm@gmial.com",
+            "phoneNumber": "09961821977",
+            "address": "Malappuram",
+            "street": "salman",
+            "country": "india",
+            "state": "kerala",
+            "paymentMethod": "creditCard"
+          },
+          "status": "outForDelivery",
+          "userId": "5ac6",
+          "date": "2024-08-08T09:42:42.454Z"
+        },
         "16": {
           "id": "16",
           "name": "New Adidas 574",
@@ -86,6 +217,43 @@
           "status": "inTransist",
           "userId": "5ac6",
           "date": "2024-08-07T15:38:17.128Z"
+        },
+        "23": {
+          "id": "23",
+          "name": "Nike Phantom Venom Academy FG",
+          "description": "Football boots designed for precision and control on the pitch.",
+          "price": 80,
+          "category": "Football",
+          "available_sizes": [
+            "6",
+            "7",
+            "8"
+          ],
+          "brand": "Nike",
+          "image_url": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/whegph8z9ornhxklc8rp/phantom-venom-academy-fg-firm-ground-soccer-cleat-6JVNll.jpg",
+          "in_stock": true,
+          "special_offer": "None",
+          "discount": 0,
+          "warranty": "1 year",
+          "additional_details": "Available in various sizes.",
+          "qty": 1,
+          "qtyPrice": 80,
+          "paymentMethord": "creditCard",
+          "size": 0,
+          "userInfo": {
+            "firstName": "Salman",
+            "lastName": "Faris",
+            "email": "salmanfariskalm@gmial.com",
+            "phoneNumber": "09961821977",
+            "address": "Malappuram",
+            "street": "sa",
+            "country": "india",
+            "state": "kerala",
+            "paymentMethod": "creditCard"
+          },
+          "status": "pending",
+          "userId": "5ac6",
+          "date": "2024-08-08T08:25:57.188Z"
         }
       }
     },
@@ -95,65 +263,25 @@
       "lname": "miya",
       "email": "fmaleeha@gmail.com",
       "password": "aaa",
-      "cpassword": "aaa",
       "cart": {
-        "2": {
-          "id": "2",
-          "name": "New Balance",
-          "description": "Modern and stylish shoes with excellent cushioning and support.",
-          "price": 150,
+        "11": {
+          "id": "11",
+          "name": "Adidas NMD",
+          "description": "Sleek and stylish sneakers with a comfortable fit for any occasion.",
+          "price": 160,
           "category": "Men",
           "available_sizes": [
-            "7",
             "8",
             "9",
             "10"
           ],
-          "brand": "New-balance",
-          "image_url": "https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw769f9d4b/images/page-designer/2024/July/16130_Comp_X_Womens_Shoes.jpg",
+          "brand": "Adidas",
+          "image_url": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/62aabd93a80240b1afbdb51b65076aab_9366/Forum_Low_Shoes_Blue_IG3784_01_standard.jpg",
           "in_stock": true,
-          "special_offer": "Buy one get one 50% off",
-          "discount": 50,
-          "warranty": "1 year",
-          "additional_details": "Available in limited colors. Offer valid while supplies last."
-        },
-        "13": {
-          "id": "13",
-          "name": "Puma Basket Classic",
-          "description": "Vintage-inspired sneakers with a modern twist and superior comfort.",
-          "price": 100,
-          "category": "Women",
-          "available_sizes": [
-            "6",
-            "7",
-            "8"
-          ],
-          "brand": "Puma",
-          "image_url": "https://s.alicdn.com/@sc04/kf/H099893a17cbd40358e75437d4e652d3cD.jpg",
-          "in_stock": true,
-          "special_offer": "None",
-          "discount": 0,
-          "warranty": "6 months",
-          "additional_details": "Classic color options available. Regular stock."
-        },
-        "14": {
-          "id": "14",
-          "name": "Reebok Club C 85",
-          "description": "Classic design with a comfortable fit for casual wear.",
-          "price": 90,
-          "category": "Women",
-          "available_sizes": [
-            "5",
-            "6",
-            "7"
-          ],
-          "brand": "Reebok",
-          "image_url": "https://s.alicdn.com/@sc04/kf/Ha1665e97746c4267806a294fbea6012aO.jpg",
-          "in_stock": true,
-          "special_offer": "15% off with code REEBOK15",
+          "special_offer": "15% off with code NMD15",
           "discount": 15,
-          "warranty": "6 months",
-          "additional_details": "Available in white and black. Free shipping."
+          "warranty": "1 year",
+          "additional_details": "Offer valid while supplies last. Free returns."
         },
         "15": {
           "id": "15",
@@ -173,46 +301,48 @@
           "discount": 0,
           "warranty": "1 year",
           "additional_details": "Out of stock. Check back soon."
+        },
+        "16": {
+          "id": "16",
+          "name": "New Adidas 574",
+          "description": "Timeless sneakers with premium materials and a comfortable fit.",
+          "price": 130,
+          "category": "Kids",
+          "available_sizes": [
+            "3",
+            "4"
+          ],
+          "brand": "Adidas",
+          "image_url": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c8aba848adba4eeebf89ae2e00ba47dd_9366/Grand_Court_2.0_Shoes_Kids_White_GW6521_01_standard.jpg",
+          "in_stock": true,
+          "special_offer": "None",
+          "discount": 0,
+          "warranty": "1 year",
+          "additional_details": "Out of stock. Check back soon."
+        },
+        "27": {
+          "id": "27",
+          "name": "X_PLR",
+          "description": "Versatile and comfortable casual sneakers with a sleek design.",
+          "price": 65,
+          "category": "Casual",
+          "available_sizes": [
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"
+          ],
+          "brand": "Adidas",
+          "image_url": "https://assets.adidas.com/images/h_320,f_auto,q_auto:sensitive,fl_lossy/a36518227134495da766ab9d01772fa2_9366/X_PLR_Shoes_Red_FY9063_01_standard.jpg",
+          "in_stock": true,
+          "special_offer": "None",
+          "discount": 0,
+          "warranty": "1 year",
+          "additional_details": "Available in multiple sizes. Limited stock."
         }
       },
       "orders": {
-        "2": {
-          "id": "2",
-          "name": "New Balance",
-          "description": "Modern and stylish shoes with excellent cushioning and support.",
-          "price": 150,
-          "category": "Men",
-          "available_sizes": [
-            "7",
-            "8",
-            "9",
-            "10"
-          ],
-          "brand": "New-balance",
-          "image_url": "https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw769f9d4b/images/page-designer/2024/July/16130_Comp_X_Womens_Shoes.jpg",
-          "in_stock": true,
-          "special_offer": "Buy one get one 50% off",
-          "discount": 50,
-          "warranty": "1 year",
-          "additional_details": "Available in limited colors. Offer valid while supplies last.",
-          "qty": 1,
-          "qtyPrice": 150,
-          "paymentMethord": "upi",
-          "size": "7",
-          "userInfo": {
-            "firstName": "Salman",
-            "lastName": "Faris",
-            "email": "salmanfariskalm@gmial.com",
-            "phoneNumber": "09961821977",
-            "address": "Malappuram",
-            "street": "aaaaa",
-            "country": "india",
-            "state": "kerala",
-            "paymentMethod": "upi"
-          },
-          "status": "delivers",
-          "userId": "daa8"
-        },
         "4": {
           "id": "4",
           "name": "Reebok Classic",
@@ -245,7 +375,7 @@
             "state": "kerala",
             "paymentMethod": "creditCard"
           },
-          "status": "outForDelivery"
+          "status": "exchange"
         },
         "23": {
           "id": "23",
@@ -280,11 +410,12 @@
             "state": "kerala",
             "paymentMethod": "upi"
           },
-          "status": "pending",
+          "status": "delivers",
           "userId": "daa8"
         }
       },
-      "admin": true
+      "admin": true,
+      "bloked": ""
     },
     {
       "id": "62af",
@@ -292,64 +423,8 @@
       "lname": "Faris",
       "email": "salmanfariskalm@gmial.com",
       "password": "sasa",
-      "cpassword": "sasa",
-      "admin": false
-    },
-    {
-      "id": "c0a1",
-      "fname": "sabith",
-      "lname": "mhd",
-      "email": "sabith@gamil.com",
-      "password": "aaa",
-      "cpassword": "aaa",
-      "admin": false,
-      "orders": {
-        "23": {
-          "id": "23",
-          "name": "Nike Phantom Venom Academy FG",
-          "description": "Football boots designed for precision and control on the pitch.",
-          "price": 80,
-          "category": "Football",
-          "available_sizes": [
-            "6",
-            "7",
-            "8"
-          ],
-          "brand": "Nike",
-          "image_url": "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/whegph8z9ornhxklc8rp/phantom-venom-academy-fg-firm-ground-soccer-cleat-6JVNll.jpg",
-          "in_stock": true,
-          "special_offer": "None",
-          "discount": 0,
-          "warranty": "1 year",
-          "additional_details": "Available in various sizes.",
-          "qty": 1,
-          "qtyPrice": 80,
-          "paymentMethord": "upi",
-          "size": "6",
-          "userInfo": {
-            "firstName": "Salman",
-            "lastName": "Faris",
-            "email": "salmanfariskalm@gmial.com",
-            "phoneNumber": "09961821977",
-            "address": "Malappuram",
-            "street": "sasa",
-            "country": "india",
-            "state": "kerala",
-            "paymentMethod": "upi"
-          },
-          "status": "pending",
-          "userId": "c0a1",
-          "date": "2024-08-07T05:55:42.812Z"
-        }
-      }
-    },
-    {
-      "id": "241e",
-      "fname": "jasim",
-      "lname": "saju",
-      "email": "jasim@gmail.com",
-      "password": "aaa",
-      "cpassword": "aaa"
+      "admin": true,
+      "bloked": ""
     },
     {
       "id": "af86",
@@ -357,7 +432,6 @@
       "fname": "arshad",
       "lname": "roshaa",
       "password": "aaa",
-      "cpassword": "aaa",
       "cart": {
         "2": {
           "id": "2",
@@ -450,7 +524,7 @@
             "state": "kerala",
             "paymentMethod": "upi"
           },
-          "status": "pending",
+          "status": "outForDelivery",
           "userId": "af86"
         },
         "8": {
@@ -525,7 +599,8 @@
           "status": "outForDelivery",
           "userId": "af86"
         }
-      }
+      },
+      "bloked": ""
     },
     {
       "id": "908a",
@@ -533,7 +608,6 @@
       "lname": "User",
       "email": "salmanfariskalm@gmail.com",
       "password": "sasa",
-      "cpassword": "sasa",
       "orders": {
         "2": {
           "id": "2",
@@ -569,7 +643,7 @@
             "state": "kerala",
             "paymentMethod": "creditCard"
           },
-          "status": "pending",
+          "status": "outForDelivery",
           "userId": "908a",
           "date": "2024-08-07T15:53:04.241Z"
         },
@@ -609,7 +683,9 @@
           "userId": "908a",
           "date": "2024-08-07T15:53:21.474Z"
         }
-      }
+      },
+      "admin": false,
+      "bloked": ""
     },
     {
       "id": "245c",
@@ -617,7 +693,6 @@
       "fname": "Salman",
       "lname": "Faris",
       "password": "sasa",
-      "cpassword": "sasa",
       "orders": {
         "6": {
           "id": "6",
@@ -652,7 +727,7 @@
             "state": "kerala",
             "paymentMethod": "cashOnPay"
           },
-          "status": "pending",
+          "status": "outForDelivery",
           "userId": "245c",
           "date": "2024-08-07T15:58:03.645Z"
         },
@@ -689,11 +764,320 @@
             "state": "kerala",
             "paymentMethod": "upi"
           },
-          "status": "delivers",
+          "status": "pending",
           "userId": "245c",
           "date": "2024-08-07T15:57:38.614Z"
         }
+      },
+      "bloked": ""
+    },
+    {
+      "id": "03ef",
+      "fname": "baduSha",
+      "lname": "badu",
+      "email": "badu@gmail.com",
+      "password": "aaa",
+      "cart": {
+        "1": {
+          "id": "1",
+          "name": "Puma",
+          "description": "Comfortable and stylish running shoes with superior cushioning.",
+          "price": 180,
+          "category": "Men",
+          "available_sizes": [
+            "8",
+            "9",
+            "10",
+            "11"
+          ],
+          "brand": "Puma",
+          "image_url": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/396464/07/sv01/fnd/AUS/fmt/png/Palermo-Lth-Unisex-Sneakers",
+          "in_stock": true,
+          "special_offer": "10% off with code BOOST10",
+          "discount": 10,
+          "warranty": "2 years",
+          "additional_details": "Limited stock available. Offer valid until end of month."
+        },
+        "2": {
+          "id": "2",
+          "name": "New Balance",
+          "description": "Modern and stylish shoes with excellent cushioning and support.",
+          "price": 150,
+          "category": "Men",
+          "available_sizes": [
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "brand": "New-balance",
+          "image_url": "https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw769f9d4b/images/page-designer/2024/July/16130_Comp_X_Womens_Shoes.jpg",
+          "in_stock": true,
+          "special_offer": "Buy one get one 50% off",
+          "discount": 50,
+          "warranty": "1 year",
+          "additional_details": "Available in limited colors. Offer valid while supplies last."
+        },
+        "3": {
+          "id": "3",
+          "name": "Nike X-3 Sh",
+          "description": "Retro-inspired shoes with a comfortable fit and bold design.",
+          "price": 115,
+          "category": "Men",
+          "available_sizes": [
+            "9",
+            "10",
+            "11"
+          ],
+          "brand": "Nike",
+          "image_url": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3ffcfac2-025a-4107-ac04-5fb938d3a5f6/KILLSHOT+2+LEATHER.png",
+          "in_stock": false,
+          "special_offer": "None",
+          "discount": 0,
+          "warranty": "1 year",
+          "additional_details": "Out of stock. Expected restock in two weeks."
+        },
+        "4": {
+          "id": "4",
+          "name": "Reebok Classic",
+          "description": "Classic design with a timeless look and comfortable fit.",
+          "price": 90,
+          "category": "Men",
+          "available_sizes": [
+            "8",
+            "9"
+          ],
+          "brand": "Reebok",
+          "image_url": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/fcf43637c2694ae197a1ab1487a0e8a4_9366/Duramo_RC_Shoes_Green_IE7991_01_standard.jpg",
+          "in_stock": true,
+          "special_offer": "15% off on your first purchase",
+          "discount": 15,
+          "warranty": "6 months",
+          "additional_details": "Available in various colors and sizes."
+        },
+        "5": {
+          "id": "5",
+          "name": "New Balance 990v5",
+          "description": "Premium materials and craftsmanship for optimal comfort.",
+          "price": 175,
+          "category": "Men",
+          "available_sizes": [
+            "9",
+            "10",
+            "11"
+          ],
+          "brand": "New Balance",
+          "image_url": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-017.jpg",
+          "in_stock": true,
+          "special_offer": "20% off for a limited time",
+          "discount": 20,
+          "warranty": "2 years",
+          "additional_details": "Special offer ends soon. Free shipping included."
+        },
+        "6": {
+          "id": "6",
+          "name": "Nike Air Force 1",
+          "description": "Iconic design with superior comfort and durability.",
+          "price": 100,
+          "category": "Men",
+          "available_sizes": [
+            "6",
+            "7",
+            "8"
+          ],
+          "brand": "Nike",
+          "image_url": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-014.jpg",
+          "in_stock": true,
+          "special_offer": "None",
+          "discount": 0,
+          "warranty": "1 year",
+          "additional_details": "Regular stock available."
+        },
+        "7": {
+          "id": "7",
+          "name": "Adidas Superstar",
+          "description": "Classic sneakers with a modern twist for everyday wear.",
+          "price": 85,
+          "category": "Men",
+          "available_sizes": [
+            "5",
+            "6",
+            "7"
+          ],
+          "brand": "Adidas",
+          "image_url": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/6c3cc4a0-2bf4-4a7c-a2ba-c83875642bc5/NIKE+CORTEZ+TXT.png",
+          "in_stock": false,
+          "special_offer": "None",
+          "discount": 0,
+          "warranty": "1 year",
+          "additional_details": "Out of stock. Check back soon."
+        }
+      },
+      "orders": {
+        "2": {
+          "id": "2",
+          "name": "New Balance",
+          "description": "Modern and stylish shoes with excellent cushioning and support.",
+          "price": 150,
+          "category": "Men",
+          "available_sizes": [
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "brand": "New-balance",
+          "image_url": "https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw769f9d4b/images/page-designer/2024/July/16130_Comp_X_Womens_Shoes.jpg",
+          "in_stock": true,
+          "special_offer": "Buy one get one 50% off",
+          "discount": 50,
+          "warranty": "1 year",
+          "additional_details": "Available in limited colors. Offer valid while supplies last.",
+          "qty": 3,
+          "qtyPrice": 450,
+          "paymentMethord": "creditCard",
+          "size": 0,
+          "userInfo": {
+            "firstName": "shine",
+            "lastName": "sha",
+            "email": "shahah@gmial.com",
+            "phoneNumber": "09961821977",
+            "address": "Malappuram",
+            "street": "sasa",
+            "country": "india",
+            "state": "kerala",
+            "paymentMethod": "creditCard"
+          },
+          "status": "pending",
+          "userId": "03ef",
+          "date": "2024-08-08T05:59:10.600Z"
+        },
+        "6": {
+          "id": "6",
+          "name": "Nike Air Force 1",
+          "description": "Iconic design with superior comfort and durability.",
+          "price": 100,
+          "category": "Men",
+          "available_sizes": [
+            "6",
+            "7",
+            "8"
+          ],
+          "brand": "Nike",
+          "image_url": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-014.jpg",
+          "in_stock": true,
+          "special_offer": "None",
+          "discount": 0,
+          "warranty": "1 year",
+          "additional_details": "Regular stock available.",
+          "qty": 2,
+          "qtyPrice": 200,
+          "paymentMethord": "creditCard",
+          "size": "8",
+          "userInfo": {
+            "firstName": "BaduSha",
+            "lastName": "badu",
+            "email": "Bhadu@gamail.coom",
+            "phoneNumber": "09961821977",
+            "address": "Malappuram",
+            "street": "sas",
+            "country": "india",
+            "state": "kerala",
+            "paymentMethod": "creditCard"
+          },
+          "status": "outForDelivery",
+          "userId": "03ef",
+          "date": "2024-08-08T05:58:40.717Z"
+        }
       }
+    },
+    {
+      "id": "2bcc",
+      "fname": "Salman",
+      "lname": "Faris",
+      "email": "ka@gmail.com",
+      "password": "aaaa",
+      "cart": {
+        "2": {
+          "id": "2",
+          "name": "New Balance",
+          "description": "Modern and stylish shoes with excellent cushioning and support.",
+          "price": 150,
+          "category": "Men",
+          "available_sizes": [
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "brand": "New-balance",
+          "image_url": "https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw769f9d4b/images/page-designer/2024/July/16130_Comp_X_Womens_Shoes.jpg",
+          "in_stock": true,
+          "special_offer": "Buy one get one 50% off",
+          "discount": 50,
+          "warranty": "1 year",
+          "additional_details": "Available in limited colors. Offer valid while supplies last."
+        },
+        "3": {
+          "id": "3",
+          "name": "Nike X-3 Sh",
+          "description": "Retro-inspired shoes with a comfortable fit and bold design.",
+          "price": 115,
+          "category": "Men",
+          "available_sizes": [
+            "9",
+            "10",
+            "11"
+          ],
+          "brand": "Nike",
+          "image_url": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3ffcfac2-025a-4107-ac04-5fb938d3a5f6/KILLSHOT+2+LEATHER.png",
+          "in_stock": false,
+          "special_offer": "None",
+          "discount": 0,
+          "warranty": "1 year",
+          "additional_details": "Out of stock. Expected restock in two weeks."
+        },
+        "4": {
+          "id": "4",
+          "name": "Adidas Clasiic",
+          "description": "Classic design with a timeless look and comfortable fit.",
+          "price": 90,
+          "category": "Men",
+          "available_sizes": [
+            "8",
+            "9"
+          ],
+          "brand": "Reebok",
+          "image_url": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/fcf43637c2694ae197a1ab1487a0e8a4_9366/Duramo_RC_Shoes_Green_IE7991_01_standard.jpg",
+          "in_stock": true,
+          "special_offer": "15% off on your first purchase",
+          "discount": 15,
+          "warranty": "6 months",
+          "additional_details": "Available in various colors and sizes."
+        }
+      }
+    },
+    {
+      "id": "954f",
+      "fname": "samee",
+      "lname": "sa",
+      "email": "sameen@gmail.com",
+      "password": "aaa"
+    },
+    {
+      "id": "9734",
+      "fname": "sula",
+      "lname": "sula",
+      "email": "s@gmail.com",
+      "password": "aaa"
+    },
+    {
+      "id": "57e8",
+      "fname": "aaa",
+      "lname": "aaa",
+      "bloked": "",
+      "email": "a@gmail.com",
+      "password": "aa"
     }
   ],
   "item": [
@@ -758,7 +1142,7 @@
     },
     {
       "id": "4",
-      "name": "Reebok Classic",
+      "name": "Adidas Clasiic",
       "description": "Classic design with a timeless look and comfortable fit.",
       "price": 90,
       "category": "Men",
@@ -944,44 +1328,6 @@
       "discount": 0,
       "warranty": "6 months",
       "additional_details": "Classic color options available. Regular stock."
-    },
-    {
-      "id": "14",
-      "name": "Reebok Club C 85",
-      "description": "Classic design with a comfortable fit for casual wear.",
-      "price": 90,
-      "category": "Women",
-      "available_sizes": [
-        "5",
-        "6",
-        "7"
-      ],
-      "brand": "Reebok",
-      "image_url": "https://s.alicdn.com/@sc04/kf/Ha1665e97746c4267806a294fbea6012aO.jpg",
-      "in_stock": true,
-      "special_offer": "15% off with code REEBOK15",
-      "discount": 15,
-      "warranty": "6 months",
-      "additional_details": "Available in white and black. Free shipping."
-    },
-    {
-      "id": "15",
-      "name": "New Balance 574",
-      "description": "Timeless sneakers with premium materials and a comfortable fit.",
-      "price": 130,
-      "category": "Women",
-      "available_sizes": [
-        "8",
-        "9",
-        "10"
-      ],
-      "brand": "New Balance",
-      "image_url": "https://s.alicdn.com/@sc04/kf/Hc50f169228294ebb8c882b2a57b72e3bx.jpg",
-      "in_stock": false,
-      "special_offer": "None",
-      "discount": 0,
-      "warranty": "1 year",
-      "additional_details": "Out of stock. Check back soon."
     },
     {
       "id": "16",
@@ -1315,6 +1661,44 @@
       "discount": "10%",
       "warranty": "2 year",
       "additional_details": "Runnig best Sheos "
+    },
+    {
+      "id": "34134",
+      "name": "nike air",
+      "description": "The best Nike shoes The best Nike shoes",
+      "price": 233,
+      "category": "Men",
+      "available_sizes": [
+        "5",
+        "6",
+        "7"
+      ],
+      "brand": "Puma",
+      "image_url": "https://media-cldnry.s-nbcnews.com/image/upload/newscms/2023_17/1989442/230428-nike-vl-2x1.jpg",
+      "in_stock": "yes",
+      "special_offer": "10% offer",
+      "discount": "10%",
+      "warranty": "2 year",
+      "additional_details": "Runnig best Sheos "
+    },
+    {
+      "id": "1222",
+      "name": "fadf",
+      "description": "Modern and stylish shoes with excellent cushioning and support.",
+      "price": 333,
+      "category": "Men",
+      "available_sizes": [
+        "2",
+        "3",
+        "2"
+      ],
+      "brand": "Adidas",
+      "image_url": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5bbf68d51e03420c9b28bf1c7c167d8b_9366/WALKANEW_SHOES_Blue_IQ9188_01_standard.jpg",
+      "in_stock": "yes",
+      "special_offer": "10% offer",
+      "discount": "10%",
+      "warranty": "2 year",
+      "additional_details": "The best Nike shoes for your feet, according to a podiatrist"
     }
   ]
 }

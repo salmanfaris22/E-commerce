@@ -11,6 +11,7 @@ import "aos/dist/aos.css";
 import axios from "axios";
 import { ItemsAPI, userAPI } from "../API/API_URL";
 
+// eslint-disable-next-line react/prop-types
 const NavBar = ({ setAdmin }) => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);

@@ -4,7 +4,15 @@ import { TotalCoutomer, TotalProduct } from "./Details/Dash";
 import { RiShoppingCartFill } from "react-icons/ri";
 import { BiSolidSquareRounded } from "react-icons/bi";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,  } from 'recharts';
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+} from "recharts";
 import { FaMoneyBillTrendUp } from "react-icons/fa6";
 import { FaMoneyBillTransfer } from "react-icons/fa6";
 import { IoCloudDone } from "react-icons/io5";
@@ -35,16 +43,17 @@ const DashBoard = () => {
       const delivers = allOrders.filter((e) => e.status === "delivers");
       const exchange = allOrders.filter((e) => e.status === "exchange");
 
-      const Newbalance =allOrders.filter((e) => e.brand ==="New-balance");
-      const Reebok =allOrders.filter((e) => e.brand ==="Reebok");
-      const Nike =allOrders.filter((e) => e.brand ==="Nike");
-      const Adidas =allOrders.filter((e) => e.brand ==="Adidas");
-      const Puma =allOrders.filter((e) => e.brand ==="Puma");
+      const Newbalance = allOrders.filter((e) => e.brand === "New-balance");
+      const Reebok = allOrders.filter((e) => e.brand === "Reebok");
+      const Nike = allOrders.filter((e) => e.brand === "Nike");
+      const Adidas = allOrders.filter((e) => e.brand === "Adidas");
+      const Puma = allOrders.filter((e) => e.brand === "Puma");
 
-       console.log("jhh",delivers);
+      console.log("jhh", delivers);
 
-       const profit = totalSales.reduce((acc,e)=>acc+e.qtyPrice,0)
-       const UpProfit = allOrders.reduce((acc,e)=>acc+e.qtyPrice,0)-profit
+      const profit = totalSales.reduce((acc, e) => acc + e.qtyPrice, 0);
+      const UpProfit =
+        allOrders.reduce((acc, e) => acc + e.qtyPrice, 0) - profit;
       setTrack({
         outForDelivery: totalSales.length,
         pending: pending.length,
@@ -52,33 +61,34 @@ const DashBoard = () => {
         delivers: delivers.length,
         exchange: exchange.length,
 
+        Newbalance: Newbalance.reduce((acc, e) => acc + e.qty, 0),
+        Reebok: Reebok.reduce((acc, e) => acc + e.qty, 0),
+        Nike: Nike.reduce((acc, e) => acc + e.qty, 0),
+        Adidas: Adidas.reduce((acc, e) => acc + e.qty, 0),
+        Puma: Puma.reduce((acc, e) => acc + e.qty, 0),
 
-        Newbalance:Newbalance.reduce((acc,e)=>acc+e.qty,0,),
-        Reebok:Reebok.reduce((acc,e)=>acc+e.qty,0,),
-        Nike:Nike.reduce((acc,e)=>acc+e.qty,0,),
-        Adidas:Adidas.reduce((acc,e)=>acc+e.qty,0,),
-        Puma:Puma.reduce((acc,e)=>acc+e.qty,0,),
-
-
-        Newbalance1:Newbalance.reduce((acc,e)=>acc+e.qtyPrice,0,),
-        Reebok1:Reebok.reduce((acc,e)=>acc+e.qtyPrice,0,),
-        Nike1:Nike.reduce((acc,e)=>acc+e.qtyPrice,0,),
-        Adidas1:Adidas.reduce((acc,e)=>acc+e.qtyPrice,0,),
-        Puma1:Puma.reduce((acc,e)=>acc+e.qtyPrice,0,),
+        Newbalance1: Newbalance.reduce((acc, e) => acc + e.qtyPrice, 0),
+        Reebok1: Reebok.reduce((acc, e) => acc + e.qtyPrice, 0),
+        Nike1: Nike.reduce((acc, e) => acc + e.qtyPrice, 0),
+        Adidas1: Adidas.reduce((acc, e) => acc + e.qtyPrice, 0),
+        Puma1: Puma.reduce((acc, e) => acc + e.qtyPrice, 0),
       });
 
       setCutermer({
         ...coutomer,
         coutomer: total.length,
         product: product.length,
-        order: 
-        Newbalance.reduce((acc,e)=>acc+e.qty,0,) + Reebok.reduce((acc,e)=>acc+e.qty,0,) +Nike.reduce((acc,e)=>acc+e.qty,0,)+Adidas.reduce((acc,e)=>acc+e.qty,0,)+Puma.reduce((acc,e)=>acc+e.qty,0,)
+        order:
+          Newbalance.reduce((acc, e) => acc + e.qty, 0) +
+          Reebok.reduce((acc, e) => acc + e.qty, 0) +
+          Nike.reduce((acc, e) => acc + e.qty, 0) +
+          Adidas.reduce((acc, e) => acc + e.qty, 0) +
+          Puma.reduce((acc, e) => acc + e.qty, 0),
 
-        ,
         sales: totalSales.length,
         orders: allOrders,
-        profit:profit,
-        UpProfit:UpProfit
+        profit: profit,
+        UpProfit: UpProfit,
       });
     }
     abc();
@@ -93,38 +103,32 @@ const DashBoard = () => {
   ];
   const data1 = [
     {
-      name: 'Newbalance',
+      name: "Newbalance",
       TotelSale: track.Newbalance,
-      TotelProfit: track.Newbalance1
-   
+      TotelProfit: track.Newbalance1,
     },
     {
-      name: 'Reebok',
+      name: "Reebok",
       TotelSale: track.Reebok,
-      TotelProfit: track.Reebok1
-     
+      TotelProfit: track.Reebok1,
     },
     {
-      name: 'Nike',
+      name: "Nike",
       TotelSale: track.Nike,
-      TotelProfit: track.Nike1
-    
+      TotelProfit: track.Nike1,
     },
     {
-      name: 'Adidas',
+      name: "Adidas",
       TotelSale: track.Adidas,
-      TotelProfit: track.Adidas1
- 
+      TotelProfit: track.Adidas1,
     },
     {
-      name: 'Puma',
+      name: "Puma",
       TotelSale: track.Puma,
-      TotelProfit: track.Puma1
-      
+      TotelProfit: track.Puma1,
     },
-   
   ];
-  
+
   const COLORS = ["#424242", "#FDD835", "#FF6F00", "#388E3C", "#C62828"];
 
   const RADIAN = Math.PI / 180;
@@ -197,37 +201,41 @@ const DashBoard = () => {
         </div>
 
         <div className="mt-10 grid md:grid-cols-6 grid-cols-1 gap-4">
-          <div className="md:col-span-4 bg-white p-4 rounded-lg shadow-lg"> 
+          <div className="md:col-span-4 bg-white p-4 rounded-lg shadow-lg">
             <div className="h-[400px]">
-                <div className="font-bold">Top Brand Selling</div>
-            <ResponsiveContainer width="100%" height="100%">
-      <BarChart
-        width={500}
-        height={300}
-        data={data1}
-        margin={{
-          top: 20,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis/>
-       
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="TotelSale" stackId="a" fill="#8884d8" />
-        <Bar dataKey="TotelProfit" stackId="a" fill="#82ca9d" />
-      </BarChart>
-    </ResponsiveContainer>
+              <div className="font-bold">Top Brand Selling</div>
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart
+                  width={500}
+                  height={300}
+                  data={data1}
+                  margin={{
+                    top: 20,
+                    right: 30,
+                    left: 20,
+                    bottom: 5,
+                  }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="name" />
+                  <YAxis />
+
+                  <Tooltip />
+                  <Legend />
+                  <Bar dataKey="TotelSale" stackId="a" fill="#8884d8" />
+                  <Bar dataKey="TotelProfit" stackId="a" fill="#82ca9d" />
+                </BarChart>
+              </ResponsiveContainer>
             </div>
           </div>
           <div className="col-span-2 bg-white p-3 rounded-lg shadow-lg h-[450px]">
             <div className="flex gap-3 flex-wrap justify-center items-center">
               {data.map((item, index) => (
-                <div key={index} className="flex justify-center items-center" style={{ color: COLORS[index % COLORS.length] }}>
+                <div
+                  key={index}
+                  className="flex justify-center items-center"
+                  style={{ color: COLORS[index % COLORS.length] }}
+                >
                   <span>
                     <BiSolidSquareRounded />
                   </span>{" "}
@@ -249,7 +257,10 @@ const DashBoard = () => {
                     dataKey="value"
                   >
                     {data.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                      <Cell
+                        key={`cell-${index}`}
+                        fill={COLORS[index % COLORS.length]}
+                      />
                     ))}
                   </Pie>
                 </PieChart>
@@ -257,15 +268,21 @@ const DashBoard = () => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-6 mt-10" >
-            <div className=" md:col-span-4 "></div>
-      <div className="h-[100px] bg-white p-2 md:col-span-2 col-span-6 shadow-xl rounded-lg flex flex-col justify-center ">
-      <span className="font-bold text-2xl ml-5 flex gap-3 p-1 justify-center items-center"><FaMoneyBillTrendUp/> Total Profit :<span className="text-green-600">{coutomer.profit}$</span></span>
-      <span className="font-bold text-2xl ml-5 flex gap-3 p-1 justify-center items-center"><FaMoneyBillTransfer/>PendingProfit :<span className="text-red-600">{coutomer.UpProfit}$</span></span>
+        <div className="grid grid-cols-6 mt-10">
+          <div className=" md:col-span-4 "></div>
+          <div className="h-[100px] bg-white p-2 md:col-span-2 col-span-6 shadow-xl rounded-lg flex flex-col justify-center ">
+            <span className="font-bold text-2xl ml-5 flex gap-3 p-1 justify-center items-center">
+              <FaMoneyBillTrendUp /> Total Profit :
+              <span className="text-green-600">{coutomer.profit}$</span>
+            </span>
+            <span className="font-bold text-2xl ml-5 flex gap-3 p-1 justify-center items-center">
+              <FaMoneyBillTransfer />
+              PendingProfit :
+              <span className="text-red-600">{coutomer.UpProfit}$</span>
+            </span>
+          </div>
+        </div>
       </div>
-      </div>
-      </div>
-     
     </div>
   );
 };
