@@ -19,6 +19,7 @@ const AminRoutes = () => {
      
       <Routes>
         <Route path="/" element={<Home />} />
+        
         <Route path="/user" element={<UserDetails />} />
         <Route path="/AddProduct" element={<AddProduct />} />
         <Route path="/DeletProduct" element={<DeletProduct/>}/>
