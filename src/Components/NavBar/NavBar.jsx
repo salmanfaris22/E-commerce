@@ -31,6 +31,7 @@ const NavBar = ({ setAdmin }) => {
   function handleAdmin() {
     localStorage.setItem("admin", true);
     setAdmin(true);
+    navigate("/")
   }
 
   const handleToggleMenu = () => {

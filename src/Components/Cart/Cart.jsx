@@ -6,7 +6,7 @@ import { handleRemovecart } from "./Cartfunction";
 import { Bounce, ToastContainer, toast } from 'react-toastify';
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
-  const [by,setBy]=useState([])
+
 
   useEffect(() => {
     async function displayCartItems() {
@@ -22,21 +22,7 @@ const Cart = () => {
   
     displayCartItems();
   }, []);
-function handleAddbys(e){
-  
-  const c=by.find((f)=>f===e)
-  
-  if(c){
-    toast.warning("alredy in by area")
-  }else{
-    setBy([
-      ...by,
-      e
-     ])
-  }
-   
- 
-}
+
   const handleRemove = async (item) => {
     try {
       await handleRemovecart(item);
@@ -63,10 +49,12 @@ function handleAddbys(e){
       console.error("Error updating cart:", err);
     }
   };
+  
+
 
   return (
-  <div className="grid grid-cols-3">
-      <div className="grid grid-cols-1  col-span-2 sm:grid-cols-2 min-h-[100vh] lg:grid-cols-3 gap-4 ">
+  <div className=" ">
+      <div className="grid grid-cols-4  min-h-[100vh] gap-4 ">
    
    {cartItems.length > 0 ? (
      cartItems.map((e) => (
@@ -107,7 +95,7 @@ function handleAddbys(e){
                   <Link to={`/byProducts/${e.id}`}>
                    <button className="bg-blue-500 text-white p-2 rounded-lg">Buy Now</button>
                  </Link>
-                 <button  onClick={()=>handleAddbys(e)} className="bg-blue-500 text-white p-2 rounded-lg">Add To By</button>
+                 {/* <button  onClick={()=>handleAddbys(e)} className="bg-blue-500 text-white p-2 rounded-lg">Add To By</button> */}
                 </div>
                )}
              </div>
@@ -119,24 +107,27 @@ function handleAddbys(e){
      <div>No cart items</div>
    )}
  </div>
- <div className="p-2 border">
-    <div>
+ {/* <div className="p-2 border">
+    <div className="flex flex-col gap-2">
         {by.map((e,i)=>{
           return(
-            <div key={i} className="grid grid-cols-2">
+            <div key={i} className="grid grid-cols-2 shadow-lg rounded-lg p-2">
           
-                <img src={e.image_url}  alt="" className="h-[100px]"/>
-                <div>
-                  <div>{e.name}</div>
-                  <div>{e.price}$</div>
-                  <button>+</button>
+                <img src={e.image_url}  alt="" className="h-[100px] w-[130px]"/>
+                <div className="flex flex-col gap-2  justify-center">
+               
                   
+               <div className="flex justify-center items-center gap-3">
+               <button className="bg-blue-500 text-white p-1 rounded-lg w-[30px]" onClick={()=>handleplus(e)}>+</button>
+                  <div>{e.price}$</div>
+                  <button className="bg-blue-500 text-white p-1 rounded-lg w-[30px]">-</button>
+               </div>
                 </div>
             </div>
           )
         })}
     </div>
- </div>
+ </div> */}
   </div>
   );
 };

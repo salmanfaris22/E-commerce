@@ -178,7 +178,7 @@
             "state": "kerala",
             "paymentMethod": "creditCard"
           },
-          "status": "outForDelivery",
+          "status": "pending",
           "userId": "5ac6",
           "date": "2024-08-08T09:42:42.454Z"
         },
@@ -283,6 +283,25 @@
           "warranty": "1 year",
           "additional_details": "Offer valid while supplies last. Free returns."
         },
+        "13": {
+          "id": "13",
+          "name": "Puma Basket Classic",
+          "description": "Vintage-inspired sneakers with a modern twist and superior comfort.",
+          "price": 100,
+          "category": "Women",
+          "available_sizes": [
+            "6",
+            "7",
+            "8"
+          ],
+          "brand": "Puma",
+          "image_url": "https://s.alicdn.com/@sc04/kf/H099893a17cbd40358e75437d4e652d3cD.jpg",
+          "in_stock": true,
+          "special_offer": "None",
+          "discount": 0,
+          "warranty": "6 months",
+          "additional_details": "Classic color options available. Regular stock."
+        },
         "15": {
           "id": "15",
           "name": "New Balance 574",
@@ -376,6 +395,43 @@
             "paymentMethod": "creditCard"
           },
           "status": "exchange"
+        },
+        "11": {
+          "id": "11",
+          "name": "Adidas NMD",
+          "description": "Sleek and stylish sneakers with a comfortable fit for any occasion.",
+          "price": 160,
+          "category": "Men",
+          "available_sizes": [
+            "8",
+            "9",
+            "10"
+          ],
+          "brand": "Adidas",
+          "image_url": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/62aabd93a80240b1afbdb51b65076aab_9366/Forum_Low_Shoes_Blue_IG3784_01_standard.jpg",
+          "in_stock": true,
+          "special_offer": "15% off with code NMD15",
+          "discount": 15,
+          "warranty": "1 year",
+          "additional_details": "Offer valid while supplies last. Free returns.",
+          "qty": 4,
+          "qtyPrice": 640,
+          "paymentMethord": "upi",
+          "size": "9",
+          "userInfo": {
+            "firstName": "Salman",
+            "lastName": "Faris",
+            "email": "salmanfariskalm@gmial.com",
+            "phoneNumber": "09961821977",
+            "address": "Malappuram",
+            "street": "sasa",
+            "country": "india",
+            "state": "kerala",
+            "paymentMethod": "upi"
+          },
+          "status": "pending",
+          "userId": "daa8",
+          "date": "2024-08-10T03:51:45.651Z"
         },
         "23": {
           "id": "23",
@@ -1078,6 +1134,13 @@
       "bloked": "",
       "email": "a@gmail.com",
       "password": "aa"
+    },
+    {
+      "id": "2859",
+      "fname": "Salman",
+      "lname": "Faris",
+      "email": "salma@gmail.com",
+      "password": "1111"
     }
   ],
   "item": [
