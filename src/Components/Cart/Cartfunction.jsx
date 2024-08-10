@@ -60,3 +60,40 @@ export const handleRemovecart = async (item) => {
     console.error("Error adding to cart:", error);
   }
 };
+
+
+
+export async function ByFronCart(from,item){
+  const user =localStorage.getItem("id")
+    if(user){
+      
+       try{
+        const date = new Date();
+       const set =  item.map((e)=>{
+          return e={
+            ...e,
+            "userInfo":from,
+            "status":"pending",
+            "userId": user,
+          "date": date
+          }
+        })
+        await console.log(set);
+        const res = await axios.get(`${userAPI}/${user}`)
+        const  GetOrders = res.data.orders
+        const updateOrder = {
+            ...GetOrders,
+            ...set
+         }
+
+        
+        axios.patch(`${userAPI}/${user}`,{orders:updateOrder})
+        console.log("this is iteamn",item);
+        toast.success("Thanks For Ordering");
+       }catch(err){
+        console.log("ordder time err",err);
+       }
+    }else{
+        toast.warning("Pleas Logine");
+    }
+}
