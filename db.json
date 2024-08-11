@@ -142,84 +142,8 @@
           "warranty": "1 year",
           "additional_details": "Only a few pairs left."
         }
-      },
-      "orders": {
-        "0": {
-          "id": "2",
-          "name": "New Balance",
-          "description": "Modern and stylish shoes with excellent cushioning and support.",
-          "price": 150,
-          "category": "Men",
-          "available_sizes": [
-            "7",
-            "8",
-            "9",
-            "10"
-          ],
-          "brand": "New-balance",
-          "image_url": "https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw769f9d4b/images/page-designer/2024/July/16130_Comp_X_Womens_Shoes.jpg",
-          "in_stock": true,
-          "special_offer": "Buy one get one 50% off",
-          "discount": 50,
-          "warranty": "1 year",
-          "additional_details": "Available in limited colors. Offer valid while supplies last.",
-          "quantity": 1,
-          "size": "10",
-          "qty": 2,
-          "userInfo": {
-            "firstName": "Salman",
-            "lastName": "Faris",
-            "email": "salmanfariskalm@gmial.com",
-            "phoneNumber": "09961821977",
-            "address": "Malappuram",
-            "street": "mn m",
-            "country": "india",
-            "state": "kerala",
-            "paymentMethod": "creditCard"
-          },
-          "status": "pending",
-          "userId": "5ac6",
-          "date": "2024-08-10T11:19:03.229Z"
-        },
-        "item": {
-          "id": "2",
-          "name": "New Balance",
-          "description": "Modern and stylish shoes with excellent cushioning and support.",
-          "price": 150,
-          "category": "Men",
-          "available_sizes": [
-            "7",
-            "8",
-            "9",
-            "10"
-          ],
-          "brand": "New-balance",
-          "image_url": "https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw769f9d4b/images/page-designer/2024/July/16130_Comp_X_Womens_Shoes.jpg",
-          "in_stock": true,
-          "special_offer": "Buy one get one 50% off",
-          "discount": 50,
-          "warranty": "1 year",
-          "additional_details": "Available in limited colors. Offer valid while supplies last.",
-          "qty": 1,
-          "qtyPrice": 150,
-          "paymentMethord": "creditCard",
-          "size": 0,
-          "userInfo": {
-            "firstName": "Salman",
-            "lastName": "Faris",
-            "email": "salmanfariskalm@gmial.com",
-            "phoneNumber": "09961821977",
-            "address": "Malappuram",
-            "street": "sa",
-            "country": "india",
-            "state": "kerala",
-            "paymentMethod": "creditCard"
-          },
-          "status": "pending",
-          "userId": "5ac6",
-          "date": "2024-08-10T12:34:30.874Z"
-        }
       }
+    
     },
     {
       "id": "daa8",
