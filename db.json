@@ -523,7 +523,7 @@
       "email": "salmanfariskalm@gmial.com",
       "password": "sasa",
       "admin": true,
-      "bloked": ""
+      "bloked": "bloked"
     },
     {
       "id": "af86",
@@ -783,7 +783,7 @@
           "date": "2024-08-07T15:53:21.474Z"
         }
       },
-      "admin": false,
+      "admin": true,
       "bloked": ""
     },
     {
@@ -868,7 +868,7 @@
           "date": "2024-08-07T15:57:38.614Z"
         }
       },
-      "bloked": ""
+      "bloked": "bloked"
     },
     {
       "id": "03ef",
@@ -1154,7 +1154,8 @@
           "warranty": "6 months",
           "additional_details": "Available in various colors and sizes."
         }
-      }
+      },
+      "bloked": "bloked"
     },
     {
       "id": "954f",
@@ -1168,7 +1169,8 @@
       "fname": "sula",
       "lname": "sula",
       "email": "s@gmail.com",
-      "password": "aaa"
+      "password": "aaa",
+      "admin": true
     },
     {
       "id": "57e8",
