@@ -142,8 +142,163 @@
           "warranty": "1 year",
           "additional_details": "Only a few pairs left."
         }
+      },
+      "orders": {
+        "2": {
+          "id": "2",
+          "name": "New Balance",
+          "description": "Modern and stylish shoes with excellent cushioning and support.",
+          "price": 150,
+          "category": "Men",
+          "available_sizes": [
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "brand": "New-balance",
+          "image_url": "https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw769f9d4b/images/page-designer/2024/July/16130_Comp_X_Womens_Shoes.jpg",
+          "in_stock": true,
+          "special_offer": "Buy one get one 50% off",
+          "discount": 50,
+          "warranty": "1 year",
+          "additional_details": "Available in limited colors. Offer valid while supplies last.",
+          "qty": 11,
+          "qtyPrice": 1650,
+          "paymentMethord": "creditCard",
+          "size": "10",
+          "userInfo": {
+            "firstName": "Salman",
+            "lastName": "Faris",
+            "email": "salmanfariskalm@gmial.com",
+            "phoneNumber": "09961821977",
+            "address": "Malappuram",
+            "street": "sasa",
+            "country": "india",
+            "state": "kerala",
+            "paymentMethod": "creditCard"
+          },
+          "status": "outForDelivery",
+          "userId": "5ac6",
+          "date": "2024-08-11T09:47:54.128Z"
+        },
+        "4": {
+          "id": "4",
+          "name": "Adidas Clasiic",
+          "description": "Classic design with a timeless look and comfortable fit.",
+          "price": 90,
+          "category": "Men",
+          "available_sizes": [
+            "8",
+            "9"
+          ],
+          "brand": "Reebok",
+          "image_url": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/fcf43637c2694ae197a1ab1487a0e8a4_9366/Duramo_RC_Shoes_Green_IE7991_01_standard.jpg",
+          "in_stock": true,
+          "special_offer": "15% off on your first purchase",
+          "discount": 15,
+          "warranty": "6 months",
+          "additional_details": "Available in various colors and sizes.",
+          "quantity": 1,
+          "selectedSize": "8",
+          "qty": 6,
+          "qtyPrice": 540,
+          "paymentMethord": "creditCard",
+          "size": "9",
+          "userInfo": {
+            "firstName": "Salman",
+            "lastName": "Faris",
+            "email": "salmanfariskalm@gmial.com",
+            "phoneNumber": "09961821977",
+            "address": "Malappuram",
+            "street": "sasa",
+            "country": "india",
+            "state": "kerala",
+            "paymentMethod": "creditCard"
+          },
+          "status": "outForDelivery",
+          "userId": "5ac6",
+          "date": "2024-08-11T09:47:54.141Z"
+        },
+        "5": {
+          "id": "5",
+          "name": "New Balance 990v5",
+          "description": "Premium materials and craftsmanship for optimal comfort.",
+          "price": 175,
+          "category": "Men",
+          "available_sizes": [
+            "9",
+            "10",
+            "11"
+          ],
+          "brand": "New Balance",
+          "image_url": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-017.jpg",
+          "in_stock": true,
+          "special_offer": "20% off for a limited time",
+          "discount": 20,
+          "warranty": "2 years",
+          "additional_details": "Special offer ends soon. Free shipping included.",
+          "quantity": 5,
+          "selectedSize": "11",
+          "qty": 5,
+          "qtyPrice": 875,
+          "paymentMethord": "creditCard",
+          "size": "11",
+          "userInfo": {
+            "firstName": "Salman",
+            "lastName": "Faris",
+            "email": "salmanfariskalm@gmial.com",
+            "phoneNumber": "09961821977",
+            "address": "Malappuram",
+            "street": "sasa",
+            "country": "india",
+            "state": "kerala",
+            "paymentMethod": "creditCard"
+          },
+          "status": "delivers",
+          "userId": "5ac6",
+          "date": "2024-08-11T09:47:54.155Z"
+        },
+        "6": {
+          "id": "6",
+          "name": "Nike Air Force 1",
+          "description": "Iconic design with superior comfort and durability.",
+          "price": 100,
+          "category": "Men",
+          "available_sizes": [
+            "6",
+            "7",
+            "8"
+          ],
+          "brand": "Nike",
+          "image_url": "https://websitedemos.net/recycled-shoe-store-04/wp-content/uploads/sites/983/2021/11/recycled-shoe-product-image-014.jpg",
+          "in_stock": true,
+          "special_offer": "None",
+          "discount": 0,
+          "warranty": "1 year",
+          "additional_details": "Regular stock available.",
+          "quantity": 3,
+          "selectedSize": "6",
+          "qty": 3,
+          "qtyPrice": 300,
+          "paymentMethord": "creditCard",
+          "size": "6",
+          "userInfo": {
+            "firstName": "Salman",
+            "lastName": "Faris",
+            "email": "salmanfariskalm@gmial.com",
+            "phoneNumber": "09961821977",
+            "address": "Malappuram",
+            "street": "sasa",
+            "country": "india",
+            "state": "kerala",
+            "paymentMethod": "creditCard"
+          },
+          "status": "pending",
+          "userId": "5ac6",
+          "date": "2024-08-11T09:46:47.555Z"
+        }
       }
-    
     },
     {
       "id": "daa8",
@@ -708,7 +863,7 @@
             "state": "kerala",
             "paymentMethod": "upi"
           },
-          "status": "pending",
+          "status": "inTransist",
           "userId": "245c",
           "date": "2024-08-07T15:57:38.614Z"
         }
@@ -892,7 +1047,7 @@
             "state": "kerala",
             "paymentMethod": "creditCard"
           },
-          "status": "pending",
+          "status": "inTransist",
           "userId": "03ef",
           "date": "2024-08-08T05:59:10.600Z"
         },

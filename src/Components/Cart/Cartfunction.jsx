@@ -1,6 +1,7 @@
 import axios from "axios";
 import { userAPI } from "../API/API_URL";
 import { Bounce, toast } from "react-toastify";
+// eslint-disable-next-line react-refresh/only-export-components
 export const handleAddCart = async (item) => {
   const user = localStorage.getItem("id");
   if (user) {
@@ -43,6 +44,7 @@ export const handleAddCart = async (item) => {
   }
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const handleRemovecart = async (item) => {
   try {
     const user = localStorage.getItem("id");

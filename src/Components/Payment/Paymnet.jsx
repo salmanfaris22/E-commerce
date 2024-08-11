@@ -10,7 +10,7 @@ const Payment = () => {
   const [quantity, setQuantity] = useState(1);
   const [price, setPrice] = useState(0);
   const [order, setOrder] = useState(false);
-  const [size,getSize]=useState(0)
+  const [size, setSize] = useState("");
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -20,7 +20,6 @@ const Payment = () => {
     street: "",
     country: "india",
     state: "kerala",
-    
     paymentMethod: "creditCard",
   });
   const [errors, setErrors] = useState({});
@@ -32,23 +31,19 @@ const Payment = () => {
       const res = await axios.get(`${ItemsAPI}/${id}`);
       setItem(res.data);
       setPrice(res.data.price);
-     
-  
     }
     fetchItem();
   }, [id]);
 
   const incrementQuantity = () => {
-    setQuantity((prev) => prev + 1);
-    setPrice((prev) => prev + item.price);
-
-  
+    setQuantity(prev => prev + 1);
+    setPrice(prev => prev + item.price);
   };
 
   const decrementQuantity = () => {
     if (quantity > 1) {
-      setQuantity((prev) => prev - 1);
-      setPrice((prev) => prev - item.price);
+      setQuantity(prev => prev - 1);
+      setPrice(prev => prev - item.price);
     } else {
       toast.warn("Minimum quantity is 1");
     }
@@ -60,7 +55,6 @@ const Payment = () => {
       ...form,
       [name]: value,
     });
-  
   };
 
   const validateForm = () => {
@@ -71,6 +65,7 @@ const Payment = () => {
     if (!form.phoneNumber) newErrors.phoneNumber = "Phone Number is required";
     if (!form.address) newErrors.address = "Address is required";
     if (!form.street) newErrors.street = "Street is required";
+    if (!size) newErrors.size = "Size is required";
     return newErrors;
   };
 
@@ -83,13 +78,17 @@ const Payment = () => {
       setErrors(newErrors);
     }
   };
-  const handelOrder = (id) => {
+
+  const handleOrder = async () => {
     setOrder(false);
-  
-    PaymentAdd(id,quantity,price,form.paymentMethod,size,form);
+    await PaymentAdd(item, quantity, price, form.paymentMethod, size, form);
+      if(localStorage.getItem("id")){
+         toast.success("Thanks For Ordering");
+      }
   };
+
   return (
-    <div className="container mx-auto p-4 w-[100vw] grid md:grid-cols-2">
+    <div className="container mx-auto p-4 md:p-8 grid md:grid-cols-2 gap-8">
       {order && (
         <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
           <div className="bg-white p-6 rounded shadow-md w-80">
@@ -104,7 +103,7 @@ const Payment = () => {
               </button>
               <button
                 className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
-                onClick={() => handelOrder(item)}
+                onClick={handleOrder}
               >
                 Confirm
               </button>
@@ -115,7 +114,7 @@ const Payment = () => {
 
       <div>
         <ToastContainer />
-        <div className="p-8 rounded-lg  gap-8 mx-auto mt-4">
+        <div className="p-4 md:p-8 rounded-lg shadow-md">
           <div className="flex justify-center">
             <img
               src={item.image_url}
@@ -123,42 +122,50 @@ const Payment = () => {
               className="rounded-lg h-[300px] object-cover"
             />
           </div>
-          <div className="flex flex-col justify-center">
+          <div className="mt-4">
             <p className="text-zinc-500 font-semibold">{item.category}</p>
             <h2 className="font-bold text-3xl">{item.brand}</h2>
             <p className="font-semibold text-2xl text-zinc-500">
               {item.description}
             </p>
-            <div className="p-3 mt-7">
+            <div className="mt-6">
               <span className="font-semibold">Sizes:</span>
               <div className="flex flex-wrap gap-2 mt-2">
                 {item.available_sizes ? (
-                  item.available_sizes.map((size, index) => (
-                    <span
-                      className="rounded-lg p-2 shadow-sm text-blue-500 border border-blue-500"
-                      key={index}
-                    >
-                      {size}
-                    </span>
+                  item.available_sizes.map((availableSize, index) => (
+                    <label key={index} className="flex items-center gap-2">
+                      <input
+                        type="radio"
+                        name="size"
+                        value={availableSize}
+                        checked={size === availableSize}
+                        onChange={() => setSize(availableSize)}
+                        className="mr-1"
+                      />
+                      {availableSize}
+                    </label>
                   ))
                 ) : (
                   <div>No sizes available</div>
                 )}
               </div>
+              {errors.size && (
+                <span className="text-red-500 block mt-2">{errors.size}</span>
+              )}
               <div className="mt-6 flex justify-between items-center">
                 <span className="font-bold text-2xl p-2 rounded-lg shadow-md">
                   ${price.toFixed(2)}
                 </span>
-               
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="md:p-8 pt-7 pb-7 p-3 rounded-lg shadow-lg  flex flex-col gap-6">
+
+      <div className="md:p-8 pt-7 pb-7 p-3 rounded-lg shadow-lg flex flex-col gap-6">
         <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-          <div className="flex justify-between">
-            <div className="w-1/2">
+          <div className="flex flex-col md:flex-row gap-6">
+            <div className="w-full md:w-1/2">
               <input
                 type="text"
                 name="firstName"
@@ -171,7 +178,7 @@ const Payment = () => {
                 <span className="text-red-500">{errors.firstName}</span>
               )}
             </div>
-            <div className="w-1/2 ml-1">
+            <div className="w-full md:w-1/2">
               <input
                 type="text"
                 name="lastName"
@@ -192,7 +199,7 @@ const Payment = () => {
               placeholder="Email"
               value={form.email}
               onChange={handleInputChange}
-              className="ml-1 rounded-lg p-2 w-full border"
+              className="rounded-lg p-2 w-full border"
             />
             {errors.email && (
               <span className="text-red-500">{errors.email}</span>
@@ -205,7 +212,7 @@ const Payment = () => {
               placeholder="Phone Number"
               value={form.phoneNumber}
               onChange={handleInputChange}
-              className="ml-1 rounded-lg p-2 w-full border"
+              className="rounded-lg p-2 w-full border"
             />
             {errors.phoneNumber && (
               <span className="text-red-500">{errors.phoneNumber}</span>
@@ -218,7 +225,7 @@ const Payment = () => {
               placeholder="Address"
               value={form.address}
               onChange={handleInputChange}
-              className="ml-1 rounded-lg p-2 w-full border"
+              className="rounded-lg p-2 w-full border"
             />
             {errors.address && (
               <span className="text-red-500">{errors.address}</span>
@@ -231,13 +238,13 @@ const Payment = () => {
               placeholder="Street"
               value={form.street}
               onChange={handleInputChange}
-              className="ml-1 rounded-lg p-2 w-full border"
+              className="rounded-lg p-2 w-full border"
             />
             {errors.street && (
               <span className="text-red-500">{errors.street}</span>
             )}
           </div>
-          <div className="flex gap-3 items-center ">
+          <div className="flex gap-3 items-center">
             <label>Select Country:</label>
             <select
               name="country"
@@ -261,7 +268,7 @@ const Payment = () => {
               <option value="karnataka">Karnataka</option>
             </select>
           </div>
-          <div className="mt-4 ">
+          <div className="mt-4">
             <label>Payment Method:</label>
             <div className="flex gap-4 flex-wrap">
               <label className="flex items-center">
@@ -284,7 +291,7 @@ const Payment = () => {
                   onChange={handleInputChange}
                   className="mr-2"
                 />
-               cashOnPay
+                Cash on Delivery
               </label>
               <label className="flex items-center">
                 <input
@@ -310,42 +317,52 @@ const Payment = () => {
               </label>
             </div>
           </div>
-          <div className="flex gap-3 items-center p-2 rounded-lg shadow-md">
-                Set Quy :  <div
-                type="btn"
-                    className="p-2 bg-blue-500 text-white rounded-lg"
-                    onClick={incrementQuantity}
-                  >
-                    +
-                  </div>
-                  <span>{quantity}</span>
-                  <div
-                    className="p-2 bg-blue-500 text-white rounded-lg"
-                    onClick={decrementQuantity}
-                  >
-                    -
-                  </div> <span className="font-bold text-2xl p-2 rounded-lg shadow-md">
-                  ${price.toFixed(2)}
-                </span>
-
-                <div className="flex gap-3 items-center">
-                 <span className=" font-semibold"> Select Sizes :</span>
-                 {item.available_sizes ? (
-                  item.available_sizes.map((size, index) => (
-                    <label className="ml-3" key={index}>
-                           {size}
-
-                        <input onClick={()=>getSize(size)} type="radio" className="ml-1" name="size" />
-                       
-                 
-       
-                    </label>
-                  ))
-                ) : (
-                  <div>No sizes available</div>
-                )}
-                </div>
-                </div>
+          <div className="mt-6 flex gap-3 items-center">
+            <span className="font-semibold">Quantity:</span>
+            <button
+              type="button"
+              className="p-2 bg-blue-500 text-white rounded-lg"
+              onClick={incrementQuantity}
+            >
+              +
+            </button>
+            <span>{quantity}</span>
+            <button
+              type="button"
+              className="p-2 bg-blue-500 text-white rounded-lg"
+              onClick={decrementQuantity}
+            >
+              -
+            </button>
+            <span className="font-bold text-2xl p-2 rounded-lg shadow-md">
+              ${price.toFixed(2)}
+            </span>
+          </div>
+          <div className="mt-6 flex flex-col">
+            <span className="font-semibold">Select Size:</span>
+            <div className="flex gap-4 flex-wrap">
+              {item.available_sizes ? (
+                item.available_sizes.map((availableSize, index) => (
+                  <label key={index} className="flex items-center gap-2">
+                    <input
+                      type="radio"
+                      name="size"
+                      value={availableSize}
+                      checked={size === availableSize}
+                      onChange={() => setSize(availableSize)}
+                      className="mr-2"
+                    />
+                    {availableSize}
+                  </label>
+                ))
+              ) : (
+                <div>No sizes available</div>
+              )}
+            </div>
+            {errors.size && (
+              <span className="text-red-500 mt-2">{errors.size}</span>
+            )}
+          </div>
           <div className="mt-8">
             <button
               type="submit"

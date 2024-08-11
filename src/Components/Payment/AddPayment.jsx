@@ -20,43 +20,62 @@ export const PaymentAdd = async (item, qty, price, Payment, size, useInfo) => {
             };
 
             const res = await axios.get(`${userAPI}/${user}`);
-            const currentOrders = res.data.orders || [];
+            const GetOrders = res.data.orders || {};
 
-            const updatedOrders = [...currentOrders, newItem];
+            // Check if the item already exists
+            if (GetOrders[item.id]) {
+                // Update the existing item's quantity and price
+                const existingItem = GetOrders[item.id];
+                existingItem.qty += qty;
+                existingItem.qtyPrice += price;
+                existingItem.paymentMethord = Payment;
+                existingItem.size = size;
+                existingItem.userInfo = useInfo;
+                existingItem.date = date;
+            } else {
+                // Add the new item
+                GetOrders[item.id] = newItem;
+            }
 
-            await axios.patch(`${userAPI}/${user}`, { orders: updatedOrders });
-
-            console.log("Order added:", newItem);
-            toast.success("Thanks for ordering!");
+            // Update the user's order
+            await axios.patch(`${userAPI}/${user}`, { orders: GetOrders });
+            console.log("Item added/updated:", newItem);
+          
         } catch (err) {
-            console.error("Order processing error:", err);
-            toast.error("Failed to process the order. Please try again.");
+            console.log("Order time error:", err);
         }
     } else {
-        toast.warning("Please log in.");
+        toast.warning("Please Log in");
     }
 };
-export const CancelOrder = async (item, i) => {
-  try {
-      const user = localStorage.getItem("id");
-      if (!user) {
-          toast.warning("Please log in to cancel your order.");
-          return;
-      }
 
-      const response = await axios.get(`${userAPI}/${user}`);
-      const currentOrders = response.data.orders || [];
+export const CancelOrder = async (item) => {
+    try {
+        const user = localStorage.getItem("id");
+        if (!user) {
+            toast.warning("Please Log in");
+            return;
+        }
 
-      // Filter out the item to be removed by its index
-      const updatedOrders = currentOrders.filter((order, index) => index !== i);
+        const response = await axios.get(`${userAPI}/${user}`);
+        const currentCart = response.data.orders;
 
-      // Update the orders in the database
-      await axios.patch(`${userAPI}/${user}`, { orders: updatedOrders });
+        if (!currentCart || !currentCart[item.id]) {
+            toast.warning("Item not found in your orders");
+            return;
+        }
 
-      console.log("Order canceled:", item);
-      toast.success("Order canceled successfully.");
-  } catch (error) {
-      console.error("Error canceling the order:", error);
-      toast.error("Failed to cancel the order. Please try again.");
-  }
+        // Remove the item from the orders
+        // eslint-disable-next-line no-unused-vars
+        const { [item.id]: removed, ...remainingItems } = currentCart;
+
+        // Update the user's order
+        await axios.patch(`${userAPI}/${user}`, { orders: remainingItems });
+
+        console.log("Item removed:", item);
+        toast.success("Order has been canceled");
+    } catch (error) {
+        console.error("Error canceling the order:", error);
+        toast.error("Failed to cancel the order");
+    }
 };
