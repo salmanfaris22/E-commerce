@@ -163,8 +163,8 @@
           "discount": 50,
           "warranty": "1 year",
           "additional_details": "Available in limited colors. Offer valid while supplies last.",
-          "qty": 11,
-          "qtyPrice": 1650,
+          "qty": 15,
+          "qtyPrice": 2250,
           "paymentMethord": "creditCard",
           "size": "10",
           "userInfo": {
@@ -173,14 +173,14 @@
             "email": "salmanfariskalm@gmial.com",
             "phoneNumber": "09961821977",
             "address": "Malappuram",
-            "street": "sasa",
+            "street": "sdfa",
             "country": "india",
             "state": "kerala",
             "paymentMethod": "creditCard"
           },
           "status": "outForDelivery",
           "userId": "5ac6",
-          "date": "2024-08-11T09:47:54.128Z"
+          "date": "2024-08-12T05:47:55.043Z"
         },
         "4": {
           "id": "4",
@@ -255,7 +255,7 @@
             "state": "kerala",
             "paymentMethod": "creditCard"
           },
-          "status": "delivers",
+          "status": "outForDelivery",
           "userId": "5ac6",
           "date": "2024-08-11T09:47:54.155Z"
         },
@@ -294,7 +294,7 @@
             "state": "kerala",
             "paymentMethod": "creditCard"
           },
-          "status": "pending",
+          "status": "outForDelivery",
           "userId": "5ac6",
           "date": "2024-08-11T09:46:47.555Z"
         }
@@ -513,7 +513,7 @@
           "userId": "daa8"
         }
       },
-      "admin": true,
+      "admin": false,
       "bloked": ""
     },
     {
@@ -1186,6 +1186,185 @@
       "lname": "Faris",
       "email": "salma@gmail.com",
       "password": "1111"
+    },
+    {
+      "id": "3e1b",
+      "fname": "jasu",
+      "lname": "jasi",
+      "email": "jasi@gmail.com",
+      "password": "aaa",
+      "cart": {
+        "2": {
+          "id": "2",
+          "name": "New Balance",
+          "description": "Modern and stylish shoes with excellent cushioning and support.",
+          "price": 150,
+          "category": "Men",
+          "available_sizes": [
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "brand": "New-balance",
+          "image_url": "https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw769f9d4b/images/page-designer/2024/July/16130_Comp_X_Womens_Shoes.jpg",
+          "in_stock": true,
+          "special_offer": "Buy one get one 50% off",
+          "discount": 50,
+          "warranty": "1 year",
+          "additional_details": "Available in limited colors. Offer valid while supplies last."
+        }
+      }
+    },
+    {
+      "id": "760e",
+      "fname": "AM",
+      "lname": "NA",
+      "email": "amna@gmail.com",
+      "password": "aaa",
+      "cart": {
+        "1": {
+          "id": "1",
+          "name": "Puma",
+          "description": "Comfortable and stylish running shoes with superior cushioning.",
+          "price": 180,
+          "category": "Men",
+          "available_sizes": [
+            "8",
+            "9",
+            "10",
+            "11"
+          ],
+          "brand": "Puma",
+          "image_url": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/396464/07/sv01/fnd/AUS/fmt/png/Palermo-Lth-Unisex-Sneakers",
+          "in_stock": true,
+          "special_offer": "10% off with code BOOST10",
+          "discount": 10,
+          "warranty": "2 years",
+          "additional_details": "Limited stock available. Offer valid until end of month."
+        },
+        "2": {
+          "id": "2",
+          "name": "New Balance",
+          "description": "Modern and stylish shoes with excellent cushioning and support.",
+          "price": 150,
+          "category": "Men",
+          "available_sizes": [
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "brand": "New-balance",
+          "image_url": "https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw769f9d4b/images/page-designer/2024/July/16130_Comp_X_Womens_Shoes.jpg",
+          "in_stock": true,
+          "special_offer": "Buy one get one 50% off",
+          "discount": 50,
+          "warranty": "1 year",
+          "additional_details": "Available in limited colors. Offer valid while supplies last."
+        },
+        "3": {
+          "id": "3",
+          "name": "Nike X-3 Sh",
+          "description": "Retro-inspired shoes with a comfortable fit and bold design.",
+          "price": 115,
+          "category": "Men",
+          "available_sizes": [
+            "9",
+            "10",
+            "11"
+          ],
+          "brand": "Nike",
+          "image_url": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3ffcfac2-025a-4107-ac04-5fb938d3a5f6/KILLSHOT+2+LEATHER.png",
+          "in_stock": false,
+          "special_offer": "None",
+          "discount": 0,
+          "warranty": "1 year",
+          "additional_details": "Out of stock. Expected restock in two weeks."
+        }
+      },
+      "orders": {
+        "1": {
+          "id": "1",
+          "name": "Puma",
+          "description": "Comfortable and stylish running shoes with superior cushioning.",
+          "price": 180,
+          "category": "Men",
+          "available_sizes": [
+            "8",
+            "9",
+            "10",
+            "11"
+          ],
+          "brand": "Puma",
+          "image_url": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/396464/07/sv01/fnd/AUS/fmt/png/Palermo-Lth-Unisex-Sneakers",
+          "in_stock": true,
+          "special_offer": "10% off with code BOOST10",
+          "discount": 10,
+          "warranty": "2 years",
+          "additional_details": "Limited stock available. Offer valid until end of month.",
+          "quantity": 3,
+          "selectedSize": "8",
+          "qty": 3,
+          "qtyPrice": 540,
+          "paymentMethord": "creditCard",
+          "size": "8",
+          "userInfo": {
+            "firstName": "Salman",
+            "lastName": "Faris",
+            "email": "salmanfariskalm@gmial.com",
+            "phoneNumber": "09961821977",
+            "address": "Malappuram",
+            "street": "sasa",
+            "country": "india",
+            "state": "kerala",
+            "paymentMethod": "creditCard"
+          },
+          "status": "inTransist",
+          "userId": "760e",
+          "date": "2024-08-12T04:24:14.205Z"
+        },
+        "2": {
+          "id": "2",
+          "name": "New Balance",
+          "description": "Modern and stylish shoes with excellent cushioning and support.",
+          "price": 150,
+          "category": "Men",
+          "available_sizes": [
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "brand": "New-balance",
+          "image_url": "https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw769f9d4b/images/page-designer/2024/July/16130_Comp_X_Womens_Shoes.jpg",
+          "in_stock": true,
+          "special_offer": "Buy one get one 50% off",
+          "discount": 50,
+          "warranty": "1 year",
+          "additional_details": "Available in limited colors. Offer valid while supplies last.",
+          "quantity": 2,
+          "selectedSize": "8",
+          "qty": 2,
+          "qtyPrice": 300,
+          "paymentMethord": "creditCard",
+          "size": "8",
+          "userInfo": {
+            "firstName": "Salman",
+            "lastName": "Faris",
+            "email": "salmanfariskalm@gmial.com",
+            "phoneNumber": "09961821977",
+            "address": "Malappuram",
+            "street": "sasa",
+            "country": "india",
+            "state": "kerala",
+            "paymentMethod": "creditCard"
+          },
+          "status": "outForDelivery",
+          "userId": "760e",
+          "date": "2024-08-12T04:24:14.222Z"
+        }
+      }
     }
   ],
   "item": [

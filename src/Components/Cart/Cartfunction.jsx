@@ -8,16 +8,18 @@ export const handleAddCart = async (item) => {
     try {
       const response = await axios.get(`${userAPI}/${user}`);
       const currentCart = response.data.cart;
-      const  dupilcate = Object.values(currentCart).filter((e)=>e.id===item.id)
 
-      if(dupilcate.length!==0){
-        toast.warning("alredy in cart")
-      }else{
-        const updatedCart = {
-          ...currentCart,
-          [item.id]: item,
-        };
-  
+      if(currentCart){
+        const  dupilcate = Object.values(currentCart).filter((e)=>e.id===item.id)
+        if(dupilcate.length!==0){
+          toast.warning("alredy in cart")
+        }else{
+          const updatedCart = {
+            ...currentCart,
+            [item.id]: item,
+
+          };
+
   
   
         await axios.patch(`${userAPI}/${user}`, { cart: updatedCart });
@@ -34,6 +36,33 @@ export const handleAddCart = async (item) => {
           transition: Bounce,
         });
       }
+      }else{
+        const updatedCart = {
+          ...currentCart,
+          [item.id]: item,
+
+        };
+
+
+
+      await axios.patch(`${userAPI}/${user}`, { cart: updatedCart });
+
+      toast("🦄 Item successfully added to cart!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+      }
+     
+
+     
+  
       
     } catch (error) {
       toast.warning("Something went Wrong");
