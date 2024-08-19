@@ -16,6 +16,7 @@ const NavBarAdmin = ({ setAdmin }) => {
   const handleLockOut = () => {
     localStorage.clear("admin");
     navigate("/");
+    window.location.reload()
     setAdmin(false);
   };
 

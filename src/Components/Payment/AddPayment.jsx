@@ -22,9 +22,9 @@ export const PaymentAdd = async (item, qty, price, Payment, size, useInfo) => {
             const res = await axios.get(`${userAPI}/${user}`);
             const GetOrders = res.data.orders || {};
 
-            // Check if the item already exists
+            
             if (GetOrders[item.id]) {
-                // Update the existing item's quantity and price
+              
                 const existingItem = GetOrders[item.id];
                 existingItem.qty += qty;
                 existingItem.qtyPrice += price;
@@ -33,11 +33,11 @@ export const PaymentAdd = async (item, qty, price, Payment, size, useInfo) => {
                 existingItem.userInfo = useInfo;
                 existingItem.date = date;
             } else {
-                // Add the new item
+               
                 GetOrders[item.id] = newItem;
             }
 
-            // Update the user's order
+         
             await axios.patch(`${userAPI}/${user}`, { orders: GetOrders });
             console.log("Item added/updated:", newItem);
           
@@ -65,11 +65,11 @@ export const CancelOrder = async (item) => {
             return;
         }
 
-        // Remove the item from the orders
+        
         // eslint-disable-next-line no-unused-vars
         const { [item.id]: removed, ...remainingItems } = currentCart;
 
-        // Update the user's order
+       
         await axios.patch(`${userAPI}/${user}`, { orders: remainingItems });
 
         console.log("Item removed:", item);

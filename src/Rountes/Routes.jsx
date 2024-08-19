@@ -15,7 +15,9 @@ import FullCategory from '../Components/CategoriesPage/BrandCategrory/FullCatego
 
 import Filter from '../Components/CategoriesPage/BrandCategrory/Filter'
 import TrackOrder from '../Components/Payment/TrackOrder/TrackOrder'
-import HomeAdmin from '../Admin/AdminUser/Home/Home'
+import Default from '../Components/Defailt'
+
+// import HomeAdmin from '../Admin/AdminUser/Home/Home'
 
 
 
@@ -29,6 +31,7 @@ const RoutesPage = () => {
     <Routes>
         
         <Route path='/' element={<Home/>}/>
+        <Route path='*' element={<Default/>}/>
           <Route path='login' element={<Login/>}/>
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/byProducts/:id' element={<ByProducts/>}/>
@@ -42,8 +45,11 @@ const RoutesPage = () => {
            <Route path='/trackOrder' element={<TrackOrder/>}/>
         <Route path='register' element={<Register/>}/> 
         {/* Admin routees */}
+        {/* <React.Suspense fallback={<div>Loading...</div>}>
         <Route path='/AdminHome' element={<HomeAdmin/>}/>
          
+                </React.Suspense> */}
+       
 
     </Routes>
 

@@ -105,7 +105,12 @@ const Login = () => {
                     Register
                   </div>
                 </Link>
+                
               </div>
+              <div>
+                  admin id: salman@gmail.com
+                    pass :salman
+                </div>
             </form>
           </div>
           <div className="md:w-1/2 flex justify-center items-center p-4">

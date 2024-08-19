@@ -47,7 +47,7 @@ const NavBar = ({ setAdmin }) => {
         setRecords(res.data);
       })
       .catch((err) => console.log(err));
-
+    
     setAdmin(localStorage.getItem("admin") === "true");
 
     if (localStorage.getItem("id")) {
@@ -75,6 +75,7 @@ const NavBar = ({ setAdmin }) => {
 
   const handleLogout = () => {
     localStorage.removeItem("id");
+    localStorage.clear()
     toast.success("Logged Out");
     setIsLoggedin(true);
     setShowMenu(false);
@@ -334,6 +335,7 @@ const NavBar = ({ setAdmin }) => {
                   <FaUser />
                   Logout
                 </li>
+               
               </div>
             )}
           </ul>

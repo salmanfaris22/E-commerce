@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { userAPI } from "../API/API_URL";
 import { Link } from "react-router-dom";
-import {  handleRemovecart } from "./Cartfunction"; // Import PaymentAdd
+import { handleRemovecart } from "./Cartfunction"; // Import PaymentAdd
 import { Bounce, ToastContainer, toast } from 'react-toastify';
 import { PaymentAdd } from "../Payment/AddPayment";
 
@@ -97,18 +97,10 @@ const Cart = () => {
     }
   };
 
-  const handlePlus = (item) => {
+  const handleQuantityChange = (itemId, delta) => {
     setBy(by.map((byItem) =>
-      byItem.id === item.id && byItem.selectedSize === item.selectedSize
-        ? { ...byItem, quantity: byItem.quantity + 1 }
-        : byItem
-    ));
-  };
-
-  const handleMinus = (item) => {
-    setBy(by.map((byItem) =>
-      byItem.id === item.id && byItem.selectedSize === item.selectedSize && byItem.quantity > 1
-        ? { ...byItem, quantity: byItem.quantity - 1 }
+      byItem.id === itemId
+        ? { ...byItem, quantity: Math.max(byItem.quantity + delta, 1) }
         : byItem
     ));
   };
@@ -128,17 +120,26 @@ const Cart = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Call PaymentAdd for each item in the `by` array
       for (const item of by) {
         await PaymentAdd(item, item.quantity, item.quantity * item.price, form.paymentMethod, item.selectedSize, form);
         if(localStorage.getItem("id")){
           toast.success("Thanks For Ordering");
-       }
+           const user = localStorage.getItem("id")
+          await axios.patch(`${userAPI}/${user}`, { cart: "" });
+  
+            try {
+              const userId = localStorage.getItem("id");
+              const res = await axios.get(`${userAPI}/${userId}`);
+              const cartList = res.data.cart;
+              setCartItems(Object.values(cartList));
+            } catch (err) {
+              console.log("Error in carts:", err);
+            }
+          
       
-       
-          window.location.reload();
+     
+        }
       }
-      // Reset the form and by array after submission
       setBy([]);
       setForm({
         firstName: "",
@@ -248,47 +249,59 @@ const Cart = () => {
         </div>
       </div>
 
-      {/* Total By Section */}
+      {/* Order Summary Section */}
       <div className="p-4 border rounded-md shadow-md">
         {by.length > 0 && (
-          <div className="flex flex-col gap-2">
-            <h1 className="text-xl font-semibold">Total By:</h1>
-            {by.map((item) => (
-              <div key={`${item.id}-${item.selectedSize}`} className="p-2 shadow-md rounded-md bg-white">
-                <div className="flex justify-between">
-                  <span className="font-semibold">{item.name}</span>
-                  <span className="font-bold text-blue-500">{item.price}$</span>
-                </div>
-                <span className="text-gray-500 text-sm">Size: {item.selectedSize}</span>
-                <div className="flex items-center gap-2 mt-2">
-                  <button onClick={() => handlePlus(item)} className="bg-blue-500 text-white p-1 rounded-md">+</button>
-                  <span>{item.quantity}</span>
-                  <button onClick={() => handleMinus(item)} className="bg-blue-500 text-white p-1 rounded-md">-</button>
-                  <button
-                    onClick={() => handleRemoveFromBy(item.id, item.selectedSize)}
-                    className="ml-auto bg-red-500 text-white p-1 rounded-md"
-                  >
-                    Remove
-                  </button>
-                </div>
-              </div>
-            ))}
+          <div>
+            <h2 className="text-xl font-semibold">Order Summary</h2>
             <div className="mt-4">
-              <h2 className="text-xl font-semibold">Total Price: {totalPrice}$</h2>
-              <button
-                onClick={() => setShowForm(true)}
-                className="mt-2 bg-green-500 text-white p-2 rounded-md w-full"
-              >
-                Place Order
-              </button>
+              {by.map((item) => (
+                <div key={item.id} className="flex justify-between items-center py-2 border-b">
+                  <div>
+                    <span className="font-semibold">{item.name}</span> - Size: {item.selectedSize} - Quantity: {item.quantity}
+                  </div>
+                  <div className="flex items-center">
+                    <button
+                      onClick={() => handleQuantityChange(item.id, -1)}
+                      className="bg-gray-200 text-gray-700 px-2 py-1 rounded-md"
+                      disabled={item.quantity <= 1}
+                    >
+                      -
+                    </button>
+                    <span className="mx-2">{item.quantity}</span>
+                    <button
+                      onClick={() => handleQuantityChange(item.id, 1)}
+                      className="bg-gray-200 text-gray-700 px-2 py-1 rounded-md"
+                    >
+                      +
+                    </button>
+                    <button
+                      onClick={() => handleRemoveFromBy(item.id, item.selectedSize)}
+                      className="ml-2 bg-red-500 text-white px-2 py-1 rounded-md"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                </div>
+              ))}
             </div>
+            <div className="mt-4 flex justify-between items-center font-bold">
+              <span>Total Price:</span>
+              <span>{totalPrice}$</span>
+            </div>
+            <button
+              onClick={() => setShowForm(true)}
+              className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md"
+            >
+              Checkout
+            </button>
           </div>
         )}
       </div>
 
       {/* Payment Form Section */}
       {showForm && (
-        <div className="fixed  inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
           <div className="bg-white p-4 rounded-md shadow-lg w-96">
             <h2 className="text-xl font-semibold">Payment Information</h2>
             <form onSubmit={handleFormSubmit} className="mt-4 space-y-4">
