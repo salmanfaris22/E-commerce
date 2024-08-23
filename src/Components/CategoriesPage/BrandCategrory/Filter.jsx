@@ -209,7 +209,7 @@ const Filter = () => {
             </div>
           </div>
         )}
-        <div className="text-3xl ">Mens</div>
+        <div className="text-3xl ">{id}</div>
         <div className="flex gap-3  justify-center items-center text-2xl">
           Filter
           <FaFilter onClick={handlefilter} />

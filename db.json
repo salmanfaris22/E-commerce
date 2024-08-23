@@ -8,48 +8,8 @@
       "password": "salman",
       "admin": true,
       "superAdmin": true,
-      "cart": "",
+      
       "orders": {
-        "2": {
-          "id": "2",
-          "name": "New Balance",
-          "description": "Modern and stylish shoes with excellent cushioning and support.",
-          "price": 150,
-          "category": "Men",
-          "available_sizes": [
-            "7",
-            "8",
-            "9",
-            "10"
-          ],
-          "brand": "New-balance",
-          "image_url": "https://www.newbalance.com/dw/image/v2/AAGI_PRD/on/demandware.static/-/Library-Sites-NBUS-NBCA/default/dw769f9d4b/images/page-designer/2024/July/16130_Comp_X_Womens_Shoes.jpg",
-          "in_stock": true,
-          "special_offer": "Buy one get one 50% off",
-          "discount": 50,
-          "warranty": "1 year",
-          "additional_details": "Available in limited colors. Offer valid while supplies last.",
-          "quantity": 1,
-          "selectedSize": "7",
-          "qty": 1,
-          "qtyPrice": 150,
-          "paymentMethord": "creditCard",
-          "size": "7",
-          "userInfo": {
-            "firstName": "Salman",
-            "lastName": "Faris",
-            "email": "salmanfariskalm@gmial.com",
-            "phoneNumber": "09961821977",
-            "address": "Malappuram",
-            "street": "salman",
-            "country": "india",
-            "state": "kerala",
-            "paymentMethod": "creditCard"
-          },
-          "status": "pending",
-          "userId": "5ac6",
-          "date": "2024-08-19T09:57:22.351Z"
-        },
         "4": {
           "id": "4",
           "name": "Adidas Clasiic",
@@ -84,9 +44,48 @@
             "state": "kerala",
             "paymentMethod": "creditCard"
           },
-          "status": "pending",
+          "status": "exchange",
           "userId": "5ac6",
           "date": "2024-08-19T09:57:22.365Z"
+        },
+        "11": {
+          "id": "11",
+          "name": "Adidas NMD",
+          "description": "Sleek and stylish sneakers with a comfortable fit for any occasion.",
+          "price": 160,
+          "category": "Men",
+          "available_sizes": [
+            "8",
+            "9",
+            "10"
+          ],
+          "brand": "Adidas",
+          "image_url": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/62aabd93a80240b1afbdb51b65076aab_9366/Forum_Low_Shoes_Blue_IG3784_01_standard.jpg",
+          "in_stock": true,
+          "special_offer": "15% off with code NMD15",
+          "discount": 15,
+          "warranty": "1 year",
+          "additional_details": "Offer valid while supplies last. Free returns.",
+          "quantity": 1,
+          "selectedSize": "10",
+          "qty": 1,
+          "qtyPrice": 160,
+          "paymentMethord": "creditCard",
+          "size": "10",
+          "userInfo": {
+            "firstName": "Salman",
+            "lastName": "Faris",
+            "email": "salmanfariskalm@gmial.com",
+            "phoneNumber": "09961821977",
+            "address": "Malappuram",
+            "street": "99",
+            "country": "india",
+            "state": "kerala",
+            "paymentMethod": "creditCard"
+          },
+          "status": "pending",
+          "userId": "5ac6",
+          "date": "2024-08-21T05:38:11.057Z"
         },
         "25": {
           "id": "25",
@@ -108,24 +107,61 @@
           "additional_details": "Only a few left in stock.",
           "quantity": 1,
           "selectedSize": "9",
-          "qty": 1,
-          "qtyPrice": 137,
+          "qty": 3,
+          "qtyPrice": 411,
           "paymentMethord": "creditCard",
-          "size": "9",
+          "size": "7",
           "userInfo": {
             "firstName": "Salman",
             "lastName": "Faris",
             "email": "salmanfariskalm@gmial.com",
             "phoneNumber": "09961821977",
             "address": "Malappuram",
-            "street": "salman",
+            "street": "palayam",
             "country": "india",
             "state": "kerala",
             "paymentMethod": "creditCard"
           },
-          "status": "pending",
+          "status": "delivers",
           "userId": "5ac6",
-          "date": "2024-08-19T09:58:43.454Z"
+          "date": "2024-08-21T05:37:01.283Z"
+        },
+        "2123123": {
+          "id": "2123123",
+          "name": "NIke",
+          "description": "The best Nike shoes The best Nike shoes",
+          "price": 399,
+          "category": "Men",
+          "available_sizes": [
+            "5",
+            "6",
+            "7"
+          ],
+          "brand": "Nike",
+          "image_url": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5a38f341-a2ab-4802-acee-48a886b877ea/NIKE+SB+ZOOM+POGO+PLUS.png",
+          "in_stock": "yes",
+          "special_offer": "10% offer",
+          "discount": "40% ",
+          "warranty": "2 year",
+          "additional_details": "The best Nike shoes for your feet, according to a podiatrist",
+          "qty": 2,
+          "qtyPrice": 798,
+          "paymentMethord": "creditCard",
+          "size": "6",
+          "userInfo": {
+            "firstName": "jasuuu",
+            "lastName": "Faris",
+            "email": "salmanfariskalm@gmial.com",
+            "phoneNumber": "09961821977",
+            "address": "Malappuram",
+            "street": "12311aas",
+            "country": "india",
+            "state": "kerala",
+            "paymentMethod": "creditCard"
+          },
+          "status": "inTransist",
+          "userId": "5ac6",
+          "date": "2024-08-21T05:28:14.323Z"
         }
       }
     },
@@ -273,7 +309,7 @@
         }
       },
       "admin": false,
-      "bloked": "bloked",
+      "bloked": "",
       "orders": {
         "11": {
           "id": "11",
@@ -364,7 +400,7 @@
       "email": "salmanfariskalm@gmial.com",
       "password": "sasa",
       "admin": false,
-      "bloked": "bloked"
+      "bloked": ""
     },
     {
       "id": "af86",
@@ -536,7 +572,7 @@
             "state": "kerala",
             "paymentMethod": "upi"
           },
-          "status": "outForDelivery",
+          "status": "inTransist",
           "userId": "af86"
         }
       },
@@ -583,7 +619,7 @@
             "state": "kerala",
             "paymentMethod": "creditCard"
           },
-          "status": "outForDelivery",
+          "status": "inTransist",
           "userId": "908a",
           "date": "2024-08-07T15:53:04.241Z"
         },
@@ -704,7 +740,7 @@
             "state": "kerala",
             "paymentMethod": "upi"
           },
-          "status": "inTransist",
+          "status": "outForDelivery",
           "userId": "245c",
           "date": "2024-08-07T15:57:38.614Z"
         }
@@ -888,7 +924,7 @@
             "state": "kerala",
             "paymentMethod": "creditCard"
           },
-          "status": "inTransist",
+          "status": "outForDelivery",
           "userId": "03ef",
           "date": "2024-08-08T05:59:10.600Z"
         },
@@ -925,11 +961,12 @@
             "state": "kerala",
             "paymentMethod": "creditCard"
           },
-          "status": "Cancelled",
+          "status": "outForDelivery",
           "userId": "03ef",
           "date": "2024-08-08T05:58:40.717Z"
         }
-      }
+      },
+      "admin": false
     },
     {
       "id": "2bcc",
@@ -1004,7 +1041,8 @@
       "lname": "sa",
       "email": "sameen@gmail.com",
       "password": "aaa",
-      "bloked": ""
+      "bloked": "",
+      "admin": true
     },
     {
       "id": "9734",
@@ -1056,7 +1094,8 @@
           "warranty": "1 year",
           "additional_details": "Available in limited colors. Offer valid while supplies last."
         }
-      }
+      },
+      "admin": true
     },
     {
       "id": "760e",
@@ -1162,7 +1201,7 @@
             "state": "kerala",
             "paymentMethod": "creditCard"
           },
-          "status": "inTransist",
+          "status": "outForDelivery",
           "userId": "760e",
           "date": "2024-08-12T04:24:14.205Z"
         },
@@ -1206,7 +1245,8 @@
           "userId": "760e",
           "date": "2024-08-12T04:24:14.222Z"
         }
-      }
+      },
+      "admin": true
     },
     {
       "id": "af1d",
@@ -1331,7 +1371,7 @@
             "state": "kerala",
             "paymentMethod": "creditCard"
           },
-          "status": "delivers",
+          "status": "outForDelivery",
           "userId": "af1d",
           "date": "2024-08-16T03:30:06.430Z"
         },
@@ -1608,7 +1648,7 @@
             "state": "kerala",
             "paymentMethod": "creditCard"
           },
-          "status": "pending",
+          "status": "outForDelivery",
           "userId": "b670",
           "date": "2024-08-19T09:48:41.767Z"
         },
@@ -1647,7 +1687,7 @@
             "state": "kerala",
             "paymentMethod": "creditCard"
           },
-          "status": "pending",
+          "status": "outForDelivery",
           "userId": "b670",
           "date": "2024-08-19T09:48:41.781Z"
         },
@@ -1686,11 +1726,18 @@
             "state": "kerala",
             "paymentMethod": "creditCard"
           },
-          "status": "pending",
+          "status": "outForDelivery",
           "userId": "b670",
           "date": "2024-08-19T09:49:04.266Z"
         }
       }
+    },
+    {
+      "id": "cca1",
+      "fname": "shamel",
+      "lname": "sa",
+      "email": "shameel@gmail.com",
+      "password": "123"
     }
   ],
   "item": [
@@ -2256,45 +2303,6 @@
       "additional_details": "Popular model. Limited availability."
     },
     {
-      "id": "12243524",
-      "name": "fadf",
-      "description": "The best Nike shoes The best Nike shoes",
-      "price": 22,
-      "category": "Men",
-      "available_sizes": [
-        "4",
-        "5",
-        "6",
-        "6"
-      ],
-      "brand": "Nike",
-      "image_url": "https://media-cldnry.s-nbcnews.com/image/upload/newscms/2023_17/1989442/230428-nike-vl-2x1.jpg",
-      "in_stock": false,
-      "special_offer": "10% offer",
-      "discount": "10%",
-      "warranty": "2 year",
-      "additional_details": "Runnig best Sheos "
-    },
-    {
-      "id": "34134",
-      "name": "nike air",
-      "description": "The best Nike shoes The best Nike shoes",
-      "price": 233,
-      "category": "Men",
-      "available_sizes": [
-        "5",
-        "6",
-        "7"
-      ],
-      "brand": "Puma",
-      "image_url": "https://media-cldnry.s-nbcnews.com/image/upload/newscms/2023_17/1989442/230428-nike-vl-2x1.jpg",
-      "in_stock": "yes",
-      "special_offer": "10% offer",
-      "discount": "10%",
-      "warranty": "2 year",
-      "additional_details": "Runnig best Sheos "
-    },
-    {
       "id": "1222",
       "name": "fadf",
       "description": "Modern and stylish shoes with excellent cushioning and support.",
@@ -2329,6 +2337,25 @@
       "in_stock": "yes",
       "special_offer": "10% offer",
       "discount": "10%",
+      "warranty": "2 year",
+      "additional_details": "The best Nike shoes for your feet, according to a podiatrist"
+    },
+    {
+      "id": "2123123",
+      "name": "NIke",
+      "description": "The best Nike shoes The best Nike shoes",
+      "price": 399,
+      "category": "Men",
+      "available_sizes": [
+        "5",
+        "6",
+        "7"
+      ],
+      "brand": "Nike",
+      "image_url": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/5a38f341-a2ab-4802-acee-48a886b877ea/NIKE+SB+ZOOM+POGO+PLUS.png",
+      "in_stock": "yes",
+      "special_offer": "10% offer",
+      "discount": "40% ",
       "warranty": "2 year",
       "additional_details": "The best Nike shoes for your feet, according to a podiatrist"
     }

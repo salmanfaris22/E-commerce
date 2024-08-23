@@ -3,9 +3,11 @@ import { userAPI } from "../API/API_URL";
 import { Bounce, toast } from "react-toastify";
 // eslint-disable-next-line react-refresh/only-export-components
 export const handleAddCart = async (item) => {
+  
   const user = localStorage.getItem("id");
   if (user) {
     try {
+      await TotelCart()
       const response = await axios.get(`${userAPI}/${user}`);
       const currentCart = response.data.cart;
 
@@ -75,6 +77,7 @@ export const handleAddCart = async (item) => {
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const handleRemovecart = async (item) => {
+  TotelCart()
   try {
     const user = localStorage.getItem("id");
 
@@ -92,9 +95,17 @@ export const handleRemovecart = async (item) => {
   }
 };
 
+export async function TotelCart(){
+  const user = localStorage.getItem("id");
 
+  const response = await axios.get(`${userAPI}/${user}`);
+  const currentCart = response.data.cart;
+
+  return Object.keys(currentCart).length
+}
 
 export async function ByFronCart(from,item){
+  TotelCart()
   const user =localStorage.getItem("id")
     if(user){
       

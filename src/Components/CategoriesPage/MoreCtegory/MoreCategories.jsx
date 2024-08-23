@@ -7,6 +7,7 @@ import img5 from "../../../Assets/OutherCasual.avif";
 import img6 from "../../../Assets/Outherrunnig.webp";
 import { Link } from "react-router-dom";
 
+
 const categories = [
   { img: img1, text: "Football", etc: "Let's Play With Me" },
   { img: img2, text: "Kids" },
@@ -17,6 +18,10 @@ const categories = [
 ];
 
 const MoreCategories = () => {
+
+
+
+  
   return (
     <div className="grid grid-cols-1   ">
       {categories.map((category, index) => (

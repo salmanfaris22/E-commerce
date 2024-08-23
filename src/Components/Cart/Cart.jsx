@@ -1,13 +1,14 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { userAPI } from "../API/API_URL";
 import { Link } from "react-router-dom";
-import { handleRemovecart } from "./Cartfunction"; // Import PaymentAdd
+import { handleRemovecart,  } from "./Cartfunction"; // Import PaymentAdd
 import { Bounce, ToastContainer, toast } from 'react-toastify';
 import { PaymentAdd } from "../Payment/AddPayment";
+import { CArtss } from "../../App";
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([]);
+  // const [cartItems, setCartItems] = useState([]);
   const [by, setBy] = useState([]);
   const [selectedSize, setSelectedSize] = useState({});
   const [showForm, setShowForm] = useState(false);
@@ -22,7 +23,7 @@ const Cart = () => {
     state: "kerala",
     paymentMethod: "creditCard",
   });
-
+  const {cartItems,setCartItems}=useContext(CArtss)
   useEffect(() => {
     async function displayCartItems() {
       try {
@@ -40,6 +41,7 @@ const Cart = () => {
 
   const handleRemove = async (item) => {
     try {
+      
       await handleRemovecart(item);
       const userId = localStorage.getItem("id");
       const res = await axios.get(`${userAPI}/${userId}`);

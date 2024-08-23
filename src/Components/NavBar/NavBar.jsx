@@ -11,8 +11,9 @@ import "aos/dist/aos.css";
 import axios from "axios";
 import { ItemsAPI, userAPI } from "../API/API_URL";
 
+
 // eslint-disable-next-line react/prop-types
-const NavBar = ({ setAdmin }) => {
+const NavBar = ({ setAdmin ,cartt}) => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
@@ -21,7 +22,21 @@ const NavBar = ({ setAdmin }) => {
   const [items, setItems] = useState([]);
   const [records, setRecords] = useState([]);
   const [query, setQuery] = useState("");
-
+  // const [carts,setCart]=useState(0)
+  // setCart(TotelCart())
+// useEffect(()=>{
+//     async function abc(){
+//         try{
+//             const t =await TotelCart()
+//              setCart(t)
+//         }catch(err){
+//           console.log(err);
+//         }
+//      }
+// console.log("dd");
+//      abc()
+// },[])
+console.log("dd");
   const filter = (e) => {
     const value = e.target.value.toLowerCase();
     setQuery(value);
@@ -209,6 +224,7 @@ const NavBar = ({ setAdmin }) => {
         </div>
         <div className="flex gap-6 text-2xl">
           <Link to="/cart">
+             {cartt}
             <FaCartShopping data-aos="zoom-out-down" data-aos-duration="2000" />
           </Link>
           <div className="relative">
@@ -343,6 +359,8 @@ const NavBar = ({ setAdmin }) => {
       )}
     </div>
   );
+
+  
 };
 
 export default NavBar;
