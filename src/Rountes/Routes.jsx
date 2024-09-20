@@ -1,10 +1,11 @@
 import  { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { Register } from '../Components/auth/Register';
 
 // Lazy load the components
 const Home = lazy(() => import('../Components/Home/Home'));
 const Login = lazy(() => import('../Components/auth/Login'));
-const Register = lazy(() => import('../Components/auth/Register'));
+// const Register = lazy(() => import('../Components/auth/Register'));
 const Cart = lazy(() => import('../Components/Cart/Cart'));
 const ByProducts = lazy(() => import('../Components/ByProdeact/ByProducts'));
 const Paymnet = lazy(() => import('../Components/Payment/Paymnet'));
@@ -37,7 +38,7 @@ const RoutesPage = () => {
         <Route path='/Categories/:id' element={<FullCategory />} />
         <Route path='/filterCategories/:id' element={<Filter />} />
         <Route path='/trackOrder' element={<TrackOrder />} />
-        <Route path='register' element={<Register />} />
+        <Route path='/register' element={<Register />} />
         {/* Admin routes */}
         {/* <Route path='/AdminHome' element={<HomeAdmin />} /> */}
       </Routes>

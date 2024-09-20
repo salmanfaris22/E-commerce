@@ -39,7 +39,7 @@ export const PaymentAdd = async (item, qty, price, Payment, size, useInfo) => {
 
          
             await axios.patch(`${userAPI}/${user}`, { orders: GetOrders });
-            console.log("Item added/updated:", newItem);
+           
           
         } catch (err) {
             console.log("Order time error:", err);
@@ -72,7 +72,7 @@ export const CancelOrder = async (item) => {
        
         await axios.patch(`${userAPI}/${user}`, { orders: remainingItems });
 
-        console.log("Item removed:", item);
+        
         toast.success("Order has been canceled");
     } catch (error) {
         console.error("Error canceling the order:", error);

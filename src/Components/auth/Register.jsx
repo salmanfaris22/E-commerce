@@ -1,22 +1,16 @@
-import { userAPI } from "../API/API_URL";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import LoginImg from "../../Assets/pexels-craytive-1456706.jpg";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
+import { AllUSers } from "../../features/API";
 export const Register = () => {
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const [input, setInput] = useState({});
   const [error, setError] = useState({});
-  const [email, setEmail] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get(userAPI)
-      .then((res) => setEmail(res.data))
-      .catch((rs) => console.log(rs));
-  }, []);
 
   const handleChange = (e) => {
     setInput({
@@ -27,7 +21,7 @@ export const Register = () => {
 
   const validate = (val) => {
     const err = {};
-  
+
     if (!val.fname) {
       err.fname = "Please enter your first name";
     }
@@ -54,25 +48,20 @@ export const Register = () => {
     e.preventDefault();
     const errors = validate(input);
     setError(errors);
-    const mail = email.find((e) => e.email === input.email);
 
-    if (mail) {
-      toast.error("Email Alredy Used");
-    } else {
-      if (Object.keys(errors).length === 0) {
-        try {
-          // eslint-disable-next-line no-unused-vars
-          const {cpassword:remove,...inputtt} =input
+    if (Object.keys(errors).length === 0) {
+      try {
 
-          await axios.post(userAPI, inputtt)
-          toast.success("Registration successful!");
-          navigate("/login");
-        } catch (err) {
-          toast.error("Error: " + err.message);
-        }
-      } else {
-        toast.error("Please fill out the form correctly");
+        dispatch(AllUSers(input))
+        // console.log('====================================');
+        // console.log("sum");
+        // console.log('====================================');
+       
+      } catch (err) {
+        toast.error("Error: " + err.message);
       }
+    } else {
+      toast.error("Please fill out the form correctly");
     }
   };
 

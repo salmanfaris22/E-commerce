@@ -7,6 +7,9 @@ import RoutesPage from "./Rountes/Routes";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { userAPI } from "./Components/API/API_URL";
+import { useDispatch } from "react-redux";
+import { AllPruduct } from "./features/API";
+
 
 // import NavBarAdmin from "./Admin/AdminUser/Navbar/Navbar";
 
@@ -20,17 +23,26 @@ function App() {
   const [admin, setAdmin] = useState(false);
   const [cartt, setCartt] = useState(0);
   const [cartItems, setCartItems] = useState([]);
+  // const {product} = useSelector((state)=>state.product)
+  const dispatch =useDispatch()
+  useEffect(()=>{
+  
+    dispatch(AllPruduct())
+    // console.log(product);
+  },[])
+
+
   useEffect(() => {
     async function TotelCart() {
       const user = localStorage.getItem("id");
 
       const response = await axios.get(`${userAPI}/${user}`);
-      const currentCart = response.data.cart;
-
-      setCartt(Object.keys(currentCart).length);
+       const currentCart = response.data;
+  
+      await setCartt(Object.keys(currentCart).length);
     }
     TotelCart();
-  }, [cartItems]);
+  }, [cartItems,admin]);
 
   return (
     <>

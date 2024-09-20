@@ -19,7 +19,7 @@ const ByProducts = () => {
       const res = await axios.get(`${ItemsAPI}/${id}`);
       setItem(res.data);
       setPrice(res.data.price);
-      console.log(res.data);
+      
     }
     fetchItem();
   }, [id]);

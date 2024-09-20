@@ -104,6 +104,9 @@ export async function TotelCart(){
   return Object.keys(currentCart).length
 }
 
+
+
+
 export async function ByFronCart(from,item){
   TotelCart()
   const user =localStorage.getItem("id")

@@ -39,7 +39,7 @@ const TrackOrder = () => {
   return (
     <div className="min-h-[100vh] mt-2">
       <ToastContainer />
-{console.log("hey", cartItems)}
+
       {cartItems.length >= 1 ? (
         cartItems.map((e) => {
           return (

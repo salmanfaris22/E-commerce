@@ -3,7 +3,7 @@ import { Si4Chan } from "react-icons/si";
 import { FaCartShopping, FaUser } from "react-icons/fa6";
 import { IoMdClose, IoMdMenu } from "react-icons/io";
 import { IoCloseSharp } from "react-icons/io5";
-import { Color } from "../Home/Color";
+
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import AOS from "aos";
@@ -13,7 +13,7 @@ import { ItemsAPI, userAPI } from "../API/API_URL";
 
 
 // eslint-disable-next-line react/prop-types
-const NavBar = ({ setAdmin ,cartt}) => {
+const NavBar = ({ setAdmin }) => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
@@ -36,7 +36,7 @@ const NavBar = ({ setAdmin ,cartt}) => {
 // console.log("dd");
 //      abc()
 // },[])
-console.log("dd");
+
   const filter = (e) => {
     const value = e.target.value.toLowerCase();
     setQuery(value);
@@ -182,7 +182,7 @@ console.log("dd");
       <div
         data-aos="fade-down"
         className="hidden md:flex justify-between items-center w-full h-[70px] z-[8888] px-4"
-        style={{ background: Color.primary, color: Color.secondary }}
+       
       >
         <div className="text-2xl flex items-center gap-3">
           <Si4Chan />
@@ -224,7 +224,7 @@ console.log("dd");
         </div>
         <div className="flex gap-6 text-2xl">
           <Link to="/cart">
-             {cartt}
+            
             <FaCartShopping data-aos="zoom-out-down" data-aos-duration="2000" />
           </Link>
           <div className="relative">
@@ -245,7 +245,7 @@ console.log("dd");
       {/* Mobile Navbar */}
       <div
         className="md:hidden flex justify-between items-center w-full h-[70px] px-4 shadow-md"
-        style={{ background: Color.primary, color: Color.secondary }}
+
       >
         <div className="text-2xl flex items-center gap-3">
           <Si4Chan />
