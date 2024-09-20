@@ -68,6 +68,7 @@ const AlllCatogory = () => {
   return (
     <div>
       <ToastContainer />
+      
       <div className="flex justify-between ml-5 mr-5">
         {filter && (
           <div className="md:w-1/4 w-[300px] p-10 bg-white rounded-lg fixed shadow-lg top-0 right-0 flex flex-col overflow-y-auto h-full">
@@ -136,7 +137,8 @@ const AlllCatogory = () => {
       <div className="grid grid-cols-2 min-h-screen sm:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
         {store &&
           store.map((item) => (
-            <div key={item.id} className="shadow-lg p-4 h-[390px] rounded-md bg-white">
+            <div key={item.id} className="  shadow-lg p-4 h-[390px] rounded-md bg-white">
+             
               <Link to={`/byProducts/${item.id}`}>
                 <img
                   src={item.image_url}

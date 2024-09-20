@@ -15,7 +15,7 @@ const FullCategory = () => {
 
   const [filterPrice, setFilterPrice] = useState("All");
   const [filterCategory, setFilterCategory] = useState("All");
-console.log(id);
+
   useEffect(() => {
     const fetchMenItems = async () => {
       try {

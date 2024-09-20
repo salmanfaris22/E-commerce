@@ -1,15 +1,13 @@
 import axios from "axios";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { userAPI } from "../../../../Components/API/API_URL";
-import { HandleDelet } from "../buttonFunction/Delete";
+import { HandleDelet, HandleUnDelet } from "../buttonFunction/Delete";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 import { MakeAdmin, RemoveAdmin } from "../buttonFunction/MakeAdmin";
-import { Color } from "../../../../App";
 
 const UserDetails = () => {
-  const color = useContext(Color)
   const [user, setUser] = useState([]);
 
   useEffect(() => {
@@ -47,6 +45,17 @@ const UserDetails = () => {
       console.log("Something went wrong");
     }
   }
+ async function undeletuser(e){
+  try {
+    await HandleUnDelet(e);
+    const res = await axios.get(userAPI);
+    const use = res.data;
+    setUser(use);
+  } catch (err) {
+    console.log("Something went wrong");
+  }
+ }
+
   const handleremoveAdmin = async (e) => {
     try {
       await RemoveAdmin(e);
@@ -59,15 +68,12 @@ const UserDetails = () => {
     }
   };
   return (
-    <div className="  bg-gray-100 h-[100vh] p-6"
-    style={{background:color.color.main}}
-    >
+    <div className="  bg-gray-100 h-[100vh] p-6">
       <ToastContainer />
       <div className="ml-[100px] ">
         <div className="flex flex-col gap-6 mt-4">
           {user.map((e, i) => (
-            <div     style={{background:color.color.secondry,color:color.color.primery}}
-
+            <div
               key={e.id}
               className="hover:scale-105 grid grid-cols-1 md:grid-cols-3  transition-transform transform gap-4 p-4 bg-white rounded-lg shadow-md"
             >
@@ -80,11 +86,20 @@ const UserDetails = () => {
               </div>
               <div className="flex flex-col md:flex-row items-center justify-end gap-2">
                 {!e.superAdmin && (
+                  e.bloked === "bloked"  ? 
+                  <button
+                  className="bg-black text-white rounded-lg p-2 md:w-auto w-full"
+                  onClick={() => undeletuser(e)}
+                >
+                  UnBlock User
+                </button>
+                  :
                   <button
                     className="bg-red-500 text-white rounded-lg p-2 md:w-auto w-full"
+                  
                     onClick={() => deleteUSer(e)}
                   >
-                    Delete
+                    Block User
                   </button>
                 )}
 

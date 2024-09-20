@@ -13,7 +13,8 @@ const TrackOrder = () => {
         const userId = localStorage.getItem("id");
         const res = await axios.get(`${userAPI}/${userId}`);
         const cartList = res.data.orders;
-        setCartItems(Object.values(cartList));
+        // console.log("sdsd", cartList.filter((e)=>e.status==="pending"));
+        setCartItems(Object.values(cartList).filter((e)=>e.status!=="outForDelivery"));
       } catch (err) {
         console.log("Error in carts:", err);
       }
@@ -22,22 +23,23 @@ const TrackOrder = () => {
     displayCartItems();
   }, []);
   async function handleRemoveOrder(id) {
-    console.log("ss", id);
+
     try {
       await CancelOrder(id);
       const user = localStorage.getItem("id");
       const res = await axios.get(`${userAPI}/${user}`);
-      const Chart = res.data.orders;
-      setCartItems(Object.values(Chart));
+      const cartList = res.data.orders;
+        // console.log("sdsd", cartList.filter((e)=>e.status==="pending"));
+        setCartItems(Object.values(cartList).filter((e)=>e.status!=="outForDelivery"));
       toast.success("cancel order sunccfully");
     } catch (err) {
       console.log("errr");
     }
   }
   return (
-    <div className="h-[100vh] mt-2">
+    <div className="min-h-[100vh] mt-2">
       <ToastContainer />
-{console.log("hey", cartItems)}
+
       {cartItems.length >= 1 ? (
         cartItems.map((e) => {
           return (

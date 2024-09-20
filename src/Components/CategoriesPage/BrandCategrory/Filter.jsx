@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
-import { ItemsAPI } from "../../API/API_URL";
+
 
 import { handleAddCart } from "../../Cart/Cartfunction";
 import { ToastContainer } from "react-toastify";
 import { FaFilter } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 
 const Filter = () => {
@@ -15,22 +15,11 @@ const Filter = () => {
   const [store, seStore] = useState([]);
   const [filterBrand, setFilterBrand] = useState("All");
   const [filterPrice, setFilterPrice] = useState("All");
-
+  const {product} = useSelector((state)=>state.product)
   useEffect(() => {
-    const fetchMenItems = async () => {
-      try {
-        const response = await axios.get(ItemsAPI);
-        const menItems = response.data.filter(
-          (item) => item.category === id
-        );
-        setMens(menItems);
-        seStore(menItems);
-      } catch (error) {
-        console.error("Error fetching men's items:", error);
-      }
-    };
-
-    fetchMenItems();
+   
+        setMens(product);
+       
   }, [store,filter,mens]);
 
 
@@ -209,7 +198,7 @@ const Filter = () => {
             </div>
           </div>
         )}
-        <div className="text-3xl ">Mens</div>
+        <div className="text-3xl ">{id}</div>
         <div className="flex gap-3  justify-center items-center text-2xl">
           Filter
           <FaFilter onClick={handlefilter} />

@@ -21,12 +21,14 @@ const Login = () => {
       );
 
       if (user) {
-        if (user.password === credentials.password) {
+        if (user.password === credentials.password && user.bloked !== "bloked" ) {
           toast.success("Login successful!");
           localStorage.setItem("id",user.id)
           localStorage.setItem("name",user.fname)
           Navigate("/")
           window.location.reload();
+        }else if(user.bloked === "bloked"){
+          toast.error("This Email is Bloked");
         } else {
           validation.password = "Incorrect password";
           toast.error("Incorrect password");
@@ -103,7 +105,12 @@ const Login = () => {
                     Register
                   </div>
                 </Link>
+                
               </div>
+              <div>
+                  admin id: salman@gmail.com
+                    pass :salman
+                </div>
             </form>
           </div>
           <div className="md:w-1/2 flex justify-center items-center p-4">

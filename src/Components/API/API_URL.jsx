@@ -1,2 +1,4 @@
-export const userAPI = "http://localhost:3000/user"
-export const ItemsAPI ="http://localhost:3000/item"
+export const userAPI = "https://shoezee.onrender.com/user"
+export const ItemsAPI ="https://shoezee.onrender.com/item"
+
+
